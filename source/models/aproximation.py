@@ -1,5 +1,3 @@
-import utils.imports
-
 class Aproximation:
     def __init__(self, size, aprox_type, path):
         self.size = size
@@ -28,4 +26,4 @@ class Aproximation:
         for video in self.videos:
             if (video.get_name() == name):
                 return video
-        return false 
+        return False 

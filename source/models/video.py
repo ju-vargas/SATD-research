@@ -1,4 +1,8 @@
-import utils.imports
+import numpy as np
+import os
+from source.commonlib import metric as metrics
+from source.commonlib import vvclog as vlog
+from source.models import logvideo as lv
 
 class Video:
     def __init__(self, name, path):
@@ -11,17 +15,20 @@ class Video:
         self.BDRate_RA = None
         self.BDRate_LB = None
         
-    #TALVEZ nao faca tanto sentido ter isso aqui, desse jeito. mandar o Precise 
+        
+    #manda os birates do self video, manda os PSNRs do self video
+    #manda tambem o Video Precise pra comparar 
+    #manda a configuracao pra setar o bdrate correto e pra comparar corretamente o video 
     def set_BDRate(self, config, VideoP):
         match config:
             case "AI":
-                self.BDRate_AI = calc_bdrate(VideoP, self.get_rates(config), self.get_PSNRs(config), config); 
+                self.BDRate_AI = metrics.calc_bdrate(VideoP, self.get_bitrates(config), self.get_PSNRs(config), config); 
             case "RA":
-                self.BDRate_RA = calc_bdrate(VideoP, self.get_rates(config), self.get_PSNRs(config), config); 
+                self.BDRate_RA = metrics.calc_bdrate(VideoP, self.get_bitrates(config), self.get_PSNRs(config), config); 
             case "LB":
-                self.BDRate_LB = calc_bdrate(VideoP, self.get_rates(config), self.get_PSNRs(config), config); 
+                self.BDRate_LB = metrics.calc_bdrate(VideoP, self.get_bitrates(config), self.get_PSNRs(config), config); 
             case _:
-                return false  
+                return False  
             
     def get_BDRate(self, config):
         match config:
@@ -32,7 +39,7 @@ class Video:
             case "LB":
                 return self.BDRate_LB
             case _:
-                return false          
+                return False          
         
     def get_name(self): 
         return self.name
@@ -49,7 +56,7 @@ class Video:
             case "LB":
                 return self.logs_LB
             case _:
-                return false           
+                return False           
             
     def add_logs(self, config):
         path_logs = self.path + config + '/'
@@ -63,11 +70,11 @@ class Video:
             qp_item = log_item.split("_")[2]  
             qp_item_n = qp_item.split("p")[1]
             
-            log_video = LogVideo(config,qp_item_n, log_item, path_logs)
+            log_video = lv.LogVideo(config,qp_item_n, log_item, path_logs)
         
             #aq eu preciso chamar outras funcoes pra preencher o resto dos dados dos logs
             #aquelas funcoes q pegam funcoes mais chamadas, tempo etc ect 
-            get_data_vvc(path_logs + log_item, log_video)
+            vlog.get_data_vvc(path_logs + log_item, log_video)
     
             #coloca na lista
             match config:
@@ -78,44 +85,52 @@ class Video:
                 case "LB":
                     self.logs_LB.append(log_video) 
                     
-    def get_rates(self, config):
+    #GET BITRATES  
+    #devolve np.array bitrates
+    def get_bitrates(self, config):
         Rate1 = []
     
         match config:
             case "AI":
                 for log in self.logs_AI:
-                    Rate1.append(log.get_bdrate())
+                    Rate1.append(log.get_bitrate())
+                return Rate1
                 
             case "RA":
                 for log in self.logs_RA:
-                    Rate1.append(log.get_bdrate())
+                    Rate1.append(log.get_bitrate())
+                return Rate1
 
             case "LB":
                 for log in self.logs_LB:
-                    Rate1.append(log.get_bdrate())
+                    Rate1.append(log.get_bitrate())
+                return Rate1
     
             case _:
-                return false   
-            
-        return np.array(Rate1)
+                return False   
+        
                 
-    
+    #devolve np.array PSNRs 
+    #ver se faz sentido devolver np.array de algo q ja deve ser um array 
     def get_PSNRs(self, config):
         PSNRs = []
         match config:
             case "AI":
                 for log in self.logs_AI:
                     PSNRs.append(log.get_PSNR())
+                return PSNRs
                 
             case "RA":
                 for log in self.logs_RA:
                     PSNRs.append(log.get_PSNR())
+                return PSNRs
 
             case "LB":
                 for log in self.logs_LB:
                     PSNRs.append(log.get_PSNR())
+                return PSNRs
+
             case _:
-                return false   
+                return False   
             
-        return np.array(PSNRs)
     

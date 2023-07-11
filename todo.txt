@@ -1,0 +1,2 @@
+2. implementar bitrate na tabela
+3. fazer import vvc framework

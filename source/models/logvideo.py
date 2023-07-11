@@ -1,5 +1,5 @@
-import utils.imports
-
+#CLASSES
+#class LogFunction: 
 class LogVideo:
     def __init__(self, config, qp, name, path):
         self.config = config
@@ -26,13 +26,8 @@ class LogVideo:
        
     def get_time(self):
         return self.time
-        
-    def set_bdrate(self, bdrate):
-        self.BD_rate = bdrate
-            
-    def get_bdrate(self):
-        return self.BD_rate
     
+    #BITRATE
     def set_bitrate(self, bitrate):
         self.bitrate = bitrate
             
@@ -45,3 +40,10 @@ class LogVideo:
     def get_PSNR(self):
         return self.PSNR
    
+    #BDRATE 
+    def set_bdrate(self, bdrate):
+        self.BD_rate = bdrate
+            
+    def get_bdrate(self):
+        return self.BD_rate
+    

@@ -1,3 +1,5 @@
+import numpy as np
+
 #Funcoes METRICAS
 
 # BD-Rate and BD-PNSR computation
@@ -51,15 +53,28 @@ def bj_delta(R1, PSNR1, R2, PSNR2, mode=0):
     return avg_diff
 
 #Precise and video 
-def calc_bdrate(VideoP, Rate2, PSNR2,config):
+def calc_bdrate(VideoP, Rate2, psnr2,config):
 
-    print(VideoP.get_name())
+    #print("precise: " + VideoP.get_name())
     
-    Rate1 = VideoP.get_rates(config)
-    PSNR1 = VideoP.get_PSNRs(config)
+    Rate1 = VideoP.get_bitrates(config)
+    psnr1 = VideoP.get_PSNRs(config)
     #Rate2 = VideoP.get_rates()
     #PSNR2 = Video.get_PSNRs()
+
+
+    #DEBUG
+    #print("testa rate corrigido")
+    #print(type(Rate1))
+    #for rate in Rate1:
+    #    print(rate)
+
+    #print("testa formato PSNR")
+    #print(type(psnr1))
+    #for psnr in psnr1:
+    #    print(psnr)
+
     
-    bdrate = bj_delta(Rate1, PSNR1, Rate2, PSNR2, 1)
+    bdrate = bj_delta(Rate1, psnr1, Rate2, psnr2, 1)
     
     return bdrate 

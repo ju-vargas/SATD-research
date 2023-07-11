@@ -1,4 +1,6 @@
-import utils.imports
+import numpy as np
+import pandas as pd
+from IPython.display import display
 
 
 #FUNCTIONS PRINT TABLE
@@ -25,6 +27,9 @@ def print_table_vvc(matrix, videos, config, check_tags):
             videos_list.append(video)
             videos_list.append(video)
             videos_list.append(video)
+        
+        videos_list.append(video)
+
 
         for tag in check_tags:
             qp_list.append(22)
@@ -49,6 +54,11 @@ def print_table_vvc(matrix, videos, config, check_tags):
         
         for tag in check_tags:
             tags_list.append(tag)
+
+        #teste bdrate
+        qp_list.append("")
+        tags_list.append("BDRate")
+
     aprox_list.sort()
 
     #index table
@@ -84,6 +94,13 @@ def print_table_vvc(matrix, videos, config, check_tags):
                 
                 if "PSNR" in check_tags:
                     data_column.append(log.get_PSNR())                    
+        
+            #teste bdrate
+            #????????????
+            #print("aaaaaa")
+            #print(video.get_BDRate(config))
+            data_column.append(video.get_BDRate(config))
+
         data.append(data_column)
     
     data = np.transpose(data)
@@ -94,4 +111,4 @@ def print_table_vvc(matrix, videos, config, check_tags):
     display(df)
     
 def print_table_gprog():
-    return void
+    return False
