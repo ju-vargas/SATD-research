@@ -12,3 +12,13 @@ POC    1 LId:  0 TId: 0 ( CRA, I-SLICE, QP 27 )     375280 bits [Y 39.9376 dB   
 POC    2 LId:  0 TId: 0 ( CRA, I-SLICE, QP 27 )     372608 bits [Y 39.9156 dB    U 44.4808 dB    V 45.6981 dB] [ET  1392 ] [L0] [L1]
 POC    3 LId:  0 TId: 0 ( CRA, I-SLICE, QP 27 )     371016 bits [Y 39.8839 dB    U 44.4902 dB    V 45.6933 dB] [ET  1237 ] [L0] [L1]
 POC    4 LId:  0 TId: 0 ( CRA, I-SLICE, QP 27 )     375512 bits [Y 39.8518 dB    U 44.4558 dB    V 45.6316 dB] [ET  1039 ] [L0] [L1]
+POC    5 LId:  0 TId: 0 ( CRA, I-SLICE, QP 27 )     374208 bits [Y 39.8138 dB    U 44.4660 dB    V 45.6331 dB] [ET   955 ] [L0] [L1]
+POC    6 LId:  0 TId: 0 ( CRA, I-SLICE, QP 27 )     375560 bits [Y 39.8163 dB    U 44.4627 dB    V 45.6133 dB] [ET   979 ] [L0] [L1]
+POC    7 LId:  0 TId: 0 ( CRA, I-SLICE, QP 27 )     377112 bits [Y 39.8407 dB    U 44.5080 dB    V 45.6763 dB] [ET   942 ] [L0] [L1]
+
+LayerId  0
+	Total Frames |  Bitrate      Y-PSNR   U-PSNR   V-PSNR   YUV-PSNR 
+	8            a  18770.3500   39.8720  44.4743  45.6410  41.0149  
+
+ finished @ Tue Jul 11 17:41:33 2023
+ Total Time:     7787.952 sec. [user]    10703.559 sec. [elapsed]

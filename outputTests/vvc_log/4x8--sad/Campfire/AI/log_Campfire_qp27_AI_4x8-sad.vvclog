@@ -8,3 +8,17 @@ FAST TOOL CFG: LCTUFast:1 FastMrg:1 PBIntraFast:1 IMV4PelFast:1 MTSMaxCand: 4(in
 
  started @ Tue Jul 11 14:43:09 2023
 POC    0 LId:  0 TId: 0 ( IDR_N_LP, I-SLICE, QP 27 )    2376408 bits [Y 40.5227 dB    U 41.5121 dB    V 41.7611 dB] [ET  6995 ] [L0] [L1]
+POC    1 LId:  0 TId: 0 ( CRA, I-SLICE, QP 27 )    2374000 bits [Y 40.5387 dB    U 41.4686 dB    V 41.6800 dB] [ET  3973 ] [L0] [L1]
+POC    2 LId:  0 TId: 0 ( CRA, I-SLICE, QP 27 )    2386640 bits [Y 40.5043 dB    U 41.4591 dB    V 41.6352 dB] [ET  2800 ] [L0] [L1]
+POC    3 LId:  0 TId: 0 ( CRA, I-SLICE, QP 27 )    2409624 bits [Y 40.5149 dB    U 41.3222 dB    V 41.5855 dB] [ET  2451 ] [L0] [L1]
+POC    4 LId:  0 TId: 0 ( CRA, I-SLICE, QP 27 )    2288168 bits [Y 40.6952 dB    U 41.4065 dB    V 41.7402 dB] [ET  2356 ] [L0] [L1]
+POC    5 LId:  0 TId: 0 ( CRA, I-SLICE, QP 27 )    2365344 bits [Y 40.7065 dB    U 41.3928 dB    V 41.7664 dB] [ET  2384 ] [L0] [L1]
+POC    6 LId:  0 TId: 0 ( CRA, I-SLICE, QP 27 )    2367512 bits [Y 40.6991 dB    U 41.3203 dB    V 41.8502 dB] [ET  2392 ] [L0] [L1]
+POC    7 LId:  0 TId: 0 ( CRA, I-SLICE, QP 27 )    2487840 bits [Y 40.5385 dB    U 41.2587 dB    V 41.8374 dB] [ET  2443 ] [L0] [L1]
+
+LayerId  0
+	Total Frames |  Bitrate      Y-PSNR   U-PSNR   V-PSNR   YUV-PSNR 
+	8            a  71458.2600   40.5900  41.3925  41.7320  40.8887  
+
+ finished @ Tue Jul 11 21:53:09 2023
+ Total Time:    22950.289 sec. [user]    25800.008 sec. [elapsed]

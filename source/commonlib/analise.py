@@ -7,7 +7,7 @@ import os
 
 #FUNCTIONS
 #returns the analise
-def analise(matrix_size, folder, config, check_tags):
+def analise(matrix_size, folder, config, check_tags, bd_tags, color_tags):
     
     #new matrix according dropdown
     matrix = mtx.Matrix(matrix_size)
@@ -57,10 +57,12 @@ def analise(matrix_size, folder, config, check_tags):
             #print("alo")
             #print(VideoP.get_name())
             video.set_BDRate(config, VideoP)
+            video.set_BDPsnr(config, VideoP)
+
             #print(video.get_BDRate(config))
             #print("\n")
 
-    tl.print_table_vvc(matrix, videos_list, config, check_tags)
+    tl.print_table_vvc(matrix, videos_list, config, check_tags, bd_tags, color_tags)
     return matrix
 
     

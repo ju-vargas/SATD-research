@@ -6,13 +6,12 @@ from IPython.display import display
 #FUNCTIONS PRINT TABLE
 
 #make the table according the param
-def print_table_vvc(matrix, videos, config, check_tags):
+def print_table_vvc(matrix, videos, config, check_tags, bd_tags, color_tags):
     
     aprox_list = []
     aproximations = matrix.get_aproximations()
 
     #to correct labels
-    #TROCAR pra "swich case"
     for aproximation in aproximations:
         match aproximation.get_type():
             case "Precise":
@@ -23,6 +22,7 @@ def print_table_vvc(matrix, videos, config, check_tags):
                 aprox_list.append("-" + aproximation.get_type())
 
     
+    #to do indexes
     videos_list = []
     tags_list = []
     qp_list = []
@@ -34,63 +34,55 @@ def print_table_vvc(matrix, videos, config, check_tags):
             videos_list.append(video)
             videos_list.append(video)
         
-        videos_list.append(video)
-
-
+        if 'BD-Rate' in bd_tags:
+            videos_list.append(video)
+        if 'BD-PSNR' in bd_tags:
+            videos_list.append(video)
+        
         for tag in check_tags:
             qp_list.append(22)
-        
         for tag in check_tags:
             tags_list.append(tag)
-          
         for tag in check_tags:
             qp_list.append(27)
-        
         for tag in check_tags:
             tags_list.append(tag)
-        
         for tag in check_tags:
             qp_list.append(32)
-        
         for tag in check_tags:
             tags_list.append(tag)
-        
         for tag in check_tags:
             qp_list.append(37)
-        
+
         for tag in check_tags:
             tags_list.append(tag)
 
-        #teste bdrate
-        qp_list.append("")
-        tags_list.append("BDRate")
+        if 'BD-Rate' in bd_tags:
+            qp_list.append("")
+            tags_list.append("BD-Rate")
 
-    #aprox_list.sort()
+        if 'BD-PSNR' in bd_tags:
+            qp_list.append("")
+            tags_list.append("BD-PSNR")
 
-    #index table
+    #table index
     arrays = [
         np.array(videos_list),
         np.array(qp_list),
         np.array(tags_list),
     ]
     
-    #content table
+    #table content
     data = []
-
     for aproximation in aproximations:
-        #crio a lista pra aproximacao 
         data_column = []
 
-        #pego os videos da respectiva aproximacao
         aprox_videos =  aproximation.get_videos()
         
-        #pra cada video, pego os 4 logs da config escolhida
         logs_list = []
         for video in aprox_videos:
             
-            logs_list = video.get_logs(config)
-            
-            #pra cada log, adiciono os 4 valores na lista 
+            logs_list = video.get_logs(config)            
             for log in logs_list:
                 if 'Time' in check_tags:
                     data_column.append(log.get_time())
@@ -100,12 +92,12 @@ def print_table_vvc(matrix, videos, config, check_tags):
                 
                 if "PSNR" in check_tags:
                     data_column.append(log.get_PSNR())                    
-        
-            #teste bdrate
-            #????????????
-            #print("aaaaaa")
-            #print(video.get_BDRate(config))
-            data_column.append(video.get_BDRate(config))
+
+            if 'BD-Rate' in bd_tags:
+                data_column.append(video.get_BDRate(config))
+            
+            if 'BD-PSNR' in bd_tags:
+                data_column.append(video.get_BDPsnr(config))
 
         data.append(data_column)
     
@@ -115,24 +107,62 @@ def print_table_vvc(matrix, videos, config, check_tags):
     #display all table
     pd.set_option('display.max_rows', None)
     df = pd.DataFrame(np.array(data), index=arrays, columns=aprox_list)
-    styled_df2 = df.style.apply(min_color, axis=1)
+    styled_best = df.style.apply(color_best, axis=1)
+    styled_worst = df.style.apply(color_worst, axis=1)
+    styled_both = df.style.apply(color_both, axis=1)
 
-    display(styled_df2)
+
+    #colors
+    if 'Best values' in color_tags: 
+        if 'Worst values' in color_tags:
+             display(styled_both)
+        else:
+             display(styled_best)
+    elif 'Worst values' in color_tags:
+        display(styled_worst)
+    else:
+        display(df)
+       
+ 
+def color_best(s):
+    min_value = s[s != 0].min()
+    min2 = -1
+
+    if s.iloc[-1] == min_value:
+        min2 = min_value
+        min_value = -1
     
+    styles = ['background-color: #60C25B'  if v < 0 and v == min_value else 'background-color: #CBE0CA' if v == min2  else 'background-color: #ABE0A6' if v == min_value else '' for v in s]
+    return styles
+
+def color_worst(s):
+    max_value = s[s != 0].max()
+    max2 = -1
+
+    if s.iloc[-1] == max_value:
+        max2 = max_value
+        max_value = -1
+
+    styles = ['background-color: #E3C5C3' if v == max2  else 'background-color: #E68C87' if v == max_value else '' for v in s]    
+    return styles
+
+def color_both(s):
+    min_value = s[s != 0].min()
+    min2 = -1
+
+    if s.iloc[-1] == min_value:
+        min2 = min_value
+        min_value = -1
+    
+    max_value = s[s != 0].max()
+    max2 = -1
+
+    if s.iloc[-1] == max_value:
+        max2 = max_value
+        max_value = -1
+
+    styles = ['background-color: #60C25B'  if v < 0 and v == min_value else 'background-color: #E3C5C3' if v == max2 else 'background-color: #CBE0CA' if v == min2 else 'background-color: #F4998D' if v == max_value else 'background-color: #BDFCB9' if v == min_value else '' for v in s]
+    return styles
+
 def print_table_gprof():
     return False
-
-def min_color(s):
-    relevant_cells = s.iloc[:-1]
-
-    # Calcula o mínimo das células relevantes
-    min_value = relevant_cells.min()
-
-    # Verifica se o mínimo está na última coluna
-    if s.iloc[-1] == min_value:
-        # Encontra o próximo valor mínimo excluindo a última coluna
-        min_value = relevant_cells[relevant_cells != min_value].min()
-
-    # Aplica o estilo às células
-    styles = ['background-color: #BDFCB9' if v == min_value else '' for v in s]
-    return styles

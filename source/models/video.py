@@ -14,6 +14,9 @@ class Video:
         self.BDRate_AI = None
         self.BDRate_RA = None
         self.BDRate_LB = None
+        self.BDPsnr_AI = None
+        self.BDPsnr_RA = None
+        self.BDPsnr_LB = None
         
         
     #manda os birates do self video, manda os PSNRs do self video
@@ -22,11 +25,11 @@ class Video:
     def set_BDRate(self, config, VideoP):
         match config:
             case "AI":
-                self.BDRate_AI = metrics.calc_bdrate(VideoP, self.get_bitrates(config), self.get_PSNRs(config), config); 
+                self.BDRate_AI = metrics.calc_rate(VideoP, self.get_bitrates(config), self.get_PSNRs(config), config, 1); 
             case "RA":
-                self.BDRate_RA = metrics.calc_bdrate(VideoP, self.get_bitrates(config), self.get_PSNRs(config), config); 
+                self.BDRate_RA = metrics.calc_rate(VideoP, self.get_bitrates(config), self.get_PSNRs(config), config, 1); 
             case "LB":
-                self.BDRate_LB = metrics.calc_bdrate(VideoP, self.get_bitrates(config), self.get_PSNRs(config), config); 
+                self.BDRate_LB = metrics.calc_rate(VideoP, self.get_bitrates(config), self.get_PSNRs(config), config, 1); 
             case _:
                 return False  
             
@@ -40,6 +43,29 @@ class Video:
                 return self.BDRate_LB
             case _:
                 return False          
+            
+
+    def set_BDPsnr(self, config, VideoP):
+        match config:
+            case "AI":
+                self.BDPsnr_AI = metrics.calc_rate(VideoP, self.get_bitrates(config), self.get_PSNRs(config), config, 0); 
+            case "RA":
+                self.BDPsnr_RA = metrics.calc_rate(VideoP, self.get_bitrates(config), self.get_PSNRs(config), config, 0); 
+            case "LB":
+                self.BDPsnr_LB = metrics.calc_rate(VideoP, self.get_bitrates(config), self.get_PSNRs(config), config, 0); 
+            case _:
+                return False  
+            
+    def get_BDPsnr(self, config):
+        match config:
+            case "AI":
+                return self.BDPsnr_AI
+            case "RA":
+                return self.BDPsnr_RA 
+            case "LB":
+                return self.BDPsnr_LB
+            case _:
+                return False      
         
     def get_name(self): 
         return self.name

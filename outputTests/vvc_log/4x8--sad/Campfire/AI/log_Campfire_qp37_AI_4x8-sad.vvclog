@@ -11,3 +11,14 @@ POC    0 LId:  0 TId: 0 ( IDR_N_LP, I-SLICE, QP 37 )     445736 bits [Y 36.3968 
 POC    1 LId:  0 TId: 0 ( CRA, I-SLICE, QP 37 )     453656 bits [Y 36.3974 dB    U 36.4479 dB    V 38.2090 dB] [ET  2155 ] [L0] [L1]
 POC    2 LId:  0 TId: 0 ( CRA, I-SLICE, QP 37 )     457184 bits [Y 36.3601 dB    U 36.4008 dB    V 38.1576 dB] [ET  1628 ] [L0] [L1]
 POC    3 LId:  0 TId: 0 ( CRA, I-SLICE, QP 37 )     456312 bits [Y 36.3351 dB    U 36.2373 dB    V 38.2718 dB] [ET  1318 ] [L0] [L1]
+POC    4 LId:  0 TId: 0 ( CRA, I-SLICE, QP 37 )     449672 bits [Y 36.5589 dB    U 36.3058 dB    V 38.3174 dB] [ET  1073 ] [L0] [L1]
+POC    5 LId:  0 TId: 0 ( CRA, I-SLICE, QP 37 )     458240 bits [Y 36.4549 dB    U 36.3561 dB    V 38.2786 dB] [ET   720 ] [L0] [L1]
+POC    6 LId:  0 TId: 0 ( CRA, I-SLICE, QP 37 )     459040 bits [Y 36.4588 dB    U 36.2977 dB    V 38.3385 dB] [ET  1219 ] [L0] [L1]
+POC    7 LId:  0 TId: 0 ( CRA, I-SLICE, QP 37 )     467216 bits [Y 36.2732 dB    U 36.2315 dB    V 38.3771 dB] [ET  1255 ] [L0] [L1]
+
+LayerId  0
+	Total Frames |  Bitrate      Y-PSNR   U-PSNR   V-PSNR   YUV-PSNR 
+	8            a  13676.4600   36.4044  36.3458  38.2754  36.6543  
+
+ finished @ Tue Jul 11 18:06:18 2023
+ Total Time:     9233.014 sec. [user]    12189.095 sec. [elapsed]
