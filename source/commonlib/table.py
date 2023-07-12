@@ -10,12 +10,18 @@ def print_table_vvc(matrix, videos, config, check_tags):
     
     aprox_list = []
     aproximations = matrix.get_aproximations()
+
+    #to correct labels
+    #TROCAR pra "swich case"
     for aproximation in aproximations:
-        if aproximation.get_type() != "Precise":
-            aprox_list.append("-" + aproximation.get_type())
-        else: 
-            aprox_list.append(aproximation.get_type())
-            
+        match aproximation.get_type():
+            case "Precise":
+                aprox_list.append(aproximation.get_type())
+            case "sad":
+                aprox_list.append("SAD")
+            case __ : 
+                aprox_list.append("-" + aproximation.get_type())
+
     
     videos_list = []
     tags_list = []
@@ -59,7 +65,7 @@ def print_table_vvc(matrix, videos, config, check_tags):
         qp_list.append("")
         tags_list.append("BDRate")
 
-    aprox_list.sort()
+    #aprox_list.sort()
 
     #index table
     arrays = [
@@ -105,10 +111,28 @@ def print_table_vvc(matrix, videos, config, check_tags):
     
     data = np.transpose(data)
     
+
     #display all table
     pd.set_option('display.max_rows', None)
     df = pd.DataFrame(np.array(data), index=arrays, columns=aprox_list)
-    display(df)
+    styled_df2 = df.style.apply(min_color, axis=1)
+
+    display(styled_df2)
     
-def print_table_gprog():
+def print_table_gprof():
     return False
+
+def min_color(s):
+    relevant_cells = s.iloc[:-1]
+
+    # Calcula o mínimo das células relevantes
+    min_value = relevant_cells.min()
+
+    # Verifica se o mínimo está na última coluna
+    if s.iloc[-1] == min_value:
+        # Encontra o próximo valor mínimo excluindo a última coluna
+        min_value = relevant_cells[relevant_cells != min_value].min()
+
+    # Aplica o estilo às células
+    styles = ['background-color: #BDFCB9' if v == min_value else '' for v in s]
+    return styles
