@@ -107,23 +107,44 @@ def print_table_vvc(matrix, videos, config, check_tags, bd_tags, color_tags):
     #display all table
     pd.set_option('display.max_rows', None)
     df = pd.DataFrame(np.array(data), index=arrays, columns=aprox_list)
+
+
+
     styled_best = df.style.apply(color_best, axis=1)
     styled_worst = df.style.apply(color_worst, axis=1)
     styled_both = df.style.apply(color_both, axis=1)
 
-
     #colors
     if 'Best values' in color_tags: 
         if 'Worst values' in color_tags:
-             display(styled_both)
+            display(styled_both)
         else:
-             display(styled_best)
+            display(styled_best)
     elif 'Worst values' in color_tags:
         display(styled_worst)
     else:
         display(df)
        
- 
+
+    #teste muda cor 
+    if 'PSNR' in check_tags:
+        print("teste 2")
+        teste = df.index[0]
+        print(teste[2])
+
+
+def styled_best2(s):
+    max_value = s[s != 0].max()
+    max2 = -1
+
+    if s.iloc[-1] == max_value:
+        max2 = max_value
+        max_value = -1
+    
+
+    styles = ['background-color: #CBE0CA' if v == max2  else 'background-color: #ABE0A6' if v == max_value else '' for v in s]
+    return styles
+
 def color_best(s):
     min_value = s[s != 0].min()
     min2 = -1
