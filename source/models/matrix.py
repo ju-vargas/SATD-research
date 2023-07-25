@@ -5,6 +5,9 @@ class Matrix:
         
     #add a new aprox (-1, -2, -3...)
     def add_aprox(self, aprox):
+
+        #colocar em ordem de nome 
+        #e o precise por ultimo 
         self.aprox_list.append(aprox)
         
     def get_aproximations(self):

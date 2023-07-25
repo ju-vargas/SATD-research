@@ -62,6 +62,11 @@ def analise(matrix_size, folder, config, check_tags, bd_tags, color_tags):
             #print(video.get_BDRate(config))
             #print("\n")
 
+    #setando medias de BD Rate das aproximacoes
+    #(precise nem tem)
+    for aprox in aprox_list:
+        aprox.set_media(config)
+
     tl.print_table_vvc(matrix, videos_list, config, check_tags, bd_tags, color_tags)
     return matrix
 

@@ -4,6 +4,10 @@ class Aproximation:
         self.aprox_type = aprox_type
         self.path = path
         self.videos = []
+        self.mediaBDR_AI = None
+        self.mediaBDR_RA = None
+        self.mediaBDR_LB = None
+
 
     def add_video(self, video):
         self.videos.append(video)
@@ -27,3 +31,41 @@ class Aproximation:
             if (video.get_name() == name):
                 return video
         return False 
+    
+    def set_media(self, config):
+        sum = 0
+        media = 0
+        count = 0
+
+        for video in self.videos:
+            sum = sum + video.get_BDRate(config)
+            count = count + 1
+
+        media = (sum/count)
+
+        match config:
+            case "AI":
+                self.mediaBDR_AI = media
+            case "RA":
+                self.mediaBDR_RA = media
+            case "LB":
+                self.mediaBDR_LB = media
+            case _:
+                return False      
+
+    def get_media(self, config):
+        match config:
+            case "AI":
+                return self.mediaBDR_AI
+            case "RA":
+                return self.mediaBDR_RA 
+            case "LB":
+                return self.mediaBDR_LB
+            case _:
+                return False      
+
+
+        
+     
+            
+

@@ -89,12 +89,15 @@ class Video:
         
         #list logs in a specif configuration folder
         logs_list = os.listdir(path_logs)
+
+        logs_list.sort()
         
         #fill config logs list
         #percorre os logs e vai preenchendo de acordo com o q ta na pasta 
         for log_item in logs_list:
             qp_item = log_item.split("_")[2]  
             qp_item_n = qp_item.split("p")[1]
+
             
             log_video = lv.LogVideo(config,qp_item_n, log_item, path_logs)
         

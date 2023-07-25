@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 from IPython.display import display
+from source.models import aproximation as apx
 
 
 #FUNCTIONS PRINT TABLE
@@ -74,6 +75,30 @@ def print_table_vvc(matrix, videos, config, check_tags, bd_tags, color_tags):
     
     #table content
     data = []
+
+
+    #sort
+    aproximations = sorted(aproximations, key=lambda aproximation: aproximation.aprox_type) 
+    aprox_list.sort()
+    
+
+    auxAprox = apx.Aproximation('','','')
+
+    #coloca Precise como ultimo das aproximacoes  
+    for aproximation in aproximations:
+        if (aproximation.get_type() == 'Precise'):
+            auxAprox = aproximation
+            aproximations.remove(aproximation)
+    aproximations.append(auxAprox)
+
+
+    #coloca Precise como ultimo dos labels
+    for aprox in aprox_list:
+        if (aprox == 'Precise'):
+            aprox_list.remove(aprox)
+    aprox_list.append('Precise')
+
+
     for aproximation in aproximations:
         data_column = []
 
@@ -186,4 +211,7 @@ def color_both(s):
     return styles
 
 def print_table_gprof():
+    return False
+
+def print_table_media():
     return False
