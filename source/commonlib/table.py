@@ -2,6 +2,8 @@ import numpy as np
 import pandas as pd
 from IPython.display import display
 from source.models import aproximation as apx
+import ipywidgets as widgets
+
 
 
 #FUNCTIONS PRINT TABLE
@@ -66,6 +68,16 @@ def print_table_vvc(matrix, videos, config, check_tags, bd_tags, color_tags):
             qp_list.append("")
             tags_list.append("BD-PSNR")
 
+
+
+    #append last line medias
+    videos_list.append("")
+    qp_list.append("")
+    tags_list.append("Media BD-Rate")
+
+
+
+
     #table index
     arrays = [
         np.array(videos_list),
@@ -73,17 +85,13 @@ def print_table_vvc(matrix, videos, config, check_tags, bd_tags, color_tags):
         np.array(tags_list),
     ]
     
-    #table content
-    data = []
+   
 
-
-    #sort
+    ##sort labels and columns
     aproximations = sorted(aproximations, key=lambda aproximation: aproximation.aprox_type) 
     aprox_list.sort()
     
-
     auxAprox = apx.Aproximation('','','')
-
     #coloca Precise como ultimo das aproximacoes  
     for aproximation in aproximations:
         if (aproximation.get_type() == 'Precise'):
@@ -91,23 +99,25 @@ def print_table_vvc(matrix, videos, config, check_tags, bd_tags, color_tags):
             aproximations.remove(aproximation)
     aproximations.append(auxAprox)
 
-
     #coloca Precise como ultimo dos labels
     for aprox in aprox_list:
         if (aprox == 'Precise'):
             aprox_list.remove(aprox)
     aprox_list.append('Precise')
 
+    #table content
+    data = []
+    media_data = []
 
     for aproximation in aproximations:
-        data_column = []
-
-        aprox_videos =  aproximation.get_videos()
+        media_data.append(aproximation.get_media(config))
         
+        data_column = []
+        aprox_videos =  aproximation.get_videos()
         logs_list = []
         for video in aprox_videos:
-            
-            logs_list = video.get_logs(config)            
+            logs_list = video.get_logs(config)    
+
             for log in logs_list:
                 if 'Time' in check_tags:
                     data_column.append(log.get_time())
@@ -124,22 +134,34 @@ def print_table_vvc(matrix, videos, config, check_tags, bd_tags, color_tags):
             if 'BD-PSNR' in bd_tags:
                 data_column.append(video.get_BDPsnr(config))
 
-        data.append(data_column)
-    
-    data = np.transpose(data)
-    
 
-    #display all table
+        #append media
+        data_column.append(aproximation.get_media(config))
+        data.append(data_column)
+        
+
+    data = np.transpose(data)
+
+    #print(media_data)
+
+    #set table
     pd.set_option('display.max_rows', None)
     df = pd.DataFrame(np.array(data), index=arrays, columns=aprox_list)
 
 
+   # index_media = [
+   #     'Media',
+   # ]
+   # df_media = pd.DataFrame([media_data], index = index_media, columns=aprox_list) 
 
+
+
+    print(matrix.get_size())
+    #display according color tags
     styled_best = df.style.apply(color_best, axis=1)
     styled_worst = df.style.apply(color_worst, axis=1)
     styled_both = df.style.apply(color_both, axis=1)
 
-    #colors
     if 'Best values' in color_tags: 
         if 'Worst values' in color_tags:
             display(styled_both)
@@ -149,9 +171,12 @@ def print_table_vvc(matrix, videos, config, check_tags, bd_tags, color_tags):
         display(styled_worst)
     else:
         display(df)
-       
 
-    #teste muda cor 
+
+    #styled_media = df_media.style.apply(color_best, axis = 1)
+    #display(df, styled_media)
+       
+    #debug ----
     if 'PSNR' in check_tags:
         print("teste 2")
         teste = df.index[0]
@@ -181,6 +206,7 @@ def color_best(s):
     styles = ['background-color: #60C25B'  if v < 0 and v == min_value else 'background-color: #CBE0CA' if v == min2  else 'background-color: #ABE0A6' if v == min_value else '' for v in s]
     return styles
 
+
 def color_worst(s):
     max_value = s[s != 0].max()
     max2 = -1
@@ -191,6 +217,7 @@ def color_worst(s):
 
     styles = ['background-color: #E3C5C3' if v == max2  else 'background-color: #E68C87' if v == max_value else '' for v in s]    
     return styles
+
 
 def color_both(s):
     min_value = s[s != 0].min()

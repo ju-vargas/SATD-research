@@ -12,3 +12,6 @@ class Matrix:
         
     def get_aproximations(self):
         return self.aprox_list
+    
+    def get_size(self):
+        return self.size
