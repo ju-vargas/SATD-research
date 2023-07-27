@@ -177,10 +177,10 @@ def print_table_vvc(matrix, videos, config, check_tags, bd_tags, color_tags):
     #display(df, styled_media)
        
     #debug ----
-    if 'PSNR' in check_tags:
-        print("teste 2")
-        teste = df.index[0]
-        print(teste[2])
+    # if 'PSNR' in check_tags:
+    #    print("teste 2")
+    #    teste = df.index[0]
+    #    print(teste[2])
 
 
 def styled_best2(s):
@@ -237,8 +237,3 @@ def color_both(s):
     styles = ['background-color: #60C25B'  if v < 0 and v == min_value else 'background-color: #E3C5C3' if v == max2 else 'background-color: #CBE0CA' if v == min2 else 'background-color: #F4998D' if v == max_value else 'background-color: #BDFCB9' if v == min_value else '' for v in s]
     return styles
 
-def print_table_gprof():
-    return False
-
-def print_table_media():
-    return False

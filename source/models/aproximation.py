@@ -1,13 +1,12 @@
+from source.models import config as con 
+
 class Aproximation:
     def __init__(self, size, aprox_type, path):
         self.size = size
         self.aprox_type = aprox_type
         self.path = path
         self.videos = []
-        self.mediaBDR_AI = None
-        self.mediaBDR_RA = None
-        self.mediaBDR_LB = None
-
+        self.configs = []
 
     def add_video(self, video):
         self.videos.append(video)
@@ -43,26 +42,19 @@ class Aproximation:
 
         media = (sum/count)
 
-        match config:
-            case "AI":
-                self.mediaBDR_AI = media
-            case "RA":
-                self.mediaBDR_RA = media
-            case "LB":
-                self.mediaBDR_LB = media
-            case _:
-                return False      
+        configuration = con.Config()
+        configuration.set_type(config)
+        configuration.set_mediaBDRate(media)
+        self.configs.append(configuration)
+
+        return False
 
     def get_media(self, config):
-        match config:
-            case "AI":
-                return self.mediaBDR_AI
-            case "RA":
-                return self.mediaBDR_RA 
-            case "LB":
-                return self.mediaBDR_LB
-            case _:
-                return False      
+        
+        for con in self.configs:
+            if(con.get_type() == config):
+                return con.get_mediaBDRate()
+        return False      
 
 
         

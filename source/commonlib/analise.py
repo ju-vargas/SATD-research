@@ -6,7 +6,7 @@ from source.commonlib import table as tl
 import os
 
 #FUNCTIONS
-#returns the analise
+#returns the analise VVC
 def analise(matrix_size, folder, config, check_tags, bd_tags, color_tags):
     
     #new matrix according dropdown
