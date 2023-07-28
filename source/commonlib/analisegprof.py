@@ -2,53 +2,50 @@ import vvc_performance as vvcpy
 from IPython.display import display
 from source.commonlib import pathlist as pl
 from source.models import aproximation as apx
-import os 
+from source.models import matrix as mtx
 
-def analise_prof(matrix_size, folder, config):
-    aproximations_list = pl.list_aproximations(matrix_size, "-",folder)
+#dar opção de escolher QUAIS funções que eu quero analisar (de qual classe e tal)
+#FUTURAMENTE analise por etapa de codificação
+#implementar para etapa
+def analise_prof(matrix, folder, config):
+    aproximations = matrix.get_aproximations()
 
-    for aproximation in aproximations_list:
+    ##sort labels and columns
+    aproximations = sorted(aproximations, key=lambda aproximation: aproximation.aprox_type) 
+    
+    auxAprox = apx.Aproximation('','','')
+    #coloca Precise como ultimo das aproximacoes  
+    for aproximation in aproximations:
+        if (aproximation.get_type() == 'Precise'):
+            auxAprox = aproximation
+            aproximations.remove(aproximation)
+    aproximations.append(auxAprox)
 
-        #create dictionary for aproximation
 
+    labels = []
+    for aproximation in aproximations:
+        labels.append(aproximation.get_type())
+        videos = aproximation.get_videos()
 
-        print('APROXIMATION:', aproximation)
-        aprox_type = aproximation.split("-")[2]
-        aprox_folder = folder + aproximation + "/"
-        
-        aprox = apx.Aproximation(matrix_size, aprox_type, aprox_folder)
-        
-        #fill aproximation videos list
-        videos_list = pl.list_videos(aprox.get_path())
+        for video in videos:
+            logs = video.get_logs(config)
 
-        path = aprox.get_path()
-        for item in videos_list:
-            path_item = path + item+'/'+config
+            for log in logs:
+                path = log.get_path() + log.get_name()
+                path = path.replace("vvc_log", "gprof_log")
+                path = path.replace("vvclog", "gplog")
 
-            log_qps_path = os.listdir(path_item)
-
-            for log_qp in log_qps_path:
-
-                #add calls in dictionary
-
-                gprof_test = vvcpy.GprofDF().read_file(path_item + '/' + log_qp)
+                gprof_test = vvcpy.GprofDF().read_file(path)
                 gprof_test = gprof_test.sort_values(by='calls', ascending=False)
 
-
-    
-                #display(gprof_test[gprof_test['function'].str.contains('xCalcHADs', na = False)])
+                #AQUI q eu mudo qual analise que to fazendo 
                 gprof_test = gprof_test[gprof_test['function'].str.contains('xCalcHADs', na = False)].iloc[:, [0,3,7,8,9]]
-
                 functions = gprof_test['function'].tolist()
-                calls = gprof_test['calls'].tolist()
 
-                res = dict(zip(functions, calls))
+                log.set_m_functions(functions)
+                #print(log.get_m_functions())
 
-                display(gprof_test)
-                print(functions)
-                print(calls)
-                print(res)
-
+    print(labels)
 
 
 

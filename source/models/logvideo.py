@@ -6,7 +6,7 @@ class LogVideo:
         self.QP = qp
         self.name = name
         self.path = path
-        #self.m_used_functions = []
+        self.m_used_functions = []
         self.time = None
         self.bitrate = None
         self.BD_rate = None
@@ -26,6 +26,9 @@ class LogVideo:
        
     def get_time(self):
         return self.time
+    
+    def get_path(self):
+        return self.path
     
     #BITRATE
     def set_bitrate(self, bitrate):
@@ -47,3 +50,9 @@ class LogVideo:
     def get_bdrate(self):
         return self.BD_rate
     
+    #Functions
+    def set_m_functions(self, m_functions):
+        self.m_used_functions = m_functions
+
+    def get_m_functions(self):
+        return self.m_used_functions

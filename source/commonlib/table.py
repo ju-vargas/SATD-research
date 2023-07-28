@@ -4,11 +4,6 @@ from IPython.display import display
 from source.models import aproximation as apx
 import ipywidgets as widgets
 
-
-
-#FUNCTIONS PRINT TABLE
-
-#make the table according the param
 def print_table_vvc(matrix, videos, config, check_tags, bd_tags, color_tags):
     
     aprox_list = []

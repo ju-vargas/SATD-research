@@ -1,4 +1,4 @@
-from source.models import config as con 
+from source.models import mediaconfig as con 
 
 class Aproximation:
     def __init__(self, size, aprox_type, path):
@@ -42,7 +42,7 @@ class Aproximation:
 
         media = (sum/count)
 
-        configuration = con.Config()
+        configuration = con.MediaConfig()
         configuration.set_type(config)
         configuration.set_mediaBDRate(media)
         self.configs.append(configuration)
