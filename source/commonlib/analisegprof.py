@@ -1,8 +1,9 @@
 import vvc_performance as vvcpy
-from IPython.display import display
 from source.commonlib import pathlist as pl
+from source.commonlib import tablegprof as tlprof
 from source.models import aproximation as apx
 from source.models import matrix as mtx
+
 
 #dar opção de escolher QUAIS funções que eu quero analisar (de qual classe e tal)
 #FUTURAMENTE analise por etapa de codificação
@@ -24,28 +25,19 @@ def analise_prof(matrix, folder, config):
 
     labels = []
     for aproximation in aproximations:
+        #debug
+        #print("Aprox: " + aproximation.get_type())
+
         labels.append(aproximation.get_type())
         videos = aproximation.get_videos()
 
         for video in videos:
-            logs = video.get_logs(config)
-
-            for log in logs:
-                path = log.get_path() + log.get_name()
-                path = path.replace("vvc_log", "gprof_log")
-                path = path.replace("vvclog", "gplog")
-
-                gprof_test = vvcpy.GprofDF().read_file(path)
-                gprof_test = gprof_test.sort_values(by='calls', ascending=False)
-
-                #AQUI q eu mudo qual analise que to fazendo 
-                gprof_test = gprof_test[gprof_test['function'].str.contains('xCalcHADs', na = False)].iloc[:, [0,3,7,8,9]]
-                functions = gprof_test['function'].tolist()
-
-                log.set_m_functions(functions)
-                #print(log.get_m_functions())
-
-    print(labels)
+            #debug 
+            #print("Nome: " + video.get_name())
+            video.set_functions(config)
+           
+    #print(labels)
+    tlprof.print_table_gprof(matrix,config, labels)
 
 
 
