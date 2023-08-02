@@ -8,36 +8,39 @@ from source.models import matrix as mtx
 #dar opção de escolher QUAIS funções que eu quero analisar (de qual classe e tal)
 #FUTURAMENTE analise por etapa de codificação
 #implementar para etapa
-def analise_prof(matrix, folder, config):
+def analise_prof(matrix_size, folder, config):
+
+    print('tesre' + matrix_size)
+    matrix = mtx.Matrix(matrix_size)
+
+    print('teste size')
+    matrix.get_size()
+
     aproximations = matrix.get_aproximations()
-
-    ##sort labels and columns
-    aproximations = sorted(aproximations, key=lambda aproximation: aproximation.aprox_type) 
-    
-    auxAprox = apx.Aproximation('','','')
-    #coloca Precise como ultimo das aproximacoes  
-    for aproximation in aproximations:
-        if (aproximation.get_type() == 'Precise'):
-            auxAprox = aproximation
-            aproximations.remove(aproximation)
-    aproximations.append(auxAprox)
-
 
     labels = []
     for aproximation in aproximations:
-        #debug
-        #print("Aprox: " + aproximation.get_type())
+        match aproximation.get_type():
+            case "Precise":
+                labels.append(aproximation.get_type())
+            case "sad":
+                labels.append("SAD")
+            case __ : 
+                labels.append("-" + aproximation.get_type())
 
-        labels.append(aproximation.get_type())
-        videos = aproximation.get_videos()
-
-        for video in videos:
+    labels.sort()
+    for aprox in labels:
+        if (aprox == 'Precise'):
+            labels.remove(aprox)
+    labels.append('Precise')   
+        
+        #videos = aproximation.get_videos()
+        #for video in videos:
             #debug 
             #print("Nome: " + video.get_name())
-            video.set_functions(config)
-           
-    #print(labels)
-    tlprof.print_table_gprof(matrix,config, labels)
+            #video.set_functions(config)
+
+    tlprof.print_table_gprof(matrix,config,labels)
 
 
 

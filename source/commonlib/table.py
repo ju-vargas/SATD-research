@@ -4,22 +4,9 @@ from IPython.display import display
 from source.models import aproximation as apx
 import ipywidgets as widgets
 
-def print_table_vvc(matrix, videos, config, check_tags, bd_tags, color_tags):
+def print_table_vvc(matrix, videos, config, check_tags, bd_tags, color_tags,labels):
     
-    aprox_list = []
     aproximations = matrix.get_aproximations()
-
-    #to correct labels
-    for aproximation in aproximations:
-        match aproximation.get_type():
-            case "Precise":
-                aprox_list.append(aproximation.get_type())
-            case "sad":
-                aprox_list.append("SAD")
-            case __ : 
-                aprox_list.append("-" + aproximation.get_type())
-
-    
     #to do indexes
     videos_list = []
     tags_list = []
@@ -63,15 +50,9 @@ def print_table_vvc(matrix, videos, config, check_tags, bd_tags, color_tags):
             qp_list.append("")
             tags_list.append("BD-PSNR")
 
-
-
-    #append last line medias
     videos_list.append("")
     qp_list.append("")
     tags_list.append("Media BD-Rate")
-
-
-
 
     #table index
     arrays = [
@@ -80,33 +61,19 @@ def print_table_vvc(matrix, videos, config, check_tags, bd_tags, color_tags):
         np.array(tags_list),
     ]
     
-   
-
-    ##sort labels and columns
     aproximations = sorted(aproximations, key=lambda aproximation: aproximation.aprox_type) 
-    aprox_list.sort()
-    
     auxAprox = apx.Aproximation('','','')
-    #coloca Precise como ultimo das aproximacoes  
     for aproximation in aproximations:
         if (aproximation.get_type() == 'Precise'):
             auxAprox = aproximation
             aproximations.remove(aproximation)
     aproximations.append(auxAprox)
 
-    #coloca Precise como ultimo dos labels
-    for aprox in aprox_list:
-        if (aprox == 'Precise'):
-            aprox_list.remove(aprox)
-    aprox_list.append('Precise')
-
     #table content
     data = []
     media_data = []
-
     for aproximation in aproximations:
         media_data.append(aproximation.get_media(config))
-        
         data_column = []
         aprox_videos =  aproximation.get_videos()
         logs_list = []
@@ -141,14 +108,7 @@ def print_table_vvc(matrix, videos, config, check_tags, bd_tags, color_tags):
 
     #set table
     pd.set_option('display.max_rows', None)
-    df = pd.DataFrame(np.array(data), index=arrays, columns=aprox_list)
-
-
-   # index_media = [
-   #     'Media',
-   # ]
-   # df_media = pd.DataFrame([media_data], index = index_media, columns=aprox_list) 
-
+    df = pd.DataFrame(np.array(data), index=arrays, columns=labels)
 
 
     print(matrix.get_size())
