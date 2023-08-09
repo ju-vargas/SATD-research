@@ -5,13 +5,20 @@ diff = []
 for i in range(32):
     diff.append(rd.randrange(0, 255, 2))
             
-
-m1 = [],[]
-m2 = [[],[],[],[]]
-
-
+#infos
 #x[coluna][linha]
 #x[j][i]
+
+rows = 4; 
+columns = 8; 
+
+m1 = []
+m2 = []
+
+for _ in range(rows):
+    row = [0] * columns  # Preencha com zeros ou outro valor inicial
+    m1.append(row)
+    m2.append(row)
 
 #HORIZONTAL
 #camada 1 
@@ -32,16 +39,11 @@ for j in range(8):
     m1[j][3] = m2[j][2] - m2[j][3]
 
 
-for k in range(4):
-    print(m1[k + 0],'',
-          m1[k + 1],'',
-          m1[k + 2],'',
-          m1[k + 3],'',
-          m1[k + 4],'',
-          m1[k + 5],'',
-          m1[k + 6],'',
-          m1[k + 7],'')
 
+print(m1[0])
+print(m1[1])
+print(m1[2])
+print(m1[3])
 
 
 #VERTICAL
