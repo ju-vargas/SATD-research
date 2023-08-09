@@ -1,17 +1,36 @@
-Distortion RdCost::xCalcHADs4x8( const Pel *piOrg, const Pel *piCur, int iStrideOrg, int iStrideCur )
-{
+#include <iostream>
+#include <math.h>
+#include <fstream>
+#include <sstream>
+#include <iomanip>
+
+using namespace std;
+
+int main() {
+
   int k, i, j, jj, sad = 0;
   int diff[32], m1[8][4], m2[8][4];
-  for( k = 0; k < 32; k += 4 )
-  {
-    diff[k + 0] = piOrg[0] - piCur[0];
-    diff[k + 1] = piOrg[1] - piCur[1];
-    diff[k + 2] = piOrg[2] - piCur[2];
-    diff[k + 3] = piOrg[3] - piCur[3];
 
-    piCur += iStrideCur;
-    piOrg += iStrideOrg;
+  int index = 0;
+
+  std::ifstream file("num.txt");
+  if (file.is_open()) {
+      std::string line;
+      while (std::getline(file, line) && index < 32) {
+          std::stringstream ss(line);
+          int number;
+          while (ss >> number) {
+              diff[index] = number;
+              ++index;
+              ss.ignore();
+          }
+      }
+      file.close();
+  } else {
+      std::cout << "Unable to open the file." << std::endl;
+      return 1;
   }
+
 
   //horizontal
   for( j = 0; j < 8; j++ )
@@ -60,7 +79,18 @@ Distortion RdCost::xCalcHADs4x8( const Pel *piOrg, const Pel *piCur, int iStride
     
   }
 
-  //m2 -> m1
+  // Set the width for each printed element
+  int elementWidth = 5;
+  // Print the matrix with aligned output
+  for (int i = 0; i < 8; ++i) {
+      for (int j = 0; j < 4; ++j) {
+          std::cout << std::setw(elementWidth) << m2[i][j];
+      }
+      std::cout << "\n";
+  }
+
+
+
   for( i = 0; i < 8; i++ )
   {
     for( j = 0; j < 4; j++ )
@@ -69,11 +99,7 @@ Distortion RdCost::xCalcHADs4x8( const Pel *piOrg, const Pel *piCur, int iStride
     }
   }
 
-#if JVET_R0164_MEAN_SCALED_SATD
-  sad -= abs(m1[0][0]);
-  sad += abs(m1[0][0]) >> 2;
-#endif
   sad  = ( int ) ( sad / sqrt( 4.0 * 8 ) * 2 );
 
-  return sad;
+  cout << sad;
 }
