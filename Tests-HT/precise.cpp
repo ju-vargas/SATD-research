@@ -5,12 +5,9 @@
 #include <iomanip>
 
 using namespace std;
-
 int main() {
-
   int k, i, j, jj, sad = 0;
   int diff[32], m1[8][4], m2[8][4];
-
   int index = 0;
 
   std::ifstream file("num.txt");
@@ -31,6 +28,15 @@ int main() {
       return 1;
   }
 
+ // Set the width for each printed element
+  int elementWidth = 5;
+  // Print the matrix with aligned output
+
+    for (int i = 0; i < 32; i++) {
+        std::cout << std::setw(elementWidth) << diff[i];
+    }
+    std::cout << "\n";
+
 
   //horizontal
   for( j = 0; j < 8; j++ )
@@ -46,6 +52,16 @@ int main() {
     m1[j][2] = m2[j][2] + m2[j][3];
     m1[j][3] = m2[j][2] - m2[j][3];
   }
+
+ // Set the width for each printed element
+  // Print the matrix with aligned output
+  for (int i = 0; i < 8; ++i) {
+      for (int j = 0; j < 4; ++j) {
+          std::cout << std::setw(elementWidth) << m1[i][j];
+      }
+      std::cout << "\n";
+  }
+  std::cout <<"\n\n";
 
   //vertical
   for( i = 0; i < 4; i++ )
@@ -76,11 +92,13 @@ int main() {
     m2[5][i] = m1[4][i] - m1[5][i];
     m2[6][i] = m1[6][i] + m1[7][i];
     m2[7][i] = m1[6][i] - m1[7][i];
-    
+ 
   }
 
+  std::cout <<"\n\n";
+  std::cout <<"\n\n";
+
   // Set the width for each printed element
-  int elementWidth = 5;
   // Print the matrix with aligned output
   for (int i = 0; i < 8; ++i) {
       for (int j = 0; j < 4; ++j) {
@@ -89,17 +107,14 @@ int main() {
       std::cout << "\n";
   }
 
-
-
   for( i = 0; i < 8; i++ )
   {
     for( j = 0; j < 4; j++ )
     {
-      sad += abs( m1[i][j] );
+      sad += abs( m2[i][j] );
     }
   }
 
   sad  = ( int ) ( sad / sqrt( 4.0 * 8 ) * 2 );
-
-  cout << sad;
+  std::cout << "SAD: " << sad << '\n';
 }

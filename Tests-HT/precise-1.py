@@ -64,24 +64,24 @@ for i in range(rows):
     m1[6][i] = m2[4][i] - m2[6][i]
     m1[7][i] = m2[5][i] - m2[7][i]
 
-    m2[0][i] = m1[0][i] + m1[1][i]
-    m2[1][i] = m1[0][i] - m1[1][i]
-    m2[2][i] = m1[2][i] + m1[3][i]
-    m2[3][i] = m1[2][i] - m1[3][i]
-    m2[4][i] = m1[4][i] + m1[5][i]
-    m2[5][i] = m1[4][i] - m1[5][i]
-    m2[6][i] = m1[6][i] + m1[7][i]
-    m2[7][i] = m1[6][i] - m1[7][i]
+    #m2[0][i] = m1[0][i] + m1[1][i]
+    #m2[1][i] = m1[0][i] - m1[1][i]
+    #m2[2][i] = m1[2][i] + m1[3][i]
+    #m2[3][i] = m1[2][i] - m1[3][i]
+    #m2[4][i] = m1[4][i] + m1[5][i]
+    #m2[5][i] = m1[4][i] - m1[5][i]
+    #m2[6][i] = m1[6][i] + m1[7][i]
+    #m2[7][i] = m1[6][i] - m1[7][i]
 
-m2 = np.array(m2)
-print(m2)
+#m2 = np.array(m2)
+#print(m2)
 
 
 sad = 0
 #SAV
 for i in range(columns):
     for j in range(rows):
-        sad = sad + abs(m2[i][j])
+        sad = sad + abs(m1[i][j])
 
 sad  = ( int ) ( sad / mt.sqrt( 4.0 * 8 ) * 2 )
 
