@@ -28,6 +28,7 @@ for i in range(columns):
       m2[i][j]=diff[i+j]
 
 
+
 #HORIZONTAL
 #pra cada elemento linha da coluna
 print("HORIZONTAL")
