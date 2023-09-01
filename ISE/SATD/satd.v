@@ -3,7 +3,7 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date:    16:45:31 08/21/2023 
+// Create Date:    14:36:17 09/01/2023 
 // Design Name: 
 // Module Name:    satd 
 // Project Name: 
@@ -18,16 +18,12 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module satd(
+module calcdiff(
 	 input wire CLK,
 	 input wire RST,
     input wire [7:0] ORG [0:7],
     input wire [7:0] CUR [0:7],
-	 output reg [8:0] diff [0:7];
-    );
-	 
-	 reg [8:0] h1 [0:7];	 
-	 reg [9:0] t_buffer [0:7];
+	 output reg [8:0] diff [0:7]);
 
 	 always @(posedge CLK) begin
 		if (RST) begin
@@ -39,6 +35,11 @@ module satd(
 			diff[5] <= 0;
 			diff[6] <= 0;
 			diff[7] <= 0;
+			
+			//acho que nao precisa disso, e pode ser só 
+			diff <= 0; 
+			//descobrir 
+			
 		end
 		
 		else begin
