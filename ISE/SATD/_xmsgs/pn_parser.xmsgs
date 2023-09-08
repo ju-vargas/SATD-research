@@ -11,5 +11,17 @@
 <msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/h_transform.v&quot; into library work</arg>
 </msg>
 
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/satd.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/shift_buffer.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/test.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/v_transform.v&quot; into library work</arg>
+</msg>
+
 </messages>
 
