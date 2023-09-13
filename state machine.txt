@@ -1,0 +1,123 @@
+
+	
+	STATE_HORIZONTAL <= 0
+	STATE_VERTICAL   <= 0
+
+ 	assign wires = 0 
+
+	* o assign permanece nos estados
+
+	HORIZONTAL		
+
+		STATE_1
+		---- outputs ----
+			assign LOAD_REG_DIFF = 1
+		
+		---- transitions ----
+			STATE_1 -> STATE_2
+
+		STATE_2
+		---- outputs ----
+			assign LOAD_REG_DIFF = 1
+			assign LOAD_REG_HT   = 1
+
+		---- transitions ----
+			STATE_2 -> STATE_3
+		
+		STATE_3
+		---- outputs ----
+			case (count)
+				0: 
+				  assign LOAD_REG_DIFF   = 1
+			          assign LOAD_REG_HT     = 1
+			          assign LOAD_BUFFER     = 1	
+			          assign SHIFT_BUFFER    = 1
+
+				  count <= count + 1
+
+				1: 
+				  //assign LOAD_REG_DIFF = 1
+			          //assign LOAD_REG_HT   = 1
+			          //assign LOAD_BUFFER   = 1	
+			          //assign SHIFT_BUFFER  = 1			
+
+				  count <= count + 1
+				
+				2: 
+				  assign LOAD_REG_DIFF   = 0
+			          //assign LOAD_REG_HT   = 1
+			          //assign LOAD_BUFFER   = 1	
+			          //assign SHIFT_BUFFER  = 1
+
+				  count <= count + 1
+
+				3: 
+				  assign LOAD_REG_DIFF   = 0
+			          assign LOAD_REG_HT     = 0
+			          //assign LOAD_BUFFER   = 1	
+			          //assign SHIFT_BUFFER  = 1
+
+				  count <= 0	  
+			
+		---- transitions ----
+			case (count)
+				0:  
+				  STATE_3 -> STATE_3
+				1:
+  				  STATE_3 -> STATE_3 
+				2:
+				  STATE_3 -> STATE_3		  
+				3:  
+                                  HORIZONTAL -> VERTICAL
+				
+		
+
+
+
+	VERTICAL
+
+		STATE_1
+		---- outputs ----
+			assign LOAD_BUFFER          = 0
+ 			//assign SHIFT_BUFFER       = 1
+			assign LOAD_REG_VERTICAL_1  = 1 
+		
+		---- transitions ----
+			STATE_1 -> STATE_2
+		
+		
+		STATE_2 
+		---- outputs ----
+			//assign LOAD_BUFFER         = 0
+ 			//assign SHIFT_BUFFER        = 1
+			//assign LOAD_REG_VERTICAL_1 = 1 
+			assign LOAD_REG_VERTICAL_2   = 1 
+
+		---- transitions ----
+			STATE_2 -> STATE_3
+
+
+		ESTADO 3 
+
+			LOAD   REG_VERTICAL_1
+			SHIFT  BUFFER
+			LOAD   REG_VERTICAL_2
+			LOAD   REG_VERTICAL_3
+
+			COUNT = COUNT + 1 
+
+		ESTADO 4 
+			LOAD   REG_VERTICAL_1
+			SHIFT  BUFFER
+			LOAD   REG_VERTICAL_2
+			LOAD   REG_VERTICAL_3
+			LOAD   REG_ABSOLUTE
+
+		ESTADO 5 
+			tudo isso e começa SOMA (tambem em pipeline)
+
+
+
+	Muda os sinais com a máquina de estados e daí chama as instancias com os sinais 
+
+
