@@ -1,0 +1,46 @@
+----- MÁQUINA DE ESTADOS TRANSFORMADA VERTICAL ----- 
+
+
+    in: 
+        reset
+        count
+        troca
+
+    out: \\ 
+        
+
+    
+    if (reset): 
+        REG_LOAD_VERTICAL_1 <= 0 
+        REG_LOAD_VERTICAL_2 <= 0
+        REG_LOAD_VERTICAL_3 <= 0
+
+    else: 
+        case(state):    
+
+            state_0:
+                -- output --            
+                REG_LOAD_VERTICAL_1 <= not(REG_LOAD_VERTICAL_1) 
+
+                -- transition --
+                state_0 -> state_1
+                        
+            state_1:
+                -- output --
+                REG_LOAD_VERTICAL_2 <= not(REG_LOAD_VERTICAL_2) 
+
+                -- transition --
+                state_1 -> state_2
+
+            state_2:
+                -- output --
+                REG_LOAD_VERTICAL_3 <= not(REG_LOAD_VERTICAL_3) 
+
+                -- transition --
+                state_2 -> state_0
+
+
+(ao inves do contador, ver algo com o buffer q ta mandando os valores)
+(n vale ser zero em tal posicao, pq zero representa um valor)
+
+          
