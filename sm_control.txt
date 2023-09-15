@@ -1,171 +1,84 @@
 ----- MÁQUINA DE ESTADOS UNIDADE DE CONTROLE ------ 
+//controla os sinais de enable e disable
+//tambem controla o shift dos registradores em que os valores de entrada são armazenados 
+
+    in: 
+        //nao tem sinal de entrada pq é o controle de tudo     
+        clk
+        
+    out:
+        ENABLE_DIFFERENCES
+        ENABLE_HT_HORIZONTAL
+        ENABLE_SHIFT_BUFFER
+        ENABLE_HT_VERTICAL
+        ENABLE_ABSOLUTE
+        ENABLE_SUM
     
-    /*
-     *      - deixar controle dos enables nessa aqui 
-     *          - com REG de estado mais geral
-     *          - com REG contador
-     *          - se tivesse contador por modulo, repetia coisa desnecessária (area!)
-     *           
-     *      - deixar controle dos loads dentro de cada módulo 
-     *          - vão estar em modulos diferentes, cada um com sua máquina de estado 
-     *              - e essas máquinas q controlam o LOAD dos registradores
-     *
-     *      - entao fazer os módulos separados, e depois juntar os sinais 
-     *          - recebe enable/reset 
-     *          -       
-     *    
-     */     
+        LOAD_REG_CUR 
+        LOAD_REG_ORG
 
+    if (reset):
+        ENABLE_DIFFERENCES    <= 0    
+        ENABLE_HT_HORIZONTAL  <= 0
+        ENABLE_SHIFT_BUFFER   <= 0
+        ENABLE_HT_VERTICAL    <= 0
+        ENABLE_ABSOLUTE       <= 0 
+        ENABLE_SUM            <= 0
+        LOAD_REG_CUR          <= 0 
+        LOAD_REG_ORG          <= 0
 
-    se enable chama 
+        //
 
-	
-	STATE_HORIZONTAL <= 0
-	STATE_VERTICAL   <= 0
-
- 	assign wires = 0 
-
-	* o assign permanece nos estados
-
-	HORIZONTAL		
-
-		STATE_1
-		---- outputs ----
-			assign LOAD_REG_DIFF = 1
-		
-		---- transitions ----
-			STATE_1 -> STATE_2
-
-		STATE_2
-		---- outputs ----
-			assign LOAD_REG_DIFF = 1
-			assign LOAD_REG_HT   = 1
-
-		---- transitions ----
-			STATE_2 -> STATE_3
-		
-		STATE_3
-		---- outputs ----
-			case (count)
-				0: 
-				  //assign LOAD_REG_DIFF   = 1
-			      //assign LOAD_REG_HT     = 1
-			      assign LOAD_BUFFER     = 1	
-		          assign SHIFT_BUFFER    = 1
-
-				  count <= count + 1
-
-				1: 
-				  //assign LOAD_REG_DIFF = 1
-			      //assign LOAD_REG_HT   = 1
-	    	      //assign LOAD_BUFFER   = 1	
-		          //assign SHIFT_BUFFER  = 1			
-
-				  count <= count + 1
-				
-				2: 
-			      //assign LOAD_REG_HT   = 1
-	              //assign LOAD_BUFFER   = 1	
-    	          //assign SHIFT_BUFFER  = 1
-				 
-                  assign LOAD_REG_DIFF   = 0
-
-				  count <= count + 1
-
-				3: 
-			      //assign LOAD_BUFFER   = 1	
-		          //assign SHIFT_BUFFER  = 1
-
-				  assign LOAD_REG_DIFF   = 0
-			      assign LOAD_REG_HT     = 0
-
-				  count <= 0	  
-			
-		---- transitions ----
-			case (count)
-				0:  
-				  STATE_3 -> STATE_3
-				1:
-  				  STATE_3 -> STATE_3 
-				2:
-				  STATE_3 -> STATE_3		  
-				3:  
-                  HORIZONTAL -> VERTICAL
-				
-		
-
-
-
-	VERTICAL
-
-		STATE_1
-		---- outputs ----
- 			//assign SHIFT_BUFFER       = 1
-
-			assign LOAD_BUFFER          = 0
-			assign LOAD_REG_VERTICAL_1  = 1 
-		
-		---- transitions ----
-			STATE_1 -> STATE_2
-		
-		
-		STATE_2 
-		---- outputs ----
-			//assign LOAD_BUFFER         = 0
- 			//assign SHIFT_BUFFER        = 1
-			//assign LOAD_REG_VERTICAL_1 = 1 
-
-			assign LOAD_REG_VERTICAL_2   = 1 
-
-		---- transitions ----
-			STATE_2 -> STATE_3
-
-
-		ESTADO 3 
-        -- > ativa os registradores da transformada vertical
-             mas nao desliga eles, pq antes de desligar precisa ativar reg absoluto, soma1, soma2 e SATD
-        -- > inclusive, dentro da soma tem q ter toda uma lógica
-             MAS essa lógica não depende dos sinais de controle da Unidade de Controle 
-
-
+        STATE                 <= 0
     
-        ---- outputs ----
-
-            case (count):
-              0:
-                //assign SHIFT_BUFFER        = 1
-                //assign LOAD_REG_VERTICAL_1 = 1 
-                //assign LOAD_REG_VERTICAL_2 = 1
-                assign LOAD_REG_VERTICAL_3   = 1
+    else:
+        case (STATE):
+            state_0:
+                -- output --
+                LOAD_REG_CUR  <= 1 
+                LOAD_REG_ORG  <= 1
                 
-              1: 
-              2: 
-              3: 
 
-      
-            count <= count + 1     
+                -- transition -- 
+                STATE <= state_1
 
-        ---- transitions ----
+            state_1: 
+                -- output --
+                LOAD_REG_CUR  <= 0
+                LOAD_REG_ORG  <= 0
+                
+                ENABLE_DIFFERENCES   <= not(ENABLE_DIFFERENCES) 
+                //habilitei nesse estado, no proximo estado comeca a fazer
 
-            case (count):
-                0:
+                -- transition -- 
+                STATE <= state_2
 
-                1: 
-                2: 
-                3: 
+            state_2:
+                -- output --
+                ENABLE_HT_HORIZONTAL <= not(ENABLE_HT_HORIZONTAL) 
+                //habilitei nesse estado, no próximo estado começa a fazer
+                -- transition --
+                
 
-		ESTADO 4 
-			LOAD   REG_VERTICAL_1
-			SHIFT  BUFFER
-			LOAD   REG_VERTICAL_2
-			LOAD   REG_VERTICAL_3
-			LOAD   REG_ABSOLUTE
+    
 
-		ESTADO 5 
-			tudo isso e começa SOMA (tambem em pipeline)
+            state_3:
+                -- output --
+                -- transition --
 
+            state_4:
+                -- output --
+                -- transition --
+        
 
-
-	Muda os sinais com a máquina de estados e daí chama as instancias com os sinais 
-
+=========================================================================
+        
+        if(ENABLE_HT_HORIZONTAL):
+            ht_horizontal (reg_differences)
+            //mas nao quero acessar nova várias vezes
+            //n pode perder o progresso dos estados
+        if(ENABLE_DIFFERENCES):
+            REG_DIFFERENCES <= REG_ORG[] - REG_CUR[] 
+            REG_ORG[]       <= REG_ORG[-]
+            REG_CUR[]       <= REG_CUR[-]
 

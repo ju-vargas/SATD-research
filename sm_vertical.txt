@@ -1,45 +1,65 @@
 ----- MÁQUINA DE ESTADOS TRANSFORMADA VERTICAL ----- 
-
+//descreve apenas o controle dos sinais de load do registradores, e nao o funcionamento como um todo 
 
     in: 
         reset
-        count
-        troca
+        end
 
-    out: \\ 
+    out: 
+        REG_LOAD_VERTICAL_1 <= 0 
+        REG_LOAD_VERTICAL_2 <= 0
+        REG_LOAD_VERTICAL_3 <= 0
+
         
-
     
     if (reset): 
         REG_LOAD_VERTICAL_1 <= 0 
         REG_LOAD_VERTICAL_2 <= 0
         REG_LOAD_VERTICAL_3 <= 0
 
+        //sera?
+        STATE               <= state_0 
+    //no verilog, descrever output e transition em cases separados  
     else: 
-        case(state):    
-
+        case(STATE):    
             state_0:
                 -- output --            
                 REG_LOAD_VERTICAL_1 <= not(REG_LOAD_VERTICAL_1) 
 
                 -- transition --
-                state_0 -> state_1
-                        
+                //state_0 -> state_1
+                STATE <= state_1
+        
             state_1:
                 -- output --
                 REG_LOAD_VERTICAL_2 <= not(REG_LOAD_VERTICAL_2) 
 
                 -- transition --
-                state_1 -> state_2
+                //state_1 -> state_2
+                STATE <= state_2
 
             state_2:
                 -- output --
                 REG_LOAD_VERTICAL_3 <= not(REG_LOAD_VERTICAL_3) 
 
                 -- transition --
-                state_2 -> state_0
+                //state_2 -> state_3 
+                STATE <= state_3
 
+            state_3:
+                -- output --
+                //continua os mesmos sinais 
 
+                -- transition --
+                if(end):
+                    //state_3 -> state_0
+                    STATE <= state_0
+                else:
+                    //nao altera o registrador de estado
+                    //state_3 -> state_3
+                    //ou, nao recebe nada, só permanece                    
+                    STATE <= state_3 
+             
 (ao inves do contador, ver algo com o buffer q ta mandando os valores)
 (n vale ser zero em tal posicao, pq zero representa um valor)
 

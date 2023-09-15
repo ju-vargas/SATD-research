@@ -1,0 +1,68 @@
+----- MÁQUINA DE ESTADOS SHIFT BUFFER ----- 
+
+    in: 
+        reset
+        vertical
+        end
+    out: 
+        REG_LOAD_BUFFER
+        REG_SHIFT_BUFFER
+
+
+    o buffer pode receber sinal de load e de shift 
+    
+    load para, mas shift faz sempre (que estiver ligado)
+
+
+    if (reset):
+        REG_LOAD_BUFFER  <= 0
+        REG_SHIFT_BUFFER <= 0
+
+        //?
+        STATE <= state_0
+    else:
+        case(STATE):
+            state_0:
+                -- output --                
+                REG_LOAD_BUFFER  <= 1
+                REG_SHIFT_BUFFER <= 1
+        
+                -- transition --
+                //state_0 -> state_1
+                STATE <= state_1
+
+            state_1:    
+                -- output --        
+                //continua como ta                                
+        
+                -- transition --
+                if (vertical):
+                    //state_1 -> state_2
+                    STATE <= state_2
+
+                else:
+                    //state_1 -> state_1
+                    STATE <= state_1
+                
+            state_2:
+                -- output -- 
+                REG_LOAD_BUFFER <= 0  
+                
+                
+                -- transition --
+                //state_2 -> state_3
+                STATE <= state_3
+
+            state_3:
+                -- output --
+                //nao muda nada 
+                
+                -- transition --
+                STATE <= state_0
+                //mas precisa cuidar o enable da unidade de controle
+
+                
+               
+
+               
+

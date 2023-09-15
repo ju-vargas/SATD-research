@@ -1,1 +1,61 @@
-oii
+----- MÁQUINA DE ESTADOS SOMA ----- 
+
+    in: 
+        reset
+        end
+    out: 
+        REG_LOAD_SUM_1
+        REG_LOAD_SUM_2
+
+
+    if (reset):
+        REG_LOAD_SUM_1 <= 0
+        REG_LOAD_SUM_2 <= 0
+        REG_LOAD_SATD  <= 0
+        
+
+        //?
+        STATE <= state_0 
+
+
+    else:
+        case(STATE):
+            state_0: 
+                -- output --   
+                REG_LOAD_SUM_1 <= not(REG_LOAD_SUM_1) 
+                
+                -- transition --
+                STATE <= state_1
+
+            state_1: 
+                -- output -- 
+                REG_LOAD_SUM_2 <= not(REG_LOAD_SUM_2)            
+
+                -- transition --
+                STATE <= state_2
+
+            state_2:
+                -- output --
+                REG_LOAD_SATD <= not(REG_LOAD_SATD)
+                
+                //SATD <= R1
+                -- transition --
+                STATE <= state_3
+
+            state_3:    
+                -- output --
+                //nada muda nos loads
+                
+                //SATD <= R1 + SATD 
+                
+                -- transition --
+                if (end):
+                    STATE <= state_0
+
+                else:
+                    //ou, nao muda nada. talvez só nao receber nada  
+                    //ou seja, tirar else, pq é coisa a mais                     
+                    STATE <= state_3
+                              
+
+
