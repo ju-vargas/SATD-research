@@ -5,14 +5,27 @@
     //que vai ser os estados da unidade de controle!
     in: 
         reset
-        
-    out: \\
+        end     (sinal que avisa se deve-se parar de calcular as diferenças
+                 no ciclo que esse end é mandado, ainda acontece a diferença
+                 no próximo ja vai estar no estado 0 e desabilitado (como se fosse um reset))
 
+              
+                 
+        
+    out: 
+        
+
+    regs: 
+        STATE
+                (o primeiro estado liga o sinal do load do reg 
+                 e elas só começam a ser calculadas no próximo ciclo)
+        REG_LOAD_DIFFERENCES
+                 
 
     if (reset):
-        REG_LOAD_HORIZONTAL <= 0   
+        REG_LOAD_DIFFERENCES <= 0   
             
-        STATE               <= 0
+        STATE                <= 0
     
     else:
         case(STATE):
@@ -22,13 +35,15 @@
                 REG_LOAD_DIFFERENCES <= not(REG_LOAD_DIFFERENCES)
      
                 -- transition --
-                //state_0 -> state_1
-                STATE <= state_1                
-            
+                if(end):
+                    STATE <= state_0
+                else:
+                    STATE <= state_1                
+
             state_1:        
                 -- output --
                 //continua como ta 
-    
+   
                 -- transition --
                 if(end):    
                     //state_1 -> state_0

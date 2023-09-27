@@ -1,0 +1,52 @@
+----- MÁQUINA DE ESTADOS UNIDADE DE CONTROLE ------ 
+
+COUNT 
+STAGE
+
+
+-- outputs --
+case(STAGE):
+    
+    0: 
+        RESET tudo
+        REG_ORG <= ORG
+        REG_CUR <= CUR
+
+
+    1:
+        case(COUNT):
+            0: 
+                ENABLE_DIFFERENCES <= not(ENABLE_DIFFERENCES)
+                
+            1: 
+                //primeiro calculo de diferencas
+        
+            2: 
+                //segundo  calculo de diferencas
+
+            3: 
+                //terceiro calculo de diferencas 
+                 
+            4:
+                //quarto   calculo de diferencas    
+                ENABLE_DIFFERENCES <= not(ENABLE_DIFFERENCES)
+
+            5: 
+
+
+            6: 
+
+
+            7: 
+-- transitions --
+case(STAGE):
+    
+    
+
+
+
+
+---------------------------------------------------------------
+    if (ENABLE_DIFFERENCES):
+        differences(org[], cur[])
+            REG_DIFFERENCES <= org[] - cur []

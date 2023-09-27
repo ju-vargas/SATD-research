@@ -1,67 +1,77 @@
 ----- MÁQUINA DE ESTADOS SHIFT BUFFER ----- 
+//o buffer pode receber sinal de load e de shift 
+//load para, mas shift faz sempre (que estiver ligado)
 
     in: 
         reset
-        vertical
-        end
-    out: 
+        vertical    (é o sinal de enable da HT vertical
+                     ele vai ter duas utilidades) 
+        end        
+        
+        //como depois do end vem o disable, nao tem risco de recomeçar
+        //e quando tiver enable de novo, nao vai precisar resetar (possivelmente)
+         
+
+    out: // 
+
+    regs: 
+        STATE
         REG_LOAD_BUFFER
         REG_SHIFT_BUFFER
 
-
-    o buffer pode receber sinal de load e de shift 
-    
-    load para, mas shift faz sempre (que estiver ligado)
 
 
     if (reset):
         REG_LOAD_BUFFER  <= 0
         REG_SHIFT_BUFFER <= 0
+        STATE            <= state_0
 
-        //?
-        STATE <= state_0
     else:
         case(STATE):
             state_0:
                 -- output --                
-                REG_LOAD_BUFFER  <= 1
-                REG_SHIFT_BUFFER <= 1
+                REG_LOAD_BUFFER  <= not(REG_LOAD_BUFFER) 
+                REG_SHIFT_BUFFER <= not(REG_SHIFT_BUFFER)
         
                 -- transition --
                 //state_0 -> state_1
                 STATE <= state_1
 
             state_1:    
-                -- output --        
-                //continua como ta                                
+                -- output --     
+                if(vertical):
+                    REG_LOAD_BUFFER <= not(REG_LOAD_BUFFER)
+
+                else:      
+                    //continua como ta                                
         
                 -- transition --
-                if (vertical):
+                if(vertical):
                     //state_1 -> state_2
                     STATE <= state_2
 
                 else:
-                    //state_1 -> state_1
+                    //continua nesse estado
                     STATE <= state_1
                 
             state_2:
                 -- output -- 
-                REG_LOAD_BUFFER <= 0  
-                
-                
-                -- transition --
-                //state_2 -> state_3
-                STATE <= state_3
-
-            state_3:
-                -- output --
-                //nao muda nada 
+                if(end):                
+                    REG_SHIFT_BUFFER <= not(REG_SHIFT_BUFFER) 
+                    
+                else: 
+                    //continua como ta
                 
                 -- transition --
-                STATE <= state_0
-                //mas precisa cuidar o enable da unidade de controle
 
-                
+                if(end):
+                    //state_2 -> state_0
+                    STATE <= state_0
+
+                else:
+                    //continua como ta
+                    STATE <= state_2
+           
                
 
                

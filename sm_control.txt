@@ -1,23 +1,41 @@
 ----- MÁQUINA DE ESTADOS UNIDADE DE CONTROLE ------ 
 //controla os sinais de enable e disable
 //tambem controla o shift dos registradores em que os valores de entrada são armazenados 
+//talvez só começar
+
 
     in: 
         //nao tem sinal de entrada pq é o controle de tudo     
         clk
         
     out:
-        ENABLE_DIFFERENCES
+        ENABLE_DIFFERENCES  
+        END_DIFFERENCES
+        
         ENABLE_HT_HORIZONTAL
+        END_HT_HORIZONTAL        
+
         ENABLE_SHIFT_BUFFER
+        END_SHIFT_BUFFER
+
         ENABLE_HT_VERTICAL
+        END_HT_VERTICAL
+
         ENABLE_ABSOLUTE
+        END_ABSOLUTE
+
         ENABLE_SUM
+        END_SUM
     
         LOAD_REG_CUR 
         LOAD_REG_ORG
+        SHIFT_REG_CUR 
+        SHIFT_REG_ORG
+
 
     if (reset):
+        STATE                 <= 0
+
         ENABLE_DIFFERENCES    <= 0    
         ENABLE_HT_HORIZONTAL  <= 0
         ENABLE_SHIFT_BUFFER   <= 0
@@ -26,10 +44,10 @@
         ENABLE_SUM            <= 0
         LOAD_REG_CUR          <= 0 
         LOAD_REG_ORG          <= 0
+        
+        //preencher 
+        
 
-        //
-
-        STATE                 <= 0
     
     else:
         case (STATE):

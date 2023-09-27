@@ -3,18 +3,20 @@
     in: 
         reset
         end
+    
     out: 
+
+    regs: 
+        STATE
         REG_LOAD_SUM_1
         REG_LOAD_SUM_2
-
-
+        REG_LOAD_SATD
+    
     if (reset):
         REG_LOAD_SUM_1 <= 0
         REG_LOAD_SUM_2 <= 0
         REG_LOAD_SATD  <= 0
         
-
-        //?
         STATE <= state_0 
 
 
@@ -38,23 +40,30 @@
                 -- output --
                 REG_LOAD_SATD <= not(REG_LOAD_SATD)
                 
-                //SATD <= R1
+                //SATD <= R1 + SATD (pq o SATD ta definido como zero, entao tanto faz)
+
+                
                 -- transition --
-                STATE <= state_3
+                if(end):
+                    STATE <= state_0
+                else:      
+                    STATE <= state_3
 
             state_3:    
                 -- output --
-                //nada muda nos loads
-                
+                if(end):
+                    REG_LOAD_SUM_1 <= not(REG_LOAD_SUM_1)
+                else:                 
+                    //nada muda nos loads         
+                      
                 //SATD <= R1 + SATD 
                 
                 -- transition --
                 if (end):
-                    STATE <= state_0
+                    STATE <= state_1
 
                 else:
-                    //ou, nao muda nada. talvez só nao receber nada  
-                    //ou seja, tirar else, pq é coisa a mais                     
+                    //mesmo estado
                     STATE <= state_3
                               
 

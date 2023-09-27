@@ -3,10 +3,17 @@
 //definir os valores de estados anteriormente, como se fossem constantes
 //fazer a lógica de enable bem certinha
     //que vai ser os estados da unidade de controle!
+
     in: 
         reset
-        
+        end     (no proximo ciclo depois que recebe o end, nao faz mais
+                 end deve ser entendido como o sinal que é o último dado indo) 
+
     out: \\
+
+    regs:
+        STATE
+        REG_LOAD_HORIZONTAL 
 
 
     if (reset):
@@ -27,7 +34,11 @@
             
             state_1:        
                 -- output --
-                //continua como ta 
+                if(end):
+                    REG_LOAD_HORIZONTAL <= not(REG_LOAD_HORIZONTAL)
+                
+                else: 
+                    //continua como ta 
     
                 -- transition --
                 if(end):    
