@@ -16,28 +16,76 @@ case(STAGE):
     1:
         case(COUNT):
             0: 
-                ENABLE_DIFFERENCES <= not(ENABLE_DIFFERENCES)
+                [liga] ENABLE_DIFFERENCES   <= not(ENABLE_DIFFERENCES)
                 
             1: 
-                //primeiro calculo de diferencas
-        
+                //1° calculo de diferencas
+                [liga] ENABLE_HT_HORIZONTAL <= not(ENABLE_HT_HORIZONTAL)           
+                [liga] ENABLE_SHIFT_BUFFER  <= not(ENABLE_SHIFT_BUFFER)
+                
+    
             2: 
-                //segundo  calculo de diferencas
+                //2° calculo de diferencas
+                //1° HT
+                //estado 0 shift buffer (nao faz conta ainda)               
+
 
             3: 
-                //terceiro calculo de diferencas 
-                 
+                //3° calculo de diferencas 
+                //2° HT    
+                
+                //estado 1 
+                //1° load/shift
+             
             4:
-                //quarto   calculo de diferencas    
-                ENABLE_DIFFERENCES <= not(ENABLE_DIFFERENCES)
+                //4° calculo de diferencas    
+                //3° HT        
+                //2° load/shift        
+    
+                [desliga] ENABLE_DIFFERENCES  <= not(ENABLE_DIFFERENCES)
 
             5: 
+                //sem calculo de diferencas                
+                //4° HT 
+                //3° load/shift
 
+                [desliga] ENABLE_HT_HORIZONTAL <= not(ENABLE_HT_HORIZONTAL)
+                [liga]    VERTICAL             <= not(VERTICAL)
+                [liga]    ENABLE_HT_VERTICAL   <= not(ENABLE_HT_VERTICAL)
 
             6: 
+                //4° load/shift 
+                //shift buffer passa pro vertical (ainda fazendo load)
 
-
+                //estado 0 do vertical liga a flag do primeiro registrador 
             7: 
+                //shift buffer nao faz mais load (só shift)  
+                //v1 faz primeiro load      
+                 (vertical começa a fazer load -> talvez de pra fazer o load ser um shift)
+ 
+                STAGE <= 2
+                
+                COUNT <= 0
+                
+     2: 
+            0:             
+                //v2 faz primeiro load
+                [liga]    end_VERTICAL <= not(end_VERTICAL)
+            1:   
+                //v3 faz primeiro load
+                //vai o valor com end e desliga o shift buffer 
+
+            2:
+                //4° valor 
+                //sem shift
+                //desliga o load 
+            3:
+            4: 
+            5:
+            6: 
+            7:
+
+
 -- transitions --
 case(STAGE):
     
