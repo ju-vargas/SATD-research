@@ -4,31 +4,41 @@ COUNT
 STAGE
 
 
+
+
+
+if(reset):
+    RESET tudo
+    REG_ORG <= ORG
+    REG_CUR <= CUR
+
+else: 
 -- outputs --
-case(STAGE):
-    
+    case(STAGE):
+
     0: 
-        RESET tudo
-        REG_ORG <= ORG
-        REG_CUR <= CUR
+      //REG_ORG <= {}ORG
+      //REG_CUR <= {}CUR 
 
+      [liga]   SHIFT_BUFFER <= not(SHIFT_BUFFER) 
 
-    1:
+      STAGE <= state_1   
+        
+     1:
         case(COUNT):
             0: 
                 [liga] ENABLE_DIFFERENCES   <= not(ENABLE_DIFFERENCES)
+
                 
             1: 
                 //1° calculo de diferencas
                 [liga] ENABLE_HT_HORIZONTAL <= not(ENABLE_HT_HORIZONTAL)           
                 [liga] ENABLE_SHIFT_BUFFER  <= not(ENABLE_SHIFT_BUFFER)
-                
-    
+                    
             2: 
                 //2° calculo de diferencas
                 //1° HT
                 //estado 0 shift buffer (nao faz conta ainda)               
-
 
             3: 
                 //3° calculo de diferencas 
@@ -37,12 +47,14 @@ case(STAGE):
                 //estado 1 
                 //1° load/shift
              
+
             4:
                 //4° calculo de diferencas    
                 //3° HT        
                 //2° load/shift        
     
                 [desliga] ENABLE_DIFFERENCES  <= not(ENABLE_DIFFERENCES)
+                [desliga] SHIFT_BUFFER        <= not(SHIFT_BUFFER) 
 
             5: 
                 //sem calculo de diferencas                
@@ -53,44 +65,94 @@ case(STAGE):
                 [liga]    VERTICAL             <= not(VERTICAL)
                 [liga]    ENABLE_HT_VERTICAL   <= not(ENABLE_HT_VERTICAL)
 
+
             6: 
                 //4° load/shift 
                 //shift buffer passa pro vertical (ainda fazendo load)
 
                 //estado 0 do vertical liga a flag do primeiro registrador 
+
             7: 
                 //shift buffer nao faz mais load (só shift)  
                 //v1 faz primeiro load      
                  (vertical começa a fazer load -> talvez de pra fazer o load ser um shift)
  
                 STAGE <= 2
-                
                 COUNT <= 0
                 
+
      2: 
             0:             
                 //v2 faz primeiro load
-                [liga]    end_VERTICAL <= not(end_VERTICAL)
+                [liga]  end_VERTICAL <= not(end_VERTICAL)      
+                
             1:   
                 //v3 faz primeiro load
                 //vai o valor com end e desliga o shift buffer 
+
+                [liga]     ENABLE_ABSOLUTE   <= not(ENABLE_ABSOLUTE) 
+                [liga]     ENABLE_SUM        <= not(ENABLE_SUM)
 
             2:
                 //4° valor 
                 //sem shift
                 //desliga o load 
-            3:
-            4: 
-            5:
-            6: 
-            7:
+    
+                //1° valor absoluto             
+                //liga flag soma
 
+                [desliga]  ENABLE_HT_VERTICAL <= not(ENABLE_HT_VERTICAL)
+                [desliga]  end_VERTICAL <= not(end_VERTICAL)            
+
+            3:
+                //2° valor absoluto
+                //soma1 faz primeiro load 
+            4: 
+                //3° valor absoluto
+                //soma1 faz segundo  load
+                //soma2 faz primeiro load
+
+            5:
+                //4° valor absoluto
+                //soma1 faz terceiro load
+                //soma2 faz segundo  load
+
+                [desliga]  ENABLE_ABSOLUTE <= not(ENABLE_ABSOLUTE)
+                [liga]     end_SUM         <= not(end_SUM)      
+
+            6:
+                //nao faz valor absoluto 
+                                     
+                //manda sinal de end pra soma
+                //soma1 faz quarto   load
+                //soma2 faz terceiro load         
+
+            7:
+                //soma1 nao faz      load
+                //soma2 faz quarto   load
+        
+                STAGE <= 3
+                COUNT <= 0
+
+    3: 
+            0:
+                //soma1 nao faz      load
+                //soma2 nao faz      load
+
+                [desliga]     ENABLE_SUM      <= not(ENABLE_SUM)                
+                [desliga]     end_SUM         <= not(end_SUM)      
+
+            1: 
+                //soma1 nao faz      load
+                //soma2 nao faz      load
+                //SATD  nao faz      load
+                
+
+                STAGE <= 0 
+                //reinicia    
 
 -- transitions --
 case(STAGE):
-    
-    
-
 
 
 
@@ -98,3 +160,7 @@ case(STAGE):
     if (ENABLE_DIFFERENCES):
         differences(org[], cur[])
             REG_DIFFERENCES <= org[] - cur []
+
+
+
+
