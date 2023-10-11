@@ -19,92 +19,69 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module control( input clk,
-				input reset);
-	
-	reg [1:0] stage;
-	reg [2:0] count;
+					 input reset,
+					 output reg [1:0] stage, 
+					 output reg [2:0] count);
+
 	
 	parameter 	stage_zero =0,
-				stage_one  =1,
-				stage_two  =2,
-				stage_three=3;
+					stage_one  =1,
+					stage_two  =2,
+					stage_three=3;
 				 
-	
+	parameter 	zero  =0,
+					one   =1,
+					two   =2,
+					three =3,
+					four  =4,
+					five  =5,
+					six   =6,
+					seven =7;
+
+
+	//transitions
 	always @(posedge clk) begin
 		if(reset) begin
 			stage <= stage_zero;
 			count <= 0;
 		end 
 		
-		
-		
 		else begin
-			//outputs	
-			case(stage) 
-				stage_zero: begin
-					case(count) 
-
-					endcase
-				end
-
-				stage_one: begin
-					case(count) 
-					endcase
-				end
-
-				stage_two: begin
-					case(count) 
-					endcase
-				end
-
-				stage_three: begin
-					case(count) 
-					endcase				
-				end
-			endcase
-			
-			//transition
-			case(stage) 
+			case (stage) 
 				stage_zero: 
 					stage <= stage_one;
-					
-				
-				stage_one: 
-					case(count) 
-						0: 
-							count <= 1;
-						1: 
-							count <= 2;
-						2: 
-							count <= 3;
-						3:
-							count <= 4;
-						4: 
-							count <= 5;
-						5: 
-							count <= 6;
-						6: 
-							count <= 7;
-						7: 
-							count <= 8;
-					endcase
 
-				
-				stage_two: begin
-					case(count) 
-					endcase
-				end
-	
-				stage_three: begin
-					case(count) 
-					endcase				
-				end
-		
-			endcase
+
+				stage_one: 
+					if (count === 7) begin
+						count <= 0;
+						stage <= stage_two; 
+					end		
 					
+					else 
+						count <= count + 1; 
+						
+				stage_two: 
+					if (count === 7) begin
+						count <= 0;
+						stage <= stage_three; 
+					end
+
+					else 
+						count <= count + 1; 
+
+				stage_three: 
+					if (!count)
+						count <= count + 1; 
+					
+					else begin
+						stage <= stage_zero;
+						count <= 0; 
+					end
+			endcase
 		end
-		
 	end
+					
 
 
 endmodule

@@ -1,0 +1,41 @@
+Release 14.5 ngdbuild P.58f (lin64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: /opt/Xilinx/14.5/ISE_DS/ISE/bin/lin64/unwrapped/ngdbuild -intstyle
+ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-3 control_tb.ngc control_tb.ngd
+
+Reading NGO file
+"/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/control_tb.ngc" ...
+Loading design module
+"/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/control_tb.ngc"...
+WARNING:NgdBuild:578 - Design contains no instances.
+Gathering constraint information from source properties...
+Done.
+
+Resolving constraint associations...
+Checking Constraint Associations...
+Done...
+
+Checking expanded design ...
+ERROR:NgdBuild:605 - logical root block 'control_tb' with type 'control_tb' is
+   unexpanded. Symbol 'control_tb' is not supported in target 'artix7'.
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+NGDBUILD Design Results Summary:
+  Number of errors:     1
+  Number of warnings:   1
+
+Total memory usage is 444240 kilobytes
+
+Total REAL time to NGDBUILD completion:  3 sec
+Total CPU time to NGDBUILD completion:   3 sec
+
+One or more errors were found during NGDBUILD.  No NGD file will be written.
+
+Writing NGDBUILD log file "control_tb.bld"...

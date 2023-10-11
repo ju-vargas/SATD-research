@@ -1,0 +1,23 @@
+	
+	//outputs	
+	always @(posedge clk) begin		
+		case(stage) 
+			stage_zero: begin
+				case(count) 
+				endcase
+			end
+			stage_one: begin
+				case(count) 
+				endcase
+			end
+			stage_two: begin
+				case(count) 
+				endcase
+			end
+			stage_three: begin
+				case(count) 
+				endcase				
+			end
+		endcase
+	end
+
