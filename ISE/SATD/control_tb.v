@@ -20,18 +20,38 @@
 //////////////////////////////////////////////////////////////////////////////////
 module control_tb;
 	
-	reg  reset; 
-	wire stage; 
-   wire count; 
+	//parametros
+   parameter CLK_PERIOD = 2;  
 	
+	//sinais de testbench
+	reg clk;
+	reg reset;
+	wire [1:0] stage; 
+   wire [2:0] count; 
+	
+		//instancia do modulo control
 	control u0(	.clk 	 (clk),
 					.reset (reset),
 					.stage (stage),
 					.count (count));
 					
-				
+					
 	initial begin
+		clk 	<= 0;
+		reset <= 1;
+	end
+
+			
+	//geracao do sinais
+	always begin
+		#CLK_PERIOD clk = ~clk;  
+		reset <= 0;
+
 		
+		$display("Inverti o clock");
+		
+		$display("Ciclo de Clock: %0d, clock: %b, stage: %b, count: %b", $time, clk, stage, count);
+		#CLK_PERIOD; // Aguarde um ciclo de clock
 	end
 	
 	

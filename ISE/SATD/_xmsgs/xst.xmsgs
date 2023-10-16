@@ -5,43 +5,34 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLCompiler" num="872" delta="new" >"/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/control_tb.v" Line 37: Using initial value of <arg fmt="%s" index="1">reset</arg> since it is never assigned
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/control_tb.v" Line 32: Assignment to <arg fmt="%s" index="1">stage</arg> ignored, since the identifier is never used
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="413" delta="new" >"/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/control.v" Line 62: Result of <arg fmt="%d" index="1">4</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">3</arg>-bit target.
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/control_tb.v" Line 33: Assignment to <arg fmt="%s" index="1">count</arg> ignored, since the identifier is never used
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="413" delta="new" >"/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/control.v" Line 71: Result of <arg fmt="%d" index="1">4</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">3</arg>-bit target.
+<msg type="warning" file="HDLCompiler" num="413" delta="old" >"/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/control.v" Line 62: Result of <arg fmt="%d" index="1">4</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">3</arg>-bit target.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="413" delta="new" >"/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/control.v" Line 75: Result of <arg fmt="%d" index="1">4</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">3</arg>-bit target.
+<msg type="warning" file="HDLCompiler" num="413" delta="old" >"/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/control.v" Line 71: Result of <arg fmt="%d" index="1">4</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">3</arg>-bit target.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="189" delta="new" >"/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/control_tb.v" Line 29: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">stage</arg>&gt;. Formal port size is <arg fmt="%d" index="2">2</arg>-bit while actual signal size is <arg fmt="%d" index="1">1</arg>-bit.
+<msg type="warning" file="HDLCompiler" num="413" delta="old" >"/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/control.v" Line 75: Result of <arg fmt="%d" index="1">4</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">3</arg>-bit target.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/control_tb.v" Line 29: Assignment to <arg fmt="%s" index="1">stage</arg> ignored, since the identifier is never used
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/control_tb.v" Line 37: Assignment to <arg fmt="%s" index="1">stage</arg> ignored, since the identifier is never used
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="189" delta="new" >"/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/control_tb.v" Line 30: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">count</arg>&gt;. Formal port size is <arg fmt="%d" index="2">3</arg>-bit while actual signal size is <arg fmt="%d" index="1">1</arg>-bit.
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/control_tb.v" Line 38: Assignment to <arg fmt="%s" index="1">count</arg> ignored, since the identifier is never used
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/control_tb.v" Line 30: Assignment to <arg fmt="%s" index="1">count</arg> ignored, since the identifier is never used
+<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/control_tb.v</arg>&quot; line <arg fmt="%d" index="2">35</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">u0</arg>&gt; of block &lt;<arg fmt="%s" index="4">control</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">control_tb</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="634" delta="new" >"/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/control_tb.v" Line 27: Net &lt;<arg fmt="%s" index="1">clk</arg>&gt; does not have a driver.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/control_tb.v</arg>&quot; line <arg fmt="%s" index="2">35</arg>: Output port &lt;<arg fmt="%s" index="3">stage</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">u0</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="warning" file="Xst" num="2972" delta="new" >&quot;<arg fmt="%s" index="1">/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/control_tb.v</arg>&quot; line <arg fmt="%d" index="2">27</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">u0</arg>&gt; of block &lt;<arg fmt="%s" index="4">control</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">control_tb</arg>&gt;. Underlying logic will be removed.
-</msg>
-
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/control_tb.v</arg>&quot; line <arg fmt="%s" index="2">27</arg>: Output port &lt;<arg fmt="%s" index="3">stage</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">u0</arg>&gt; is unconnected or connected to loadless signal.
-</msg>
-
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/control_tb.v</arg>&quot; line <arg fmt="%s" index="2">27</arg>: Output port &lt;<arg fmt="%s" index="3">count</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">u0</arg>&gt; is unconnected or connected to loadless signal.
-</msg>
-
-<msg type="warning" file="Xst" num="653" delta="new" >Signal &lt;<arg fmt="%s" index="1">clk</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/control_tb.v</arg>&quot; line <arg fmt="%s" index="2">35</arg>: Output port &lt;<arg fmt="%s" index="3">count</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">u0</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
 </messages>

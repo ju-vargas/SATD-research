@@ -6,3 +6,23 @@ ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-3 control_tb
 xst -intstyle ise -ifn "/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/control_tb.xst" -ofn "/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/control_tb.syr" 
 xst -intstyle ise -ifn "/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/control_tb.xst" -ofn "/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/control_tb.syr" 
 ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-3 control_tb.ngc control_tb.ngd  
+xst -intstyle ise -ifn "/home/juliana/Documents/GitHub/SATD-research/ISE/SATD/control_tb.xst" -ofn "/home/juliana/Documents/GitHub/SATD-research/ISE/SATD/control_tb.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-3 control_tb.ngc control_tb.ngd  
+xst -intstyle ise -ifn "/home/juliana/Documents/GitHub/SATD-research/ISE/SATD/control_tb.xst" -ofn "/home/juliana/Documents/GitHub/SATD-research/ISE/SATD/control_tb.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-3 control_tb.ngc control_tb.ngd  
+xst -intstyle ise -ifn "/home/juliana/Documents/GitHub/SATD-research/ISE/SATD/control_tb.xst" -ofn "/home/juliana/Documents/GitHub/SATD-research/ISE/SATD/control_tb.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-3 control_tb.ngc control_tb.ngd  
+xst -intstyle ise -ifn "/home/juliana/Documents/GitHub/SATD-research/ISE/SATD/control_tb.xst" -ofn "/home/juliana/Documents/GitHub/SATD-research/ISE/SATD/control_tb.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-3 control_tb.ngc control_tb.ngd  
+xst -intstyle ise -ifn "/home/juliana/Documents/GitHub/SATD-research/ISE/SATD/control_tb.xst" -ofn "/home/juliana/Documents/GitHub/SATD-research/ISE/SATD/control_tb.syr" 
+xst -intstyle ise -ifn "/home/juliana/Documents/GitHub/SATD-research/ISE/SATD/control_tb.xst" -ofn "/home/juliana/Documents/GitHub/SATD-research/ISE/SATD/control_tb.syr" 
+xst -intstyle ise -ifn "/home/juliana/Documents/GitHub/SATD-research/ISE/SATD/control_tb.xst" -ofn "/home/juliana/Documents/GitHub/SATD-research/ISE/SATD/control_tb.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-3 control_tb.ngc control_tb.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-3 control_tb.ngc control_tb.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-3 control_tb.ngc control_tb.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-3 control_tb.ngc control_tb.ngd  
+xst -intstyle ise -ifn "/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/control_tb.xst" -ofn "/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/control_tb.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-3 control_tb.ngc control_tb.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-3 control_tb.ngc control_tb.ngd  
+xst -intstyle ise -ifn "/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/control_tb.xst" -ofn "/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/control_tb.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-3 control_tb.ngc control_tb.ngd  

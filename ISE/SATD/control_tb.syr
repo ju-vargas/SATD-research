@@ -1,18 +1,18 @@
-Release 14.5 - xst P.58f (lin64)
-Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> 
 Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.03 secs
+Total CPU time to Xst completion: 0.08 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.03 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> 
 Reading design: control_tb.prj
@@ -108,9 +108,9 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Analyzing Verilog file "/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/control.v" into library work
+Analyzing Verilog file "/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/control.v" into library work
 Parsing module <control>.
-Analyzing Verilog file "/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/control_tb.v" into library work
+Analyzing Verilog file "/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/control_tb.v" into library work
 Parsing module <control_tb>.
 
 =========================================================================
@@ -118,29 +118,49 @@ Parsing module <control_tb>.
 =========================================================================
 
 Elaborating module <control_tb>.
-"/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/control_tb.v" Line 40. $display  $stage
-WARNING:HDLCompiler:872 - "/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/control_tb.v" Line 37: Using initial value of reset since it is never assigned
+"/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/control_tb.v" Line 59. $display Iniciando simulacao
+"/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/control_tb.v" Line 64. $display Ciclo de Clock:  2'b.. 3'b...
+"/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/control_tb.v" Line 64. $display Ciclo de Clock:  2'b.. 3'b...
+"/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/control_tb.v" Line 64. $display Ciclo de Clock:  2'b.. 3'b...
+"/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/control_tb.v" Line 64. $display Ciclo de Clock:  2'b.. 3'b...
+"/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/control_tb.v" Line 64. $display Ciclo de Clock:  2'b.. 3'b...
+"/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/control_tb.v" Line 64. $display Ciclo de Clock:  2'b.. 3'b...
+"/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/control_tb.v" Line 64. $display Ciclo de Clock:  2'b.. 3'b...
+"/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/control_tb.v" Line 64. $display Ciclo de Clock:  2'b.. 3'b...
+"/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/control_tb.v" Line 64. $display Ciclo de Clock:  2'b.. 3'b...
+"/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/control_tb.v" Line 64. $display Ciclo de Clock:  2'b.. 3'b...
+"/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/control_tb.v" Line 64. $display Ciclo de Clock:  2'b.. 3'b...
+"/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/control_tb.v" Line 64. $display Ciclo de Clock:  2'b.. 3'b...
+"/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/control_tb.v" Line 64. $display Ciclo de Clock:  2'b.. 3'b...
+"/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/control_tb.v" Line 64. $display Ciclo de Clock:  2'b.. 3'b...
+"/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/control_tb.v" Line 64. $display Ciclo de Clock:  2'b.. 3'b...
+"/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/control_tb.v" Line 64. $display Ciclo de Clock:  2'b.. 3'b...
+"/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/control_tb.v" Line 64. $display Ciclo de Clock:  2'b.. 3'b...
+"/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/control_tb.v" Line 64. $display Ciclo de Clock:  2'b.. 3'b...
+"/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/control_tb.v" Line 64. $display Ciclo de Clock:  2'b.. 3'b...
+"/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/control_tb.v" Line 64. $display Ciclo de Clock:  2'b.. 3'b...
+"/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/control_tb.v" Line 68. $display Fim da simulacao
+WARNING:HDLCompiler:1127 - "/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/control_tb.v" Line 32: Assignment to stage ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/control_tb.v" Line 33: Assignment to count ignored, since the identifier is never used
 
 Elaborating module <control>.
-WARNING:HDLCompiler:413 - "/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/control.v" Line 62: Result of 4-bit expression is truncated to fit in 3-bit target.
-WARNING:HDLCompiler:413 - "/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/control.v" Line 71: Result of 4-bit expression is truncated to fit in 3-bit target.
-WARNING:HDLCompiler:413 - "/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/control.v" Line 75: Result of 4-bit expression is truncated to fit in 3-bit target.
-WARNING:HDLCompiler:189 - "/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/control_tb.v" Line 29: Size mismatch in connection of port <stage>. Formal port size is 2-bit while actual signal size is 1-bit.
-WARNING:HDLCompiler:1127 - "/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/control_tb.v" Line 29: Assignment to stage ignored, since the identifier is never used
-WARNING:HDLCompiler:189 - "/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/control_tb.v" Line 30: Size mismatch in connection of port <count>. Formal port size is 3-bit while actual signal size is 1-bit.
-WARNING:HDLCompiler:1127 - "/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/control_tb.v" Line 30: Assignment to count ignored, since the identifier is never used
-WARNING:HDLCompiler:634 - "/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/control_tb.v" Line 27: Net <clk> does not have a driver.
-WARNING:Xst:2972 - "/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/control_tb.v" line 27. All outputs of instance <u0> of block <control> are unconnected in block <control_tb>. Underlying logic will be removed.
+WARNING:HDLCompiler:413 - "/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/control.v" Line 62: Result of 4-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:413 - "/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/control.v" Line 71: Result of 4-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:413 - "/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/control.v" Line 75: Result of 4-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:1127 - "/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/control_tb.v" Line 37: Assignment to stage ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/control_tb.v" Line 38: Assignment to count ignored, since the identifier is never used
+"/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/control_tb.v" Line 44. $display Inverti o clock
+WARNING:Xst:2972 - "/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/control_tb.v" line 35. All outputs of instance <u0> of block <control> are unconnected in block <control_tb>. Underlying logic will be removed.
 
 =========================================================================
 *                           HDL Synthesis                               *
 =========================================================================
 
 Synthesizing Unit <control_tb>.
-    Related source file is "/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/control_tb.v".
-INFO:Xst:3210 - "/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/control_tb.v" line 27: Output port <stage> of the instance <u0> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/control_tb.v" line 27: Output port <count> of the instance <u0> is unconnected or connected to loadless signal.
-WARNING:Xst:653 - Signal <clk> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Related source file is "/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/control_tb.v".
+        CLK_PERIOD = 2
+INFO:Xst:3210 - "/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/control_tb.v" line 35: Output port <stage> of the instance <u0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/control_tb.v" line 35: Output port <count> of the instance <u0> is unconnected or connected to loadless signal.
     Summary:
 	no macro.
 Unit <control_tb> synthesized.
@@ -266,15 +286,15 @@ Cross Clock Domains Report:
 =========================================================================
 
 
-Total REAL time to Xst completion: 5.00 secs
-Total CPU time to Xst completion: 5.66 secs
+Total REAL time to Xst completion: 15.00 secs
+Total CPU time to Xst completion: 13.56 secs
  
 --> 
 
 
-Total memory usage is 485352 kilobytes
+Total memory usage is 479292 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   11 (   0 filtered)
+Number of warnings :    8 (   0 filtered)
 Number of infos    :    2 (   0 filtered)
 
