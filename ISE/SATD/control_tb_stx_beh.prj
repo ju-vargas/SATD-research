@@ -1,3 +1,3 @@
 verilog isim_temp "control.v"
 verilog isim_temp "control_tb.v"
-verilog isim_temp "/opt/Xilinx/14.5/ISE_DS/ISE//verilog/src/glbl.v"
+verilog isim_temp "/media/juliana/Lin/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"

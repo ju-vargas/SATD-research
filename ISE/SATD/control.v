@@ -18,173 +18,147 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module control( input clk,
-					 input reset,
-					 output reg [1:0] stage, 
-					 output reg [2:0] count,
-					 output reg 		enable_diff,
-					 output reg			enable_ht_horizontal,
-					 output reg 		enable_shift_buffer,
-					 output reg			shift_flag,
-					 output reg			vertical_flag,
-					 output reg			enable_ht_vertical,
-					 output reg			end_vertical_flag,
-					 output reg			enable_absolute,
-					 output reg			enable_sum,
-					 output reg			end_sum_flag);
+//Part 1: Module Header ---------------------------------------------------------
+module control( input  clk,
+					 input  reset,
+					 output reg [9:0] out_signal,
+					 output reg [1:0] state,
+					 output reg [2:0] count); 
+					 
+					 
+		// out_signals[0] enable_diff,
+		// out_signals[1] enable_ht_horizontal,
+		// out_signals[2] enable_shift_buffer,
+		// out_signals[3] shift_flag,
+		// out_signals[4] vertical_flag,
+		// out_signals[5] enable_ht_vertical,
+		// out_signals[6] end_vertical_flag,
+		// out_signals[7] enable_absolute,
+		// out_signals[8] enable_sum,
+		// out_signals[9] end_sum_flag);
 
-	//duvida!! colocar esse sinais como output reg ou como wires????
 	
-	parameter 	stage_zero =0,
-					stage_one  =1,
-					stage_two  =2,
-					stage_three=3;
-				 
-	//outputs 
-		always @(posedge clk) begin
-			if(reset) begin
-				stage                <=0;  	   		 
-				count					   <=0;
-				enable_diff  		   <=0;
-				enable_ht_horizontal <=0;	
-				enable_shift_buffer	<=0;	
-				shift_flag				<=0;
-				vertical_flag			<=0;
-				enable_ht_vertical	<=0;
-				end_vertical_flag		<=0;
-				enable_absolute		<=0;
-				enable_sum				<=0;
-				end_sum_flag				<=0;
-			end
-			else begin
-				case (stage)
-					stage_zero: 
-						shift_flag <= ~shift_flag;
-					
-					stage_one: 
-						case(count)
-							0:
-								enable_diff <= ~enable_diff;
-							
-							1: begin
-								enable_ht_horizontal <= ~enable_ht_horizontal;
-								enable_shift_buffer	<= ~enable_shift_buffer;
-							end
-							
-							2: begin
-							end
-							
-							3: begin
-							end
-							
-							4: begin
-								enable_diff <= ~enable_diff; 
-								shift_flag  <= ~shift_flag; 
-							end
-							
-							5: begin
-								enable_ht_horizontal <= ~enable_ht_horizontal;
-								vertical_flag 			<= ~vertical_flag;
-								enable_ht_vertical	<= ~enable_ht_vertical;
-							end
-							6: begin
-							end
-							
-							7: begin
-							end							
-						
-						endcase
-						
-					
-					stage_two: 
-						case(count)
-							0:
-								end_vertical_flag <=  ~end_vertical_flag;
-							1: begin
-								enable_absolute  <= ~enable_absolute;
-								enable_sum		  <= ~enable_sum; 
-							end
-						
-							2: begin
-								enable_ht_vertical <= ~enable_ht_vertical; 
-								end_vertical_flag 	 <= ~end_vertical_flag;
-							end
-							
-							3: begin
-							end
-							
-							4: begin
-							end
-							
-							5: begin
-								enable_absolute <= ~enable_absolute;
-								end_sum_flag 	 <= ~end_sum_flag;
-							end
-							6: begin
-							end
-							
-							7: begin
-							end
-						endcase
-					
-					
-					stage_three: 
-						case(count)
-							0: begin
-								enable_sum  = ~enable_sum;
-								end_sum_flag = ~end_sum_flag;
-							end
-					
-							1: begin
-							end
-						endcase
-				endcase
-			end
-		end
 
-	//transitions
-	always @(posedge clk) begin
-		if(reset) begin
-			stage <= stage_zero;
-			count <= 0;
-		end 
+					
+//Part 2: Declarations ----------------------------------------------------------
+
+	
+	parameter 	state_zero =0,
+					state_one  =1,
+					state_two  =2,
+					state_three=3;	
+					
+//Part 3: Statements ------------------------------------------------------------
+
+	//FSM State Register
+	always @(posedge clk or posedge reset) begin
 		
-		else begin
-			case (stage) 
-				stage_zero: 
-					stage <= stage_one;
-
-
-				stage_one: 
+		if(reset) begin
+			state		  <= state_zero;
+			count 	  <= 0;
+			out_signal <= 0;
+		end else begin
+			case (state) 
+				state_zero: 
+					state <= state_one;
+					
+				state_one: 
 					if (count === 7) begin
 						count <= 0;
-						stage <= stage_two; 
-					end		
-					
-					else 
+						state <= state_two; 
+					end else 
 						count <= count + 1; 
 						
-				stage_two: 
+				state_two: 
 					if (count === 7) begin
 						count <= 0;
-						stage <= stage_three; 
-					end
-
-					else 
+						state <= state_three; 
+					end else 
 						count <= count + 1; 
-
-				stage_three: 
+						
+				state_three: 
 					if (!count)
 						count <= count + 1; 
 					
 					else begin
-						stage <= stage_zero;
+						state <= state_zero;
 						count <= 0; 
 					end
 			endcase
 		end
 	end
-					
+				
+
+
+	//FSM combinational logic
+	always @(state or count) begin
+		case (state)
+			state_zero: 
+				out_signal[3] <= 1;
+			
+			state_one: 
+				case(count)
+					0:
+						out_signal[0] <= 1;
+					1: begin
+						out_signal[1] <= 1;
+						out_signal[2] <= 1;
+					end
+					2: ;
+					3: ;
+					4: begin
+						out_signal[0] <= 0; 
+						out_signal[3] <= 0; 
+					end
+					5: begin
+						out_signal[1] <= 0;
+						out_signal[4] <= 1;
+						out_signal[5] <= 1;
+					end
+					6: ;
+					7: ;							
+				endcase
+				
+			
+			state_two: 
+				case(count)
+					0:
+						out_signal[6] <= 1;
+					1: begin
+						out_signal[7] <= 1;
+						out_signal[8] <= 1; 
+					end
+					2: begin
+						out_signal[5] <= 0; 
+						out_signal[4] <= 1;
+					end
+					3: ;
+					4: ;
+					5: begin
+						out_signal[7] <= 0;
+						out_signal[9] <= 1;
+					end
+					6: ;
+					7: ;
+				endcase
+			
+			
+			state_three: 
+				case(count)
+					0: begin
+						out_signal[8] <= 0;
+						out_signal[9] <= 0;
+					end
+					1: begin
+						out_signal[2] <= 0;
+						out_signal[4] <= 0;
+						out_signal[6] <= 0;
+					end
+			endcase
+		endcase
+	end
+
+		
 
 
 endmodule
