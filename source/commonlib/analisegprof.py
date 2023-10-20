@@ -1,4 +1,4 @@
-import vvc_performance as vvcpy
+import vvcpy as vvcpy
 from source.commonlib import pathlist as pl
 from source.commonlib import tablegprof as tlprof
 from source.models import aproximation as apx

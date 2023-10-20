@@ -1,4 +1,4 @@
-import vvc_performance as vvcpy
+import vvcpy as vvcpy
 import os
 from source.commonlib import metric as metrics
 from source.commonlib import vvclog as vlog

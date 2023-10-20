@@ -147,7 +147,7 @@ def styled_best2(s):
         max_value = -1
     
 
-    styles = ['background-color: #CBE0CA' if v == max2  else 'background-color: #ABE0A6' if v == max_value else '' for v in s]
+    styles = ['background-color: #999999'  if v == None else 'background-color: #CBE0CA' if v == max2  else 'background-color: #ABE0A6' if v == max_value else '' for v in s]
     return styles
 
 def color_best(s):
@@ -158,7 +158,7 @@ def color_best(s):
         min2 = min_value
         min_value = -1
     
-    styles = ['background-color: #60C25B'  if v < 0 and v == min_value else 'background-color: #CBE0CA' if v == min2  else 'background-color: #ABE0A6' if v == min_value else '' for v in s]
+    styles = ['background-color: #999999'  if v == None else 'background-color: #60C25B'  if v < 0 and v == min_value else 'background-color: #CBE0CA' if v == min2  else 'background-color: #ABE0A6' if v == min_value else '' for v in s]
     return styles
 
 
@@ -170,7 +170,7 @@ def color_worst(s):
         max2 = max_value
         max_value = -1
 
-    styles = ['background-color: #E3C5C3' if v == max2  else 'background-color: #E68C87' if v == max_value else '' for v in s]    
+    styles = ['background-color: #999999'  if v == None else 'background-color: #E3C5C3' if v == max2  else 'background-color: #E68C87' if v == max_value else '' for v in s]    
     return styles
 
 
@@ -189,6 +189,6 @@ def color_both(s):
         max2 = max_value
         max_value = -1
 
-    styles = ['background-color: #60C25B'  if v < 0 and v == min_value else 'background-color: #E3C5C3' if v == max2 else 'background-color: #CBE0CA' if v == min2 else 'background-color: #F4998D' if v == max_value else 'background-color: #BDFCB9' if v == min_value else '' for v in s]
+    styles = ['background-color: #999999'  if v == None else 'background-color: #60C25B'  if v < 0 and v == min_value else 'background-color: #E3C5C3' if v == max2 else 'background-color: #CBE0CA' if v == min2 else 'background-color: #F4998D' if v == max_value else 'background-color: #BDFCB9' if v == min_value else '' for v in s]
     return styles
 

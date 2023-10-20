@@ -37,8 +37,9 @@ class Aproximation:
         count = 0
 
         for video in self.videos:
-            sum = sum + video.get_BDRate(config)
-            count = count + 1
+            if(video.get_BDRate(config) != None):
+                sum = sum + video.get_BDRate(config)
+                count = count + 1
 
         media = (sum/count)
 
