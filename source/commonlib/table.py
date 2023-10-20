@@ -110,7 +110,7 @@ def print_table_vvc(matrix, videos, config, check_tags, bd_tags, color_tags,labe
     pd.set_option('display.max_rows', None)
     df = pd.DataFrame(np.array(data), index=arrays, columns=labels)
 
-
+    print(config)
     print(matrix.get_size())
     #display according color tags
     styled_best = df.style.apply(color_best, axis=1)

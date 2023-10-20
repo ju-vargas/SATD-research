@@ -9,7 +9,6 @@ def bj_delta(R1, PSNR1, R2, PSNR2, mode=0):
     lR1 = np.log(R1)
     
     if (None in R2):
-        print (R2)
         return None
     else:
         lR2 = np.log(R2)
