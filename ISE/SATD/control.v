@@ -25,19 +25,25 @@ module control( input  clk,
 					 output reg [1:0] state,
 					 output reg [2:0] count); 
 					 
-					 
-		// out_signals[0] enable_diff,
-		// out_signals[1] enable_ht_horizontal,
-		// out_signals[2] enable_shift_buffer,
-		// out_signals[3] shift_flag,
-		// out_signals[4] vertical_flag,
-		// out_signals[5] enable_ht_vertical,
-		// out_signals[6] end_vertical_flag,
-		// out_signals[7] enable_absolute,
-		// out_signals[8] enable_sum,
-		// out_signals[9] end_sum_flag);
+		/*
+		 out_signals[0] enable_diff,
+		 out_signals[1] enable_ht_horizontal,
+		 out_signals[2] enable_shift_buffer,
+		 out_signals[3] shift_flag,
+		 out_signals[4] vertical_flag,
+		 out_signals[5] enable_ht_vertical,
+		 out_signals[6] end_vertical_flag,
+		 out_signals[7] enable_absolute,
+		 out_signals[8] enable_sum,
+		 out_signals[9] end_sum_flag);		
+		*/			 
 
-	
+		/*
+		A principio, a forma da discricao dos estados pode estar errada
+		-> a logica combinacional dos proximos estados deveria estar na parte combinacional, colocando em um reg de nx_state
+		-> a parte com clk so faria state <= nx_state
+
+		*/
 
 					
 //Part 2: Declarations ----------------------------------------------------------

@@ -15,7 +15,7 @@
 
   <!--                                                          -->
 
-  <!-- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved. -->
+  <!-- Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved. -->
 
   <version xmlns="http://www.xilinx.com/XMLSchema">11.1</version>
 
@@ -39,6 +39,11 @@
     <transform xil_pn:end_ts="1697602926" xil_pn:in_ck="3637650629316469983" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1697602926">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputAdded"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="control.v"/>
       <outfile xil_pn:name="control_tb.v"/>
     </transform>
@@ -57,14 +62,22 @@
     <transform xil_pn:end_ts="1697602930" xil_pn:in_ck="3637650629316469983" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1697602930">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="control.v"/>
       <outfile xil_pn:name="control_tb.v"/>
     </transform>
-    <transform xil_pn:end_ts="1697602952" xil_pn:in_ck="3637650629316469983" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-5150882101939408919" xil_pn:start_ts="1697602949">
+    <transform xil_pn:end_ts="1698172491" xil_pn:in_ck="3637650629316469983" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-5150882101939408919" xil_pn:start_ts="1698172488">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForProperties"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="control_tb_beh.prj"/>
       <outfile xil_pn:name="control_tb_isim_beh.exe"/>
@@ -73,7 +86,7 @@
       <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1697602952" xil_pn:in_ck="-7635767943500601771" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="4310192502814047084" xil_pn:start_ts="1697602952">
+    <transform xil_pn:end_ts="1698172491" xil_pn:in_ck="-7635767943500601771" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="4310192502814047084" xil_pn:start_ts="1698172491">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForProperties"/>

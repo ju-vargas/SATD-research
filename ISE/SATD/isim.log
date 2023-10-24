@@ -1,7 +1,6 @@
 ISim log file
-Running: /media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/control_tb_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb /media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/control_tb_isim_beh.wdb 
-INFO: There is another simulation running in the same directory. Using database file name isim1.wdb.
-ISim P.20131013 (signature 0xfbc00daa)
+Running: /home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/control_tb_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb /home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/control_tb_isim_beh.wdb 
+ISim P.58f (signature 0xfbc00daa)
 WARNING: A WEBPACK license was found.
 WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
 WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
@@ -512,3 +511,4 @@ Inverti o clock
 Ciclo de Clock: 994, clock: 1, stage: 10, count: 000
 Inverti o clock
 Ciclo de Clock: 998, clock: 0, stage: 10, count: 001
+# exit 0
