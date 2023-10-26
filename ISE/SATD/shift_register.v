@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date:    15:56:30 10/24/2023 
+// Create Date:    16:50:54 10/26/2023 
 // Design Name: 
-// Module Name:    differences 
+// Module Name:    shift_register 
 // Project Name: 
 // Target Devices: 
 // Tool versions: 
@@ -16,20 +16,21 @@
 // Revision: 
 // Revision 0.01 - File Created
 // Additional Comments: 
-//
+
+//registrador que manda 8 diferentes valores a cada clk
 //////////////////////////////////////////////////////////////////////////////////
-module differences( input  enable,
-					    input  reg [7:0] org,
-						 input  reg [7:0] cur,
-						 output reg [8:0] diff);
-	
-//Part 2: Declarations ----------------------------------------------------------
+module shift_register( input rst,
+							  input shift,
+							  input wire [7:0] ORG [127:0],
+							  input wire [7:0] CUR [127:0]);
 
-	reg[8:0] diff;
-	
+//Part 1: Declarations ------------------------------------------------------------
+	reg [7:0] ORG_reg [0:127];
+	reg [7:0] CUR_reg [0:127];
+
 //Part 3: Statements ------------------------------------------------------------
+	always @(posedge clk) begin
+		ORG_reg[126:0] <= ORG_reg[127:1];
+	end
 
-	always @(org, cur) begin
-		diff <= org - cur;
-	end	
 endmodule
