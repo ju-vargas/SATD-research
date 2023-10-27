@@ -5,28 +5,25 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="error" file="HDLCompiler" num="255" delta="unknown" >"/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/SATD.v" Line 59: Cannot assign to memory <arg fmt="%s" index="1">ORG_reg</arg> directly
+<msg type="warning" file="HDLCompiler" num="1818" delta="unknown" >"/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/SATD_tb.v" Line 53: Invalid size of integer constant literal
 </msg>
 
-<msg type="error" file="HDLCompiler" num="252" delta="unknown" >"/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/SATD.v" Line 59: Cannot assign <arg fmt="%s" index="1">a packed</arg> type to <arg fmt="%s" index="2">an unpacked</arg> type
+<msg type="warning" file="HDLCompiler" num="1818" delta="unknown" >"/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/SATD_tb.v" Line 54: Invalid size of integer constant literal
 </msg>
 
-<msg type="error" file="HDLCompiler" num="69" delta="unknown" >"/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/SATD.v" Line 60: &lt;<arg fmt="%s" index="1">CUR_CUR</arg>&gt; is not declared.
+<msg type="warning" file="HDLCompiler" num="327" delta="unknown" >"/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/SATD_tb.v" Line 53: Concatenation with unsized literal; will interpret as 32 bits
 </msg>
 
-<msg type="error" file="HDLCompiler" num="698" delta="unknown" >"/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/SATD.v" Line 64: Part-select of memory <arg fmt="%s" index="1">ORG_reg</arg> is not allowed
+<msg type="warning" file="HDLCompiler" num="327" delta="unknown" >"/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/SATD_tb.v" Line 54: Concatenation with unsized literal; will interpret as 32 bits
 </msg>
 
-<msg type="error" file="HDLCompiler" num="1373" delta="unknown" >"/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/SATD.v" Line 64: Unpacked value/target cannot be used in assignment
+<msg type="warning" file="HDLCompiler" num="329" delta="unknown" >"/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/SATD_tb.v" Line 40: Target &lt;<arg fmt="%s" index="1">diff_result</arg>&gt; of concurrent assignment or output port connection should be a net type.
 </msg>
 
-<msg type="error" file="HDLCompiler" num="698" delta="unknown" >"/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/SATD.v" Line 65: Part-select of memory <arg fmt="%s" index="1">CUR_reg</arg> is not allowed
+<msg type="warning" file="HDLCompiler" num="327" delta="unknown" >"/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/SATD_tb.v" Line 53: Concatenation with unsized literal; will interpret as 32 bits
 </msg>
 
-<msg type="error" file="HDLCompiler" num="1373" delta="unknown" >"/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/SATD.v" Line 65: Unpacked value/target cannot be used in assignment
-</msg>
-
-<msg type="error" file="HDLCompiler" num="598" delta="unknown" >"/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/SATD.v" Line 23: Module &lt;<arg fmt="%s" index="1">SATD</arg>&gt; ignored due to previous errors.
+<msg type="warning" file="HDLCompiler" num="327" delta="unknown" >"/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/SATD_tb.v" Line 54: Concatenation with unsized literal; will interpret as 32 bits
 </msg>
 
 </messages>

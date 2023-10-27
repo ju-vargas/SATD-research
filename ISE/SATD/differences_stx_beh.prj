@@ -1,4 +1,2 @@
 verilog isim_temp "differences.v"
-verilog isim_temp "control.v"
-verilog isim_temp "SATD.v"
 verilog isim_temp "/opt/Xilinx/14.5/ISE_DS/ISE//verilog/src/glbl.v"

@@ -21,17 +21,15 @@
 module differences( input  clk,
 						 input  rst,
 						 input  enable,
-					    input  reg [7:0] org,
-						 input  reg [7:0] cur,
-						 output reg [8:0] diff);
+					    input  [7:0] org,
+						 input  [7:0] cur,
+						 output reg  [8:0] diff);
 	
 //Part 2: Declarations ----------------------------------------------------------
-
-	reg[8:0] diff;
 	
 //Part 3: Statements ------------------------------------------------------------
 
-	always @(org, cur) begin
+	always @(posedge clk) begin
 		diff <= org - cur;
 	end	
 endmodule
