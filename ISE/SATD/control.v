@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 //Part 1: Module Header ---------------------------------------------------------
 module control( input  clk,
-					 input  reset,
+					 input  rst,
 					 output reg [9:0] out_signal,
 					 output reg [1:0] state,
 					 output reg [2:0] count); 
@@ -57,9 +57,9 @@ module control( input  clk,
 //Part 3: Statements ------------------------------------------------------------
 
 	//FSM State Register
-	always @(posedge clk or posedge reset) begin
+	always @(posedge clk or posedge rst) begin
 		
-		if(reset) begin
+		if(rst) begin
 			state		  <= state_zero;
 			count 	  <= 0;
 			out_signal <= 0;

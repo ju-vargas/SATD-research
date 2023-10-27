@@ -5,5 +5,29 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
+<msg type="error" file="HDLCompiler" num="255" delta="unknown" >"/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/SATD.v" Line 59: Cannot assign to memory <arg fmt="%s" index="1">ORG_reg</arg> directly
+</msg>
+
+<msg type="error" file="HDLCompiler" num="252" delta="unknown" >"/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/SATD.v" Line 59: Cannot assign <arg fmt="%s" index="1">a packed</arg> type to <arg fmt="%s" index="2">an unpacked</arg> type
+</msg>
+
+<msg type="error" file="HDLCompiler" num="69" delta="unknown" >"/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/SATD.v" Line 60: &lt;<arg fmt="%s" index="1">CUR_CUR</arg>&gt; is not declared.
+</msg>
+
+<msg type="error" file="HDLCompiler" num="698" delta="unknown" >"/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/SATD.v" Line 64: Part-select of memory <arg fmt="%s" index="1">ORG_reg</arg> is not allowed
+</msg>
+
+<msg type="error" file="HDLCompiler" num="1373" delta="unknown" >"/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/SATD.v" Line 64: Unpacked value/target cannot be used in assignment
+</msg>
+
+<msg type="error" file="HDLCompiler" num="698" delta="unknown" >"/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/SATD.v" Line 65: Part-select of memory <arg fmt="%s" index="1">CUR_reg</arg> is not allowed
+</msg>
+
+<msg type="error" file="HDLCompiler" num="1373" delta="unknown" >"/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/SATD.v" Line 65: Unpacked value/target cannot be used in assignment
+</msg>
+
+<msg type="error" file="HDLCompiler" num="598" delta="unknown" >"/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/SATD.v" Line 23: Module &lt;<arg fmt="%s" index="1">SATD</arg>&gt; ignored due to previous errors.
+</msg>
+
 </messages>
 

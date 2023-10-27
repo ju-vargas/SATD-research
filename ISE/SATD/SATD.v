@@ -21,9 +21,9 @@
 //Part 1: Module Header ---------------------------------------------------------
 
 module SATD( input clk,
-				 input reset,
-				 input wire [7:0] ORG [0:127],
-				 input wire [7:0] CUR [0:127]);
+				 input rst,
+				 input wire [1023:0] ORG,
+				 input wire [1023:0] CUR);
 
 //Part 2: Declarations ----------------------------------------------------------
 
@@ -41,17 +41,17 @@ module SATD( input clk,
 
 	//?
 	control u1(	.clk 	 		(clk),
-					.reset 		(reset),
+					.rst 			(rst),
 					.out_signal (control_signals),
 					.state 		(state),
 					.count 		(count));
 					
-	//aqui sempre recebe o zero, preciso so lembrar de mudar o zero quando precicar
-	diff d1 (	.enable	(control_signals[0]),
+	diff d1 (	.clk 	 	(clk),
+				.rst 		(rst),
+				.enable	(control_signals[0]),
 				.org		(ORG_reg[0]),
 				.cur 		(CUR_reg[0]),
-				.diff 		(out_diff)
-	);
+				.diff 		(out_diff));
 	
 //Part 3: Statements ------------------------------------------------------------
 	

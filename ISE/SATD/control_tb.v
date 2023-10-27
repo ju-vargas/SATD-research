@@ -32,7 +32,7 @@ module control_tb;
 	
 		//instancia do modulo control
 	control u0(	.clk 	 		(clk),
-					.reset 		(reset),
+					.rst	 		(reset),
 					.out_signal (signals),
 					.state 		(state),
 					.count 		(count));

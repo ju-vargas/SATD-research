@@ -18,7 +18,9 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module differences( input  enable,
+module differences( input  clk,
+						 input  rst,
+						 input  enable,
 					    input  reg [7:0] org,
 						 input  reg [7:0] cur,
 						 output reg [8:0] diff);
