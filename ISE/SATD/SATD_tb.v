@@ -16,47 +16,52 @@
 // Revision: 
 // Revision 0.01 - File Created
 // Additional Comments: 
-//
+
 //////////////////////////////////////////////////////////////////////////////////
 module SATD_tb(
     );
 
 	//parametros
    parameter CLK_PERIOD = 2;  
-	
+	integer count = 0;
 	//sinais de testbench
 	reg clk;
 	reg reset;
-	reg [8:0] diff_result;
 	
-	reg [63:0] ORG_input; 
-	reg [63:0] CUR_input;
+	//entradas e saidas pra teste
+	wire [63:0] input_ORG; 
+	wire [63:0] input_CUR;
+	wire signed [8:0]  diff_result;
 	
-	//instancia do modulo control
+	
+	//module instantiation 		
 	SATD satd(	.clk 	 		(clk),
 					.rst	 		(reset),
-					.ORG 			(ORG_input),
-					.CUR 			(CUR_input),
-					.out_diff 	(diff_result));
-				 
+					.ORG 			(input_ORG),
+					.CUR 			(input_CUR),
+					.diff 			(diff_result));
+
+	//assign input_ORG = {60'b0, 4'b1111};
+	//assign input_CUR = {60'b0, 4'b0011};
+	
+	assign input_ORG = 64'b0011011010101101111010110011001100110011001110111101101101001001;
+	assign input_CUR = 64'b1100101101110010001110111011000011010110101000111000101011001001;
+
 	initial begin
 		clk 	<= 0;
 		reset <= 1;
-		diff_result <= 0;
 	end
-			
-	//geracao do sinais
+	
+	//geracao do sinais		
 	always begin
-		#CLK_PERIOD clk = ~clk;  
-		
+		#CLK_PERIOD clk = ~clk; 
+		  
 		reset <= 0;
-		ORG_input <= {64{0'b1111}};
-		CUR_input <= {64{0'b0011}};
-		
-		$display("Inverti o clock");
-		
-		$display("Ciclo de Clock: %0d, clock: %b", $time, clk);
-		#CLK_PERIOD; // Aguarde um ciclo de clock
+
+      count = count + 1;
+      if (count == CLK_PERIOD*15) begin
+          $stop; 
+		end	
 	end
 
 endmodule

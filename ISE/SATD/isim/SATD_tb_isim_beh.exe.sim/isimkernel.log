@@ -1,29 +1,29 @@
 Command line:
    SATD_tb_isim_beh.exe
      -simmode  gui
-     -simrunnum  1
-     -socket  39115
+     -simrunnum  0
+     -socket  44623
 
-Fri Oct 27 17:45:27 2023
+Thu Nov  2 19:32:24 2023
 
 
- Elaboration Time: 0.01 sec
+ Elaboration Time: 0.02 sec
 
- Current Memory Usage: 169.378 Meg
+ Current Memory Usage: 183.972 Meg
 
- Total Signals          : 22
- Total Nets             : 167
- Total Signal Drivers   : 14
- Total Blocks           : 4
+ Total Signals          : 20
+ Total Nets             : 152
+ Total Signal Drivers   : 10
+ Total Blocks           : 3
  Total Primitive Blocks : 2
- Total Processes        : 21
- Total Traceable Variables  : 34
- Total Scalar Nets and Variables : 698
-Total Line Count : 114
+ Total Processes        : 14
+ Total Traceable Variables  : 25
+ Total Scalar Nets and Variables : 435
+Total Line Count : 61
 
- Total Simulation Time: 0.02 sec
+ Total Simulation Time: 0.03 sec
 
- Current Memory Usage: 244.879 Meg
+ Current Memory Usage: 259.473 Meg
 
-Fri Oct 27 17:46:50 2023
+Thu Nov  2 19:32:58 2023
 
