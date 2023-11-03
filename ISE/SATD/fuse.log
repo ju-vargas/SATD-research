@@ -3,20 +3,23 @@ ISim P.20131013 (signature 0xfbc00daa)
 Number of CPUs detected in this system: 4
 Turning on mult-threading, number of parallel sub-compilation jobs: 8 
 Determining compilation order of HDL files
+Analyzing Verilog file "/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/differences.v" into library work
+Analyzing Verilog file "/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/control_satd.v" into library work
 Analyzing Verilog file "/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/SATD.v" into library work
 Analyzing Verilog file "/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/SATD_tb.v" into library work
 Analyzing Verilog file "/media/juliana/Lin/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
 Starting static elaboration
 Completed static elaboration
-Fuse Memory Usage: 82716 KB
-Fuse CPU Usage: 1750 ms
+Fuse Memory Usage: 82708 KB
+Fuse CPU Usage: 2050 ms
+Compiling module control_satd
+Compiling module differences
 Compiling module SATD
 Compiling module SATD_tb
 Compiling module glbl
 Time Resolution for simulation is 1ps.
-Waiting for 1 sub-compilation(s) to finish...
-Compiled 3 Verilog Units
+Compiled 5 Verilog Units
 Built simulation executable /media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/SATD_tb_isim_beh.exe
-Fuse Memory Usage: 643020 KB
-Fuse CPU Usage: 1770 ms
-GCC CPU Usage: 550 ms
+Fuse Memory Usage: 642928 KB
+Fuse CPU Usage: 2090 ms
+GCC CPU Usage: 740 ms

@@ -1,0 +1,3 @@
+verilog isim_temp "differences.v"
+verilog isim_temp "differences_tb.v"
+verilog isim_temp "/media/juliana/Lin/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"
