@@ -21,59 +21,63 @@
 //Part 1: Module Header ---------------------------------------------------------
 module control_satd(input clk,
 						  input rst,
-						  output reg ENABLE_DIFF,
-						  output reg RESET_DIFF,
-						  output reg [3:0] COUNTER);
+						  input 	wire [3:0] counter,
+						  output wire ENABLE_COUNTER,
+						  output wire ENABLE_DIFF,
+						  output wire RESET_DIFF);
 
 
 //Part 2: Declarations ----------------------------------------------------------
-	reg [3:0] state;
-	reg [3:0] nx_state;
+	reg [1:0] state;
+	reg [1:0] nx_state;
+
+	parameter STATE_A = 2'b00;
+	parameter STATE_B = 2'b01;
+	parameter STATE_C = 2'b10;
+	parameter STATE_D = 2'b11;
+	/*
+		tem uma logica q usa nx_state mas eu achei complicada 
+		pelo menos POR ENQUANTO 
+	*/
 	
 //Part 3: Statements ------------------------------------------------------------
 	//FSM State Register
 	always @(posedge clk) begin
 		if(rst) begin
-			state 		<= 4'b0;
-			COUNTER 		<= 4'b0;
-			ENABLE_DIFF <= 1'b0; 
-			RESET_DIFF 	<= 1'b0;
-			$display("reset");
+			state <= STATE_A;
+
 			
 		end else begin
-			case (state)
-				0: state <= 4'b0001;
-				1: state <= 4'b0010;
-				2: begin
-						if(COUNTER == 15)
-							COUNTER <= 4'b0; 
-						else 
-							COUNTER <= COUNTER + 1;						
-					end 
-			endcase
+			state <= nx_state; 
 		end
 	end
 	
 	//FSM combinational logic
-	always @(state) begin
+	//faz sentido
+	always @(state or counter) begin
 		case(state)
-			0: begin
-					ENABLE_DIFF <= 1;
-					RESET_DIFF	<= 1; 
-					
-					$display("estado 0");
-
+			STATE_A: begin
+					nx_state <= STATE_B; 				
 				end
-			1: begin
-					RESET_DIFF <= 0;
-					$display("estado 1");
-
+			STATE_B: begin
+					nx_state <= STATE_C; 
 				end
-			2: begin
-					$display("estado 2");
-
+			STATE_C: begin
+					if (counter == 4'b1111) begin
+						nx_state <= STATE_D;
+						end
+				end
+			STATE_D: begin
+					$display("to no D");
 				end
 		endcase
 	end
+
+
+	//combinational output
+	assign ENABLE_DIFF = 1'b1; 
+	//assign ENABLE_DIFF 	 = (state  == STATE_D) ? 1'b0 : 1'b1;
+	assign RESET_DIFF  	 = ((state == STATE_A) || (state == STATE_D)) ? 1'b1 : 1'b0;
+	assign ENABLE_COUNTER = (state  == STATE_C) ? 1'b1 : 1'b0;
 
 endmodule

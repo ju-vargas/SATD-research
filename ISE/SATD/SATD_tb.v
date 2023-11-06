@@ -31,13 +31,36 @@ module SATD_tb(
 	//entradas e saidas pra teste
 	wire [1023:0] input_ORG; 
 	wire [1023:0] input_CUR;
-	
+	wire signed [8:0] diff_tb_0;
+	wire signed [8:0] diff_tb_1;
+	wire signed [8:0] diff_tb_2;
+	wire signed [8:0] diff_tb_3;
+	wire signed [8:0] diff_tb_4;
+	wire signed [8:0] diff_tb_5;
+	wire signed [8:0] diff_tb_6;
+	wire signed [8:0] diff_tb_7;
+	wire ENABLE_DIFF_tb;
+	wire RESET_DIFF_tb;	
+	wire ENABLE_COUNTER_tb;
+	wire [3:0] COUNTER_tb;
 	
 	//module instantiation 		
-	SATD satd(	.clk 	 		(clk),
-					.rst	 		(reset),
-					.ORG 			(input_ORG),
-					.CUR 			(input_CUR));
+	SATD satd(	.clk 	 		  		(clk),
+					.rst	 		  		(reset),
+					.ORG 			  		(input_ORG),
+					.CUR 			  		(input_CUR),
+					.diff_result_0 		(diff_tb_0),
+					.diff_result_1 		(diff_tb_1),
+					.diff_result_2 		(diff_tb_2),
+					.diff_result_3 		(diff_tb_3),
+					.diff_result_4 		(diff_tb_4),
+					.diff_result_5 		(diff_tb_5),
+					.diff_result_6 		(diff_tb_6),
+					.diff_result_7 		(diff_tb_7),
+					.ENABLE_DIFF  		(ENABLE_DIFF_tb),
+					.RESET_DIFF   		(RESET_DIFF_tb),
+					.ENABLE_COUNTER	(ENABLE_COUNTER_tb),
+					.COUNTER				(COUNTER_tb));
 
 	//assign input_ORG = {60'b0, 4'b1111};
 	//assign input_CUR = {60'b0, 4'b0011};
@@ -49,8 +72,8 @@ module SATD_tb(
 							  64'b0000111100001111000011110000111100001111000011110000111100001111,
 							  64'b1111000011110000111100001111000011110000111100001111000011110000,
 							  64'b0100010001000100010001000100010001000100010001000100010001000100,
-							  64'b1000100010001000100010001000100010001000100010001000100010001000,
-							  64'b0000000011111111100000000111111110000000011111111000000001111111,
+							  64'b1001111111111111111110001000100010001000100010001000100010001000,
+							  64'b0000000000000000000000000111111110000000011111111000000001111111,
 							  64'b1111111100000000111111110000000011111111000000001111111000000000,
 							  64'b0101010010101010101010101010010101010101010101010101010101010101,
 							  64'b1010101001010101010101010101101010101010101010101010101010101101,
@@ -73,9 +96,9 @@ module SATD_tb(
 							  64'b0010001000101010101010010101001001010000101010101001001010010101,
 							  64'b1001010100010101001001010101001101000101010101010101010001000101,
 							  64'b1111010011110111001100110011110011010101111010011001110001001100,
-							  64'b0011001100001100110000110011001101001001100000010000011001100110,
+							  64'b1111111111111111111111111111111111111111111111111110011001100110,
 							  64'b0100011000100010001010010101000010001001000101000001001000010001,
-							  64'b1101010000101010100001001000101011000101010001010101000101010101};
+							  64'b1111111111111111111111111111111111111111010001010101000101010101};
 									  
 	initial begin
 		clk 	<= 0;
@@ -89,7 +112,7 @@ module SATD_tb(
 		reset <= 0;
 
       count = count + 1;
-      if (count == CLK_PERIOD*20) begin
+      if (count == CLK_PERIOD*30) begin
           $stop; 
 		end	
 	end
