@@ -18,19 +18,20 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module differences( input  clk,
+module differences #(parameter WIDTH = 0, parameter NUM_INPUTS = 0) ( input  clk,
 						 input  rst,
 						 input  ena,
-						 input wire [63:0] ORG,
-						 input wire [63:0] CUR,
-						 output reg signed [8:0]diff_0,
-						 output reg signed [8:0]diff_1,
-						 output reg signed [8:0]diff_2,
-						 output reg signed [8:0]diff_3,
-						 output reg signed [8:0]diff_4,
-						 output reg signed [8:0]diff_5,
-						 output reg signed [8:0]diff_6,
-						 output reg signed [8:0]diff_7);
+						 input wire [(WIDTH*NUM_INPUTS)-1:0] ORG,
+						 input wire [(WIDTH*NUM_INPUTS)-1:0] CUR,
+						 output reg signed [WIDTH:0]diff_0,
+                         output reg signed [WIDTH:0]diff_1,
+                         output reg signed [WIDTH:0]diff_2,
+                         output reg signed [WIDTH:0]diff_3,
+                         output reg signed [WIDTH:0]diff_4,
+                         output reg signed [WIDTH:0]diff_5,
+                         output reg signed [WIDTH:0]diff_6,
+                         output reg signed [WIDTH:0]diff_7);
+
 						 	
 //Part 2: Declarations ----------------------------------------------------------
 	
@@ -50,15 +51,15 @@ module differences( input  clk,
 				diff_7 <= 0;
 			end else
 			begin 
-				diff_0 <= ({1'b0, ORG[7:0]}   - {1'b0, CUR[7:0]});
-				diff_1 <= ({1'b0, ORG[15:8]}  - {1'b0, CUR[15:8]});
-				diff_2 <= ({1'b0, ORG[23:16]} - {1'b0, CUR[23:16]});
-				diff_3 <= ({1'b0, ORG[31:24]} - {1'b0, CUR[31:24]});
-				diff_4 <= ({1'b0, ORG[39:32]} - {1'b0, CUR[39:32]});
-				diff_5 <= ({1'b0, ORG[47:40]} - {1'b0, CUR[47:40]});
-				diff_6 <= ({1'b0, ORG[55:48]} - {1'b0, CUR[55:48]});
-				diff_7 <= ({1'b0, ORG[63:56]} - {1'b0, CUR[63:56]});				
-			end
+            	diff_0 <= (ORG[(WIDTH)-1:0]   		  - CUR[(WIDTH)-1:0]);
+                diff_1 <= (ORG[(2*WIDTH)-1:(WIDTH)]   - CUR[(2*WIDTH)-1:(WIDTH)]);
+                diff_2 <= (ORG[(3*WIDTH)-1:(2*WIDTH)] - CUR[(3*WIDTH)-1:(2*WIDTH)]);
+                diff_3 <= (ORG[(4*WIDTH)-1:(3*WIDTH)] - CUR[(4*WIDTH)-1:(3*WIDTH)]);
+                diff_4 <= (ORG[(5*WIDTH)-1:(4*WIDTH)] - CUR[(5*WIDTH)-1:(4*WIDTH)]);
+                diff_5 <= (ORG[(6*WIDTH)-1:(5*WIDTH)] - CUR[(6*WIDTH)-1:(5*WIDTH)]);
+                diff_6 <= (ORG[(7*WIDTH)-1:(6*WIDTH)] - CUR[(7*WIDTH)-1:(6*WIDTH)]);
+                diff_7 <= (ORG[(8*WIDTH)-1:(7*WIDTH)] - CUR[(8*WIDTH)-1:(7*WIDTH)]);                
+            end
 		end
 	end	
 	

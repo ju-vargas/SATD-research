@@ -31,37 +31,17 @@ module SATD_tb(
 	//entradas e saidas pra teste
 	wire [1023:0] input_ORG; 
 	wire [1023:0] input_CUR;
-	wire signed [8:0] diff_tb_0;
-	wire signed [8:0] diff_tb_1;
-	wire signed [8:0] diff_tb_2;
-	wire signed [8:0] diff_tb_3;
-	wire signed [8:0] diff_tb_4;
-	wire signed [8:0] diff_tb_5;
-	wire signed [8:0] diff_tb_6;
-	wire signed [8:0] diff_tb_7;
-	wire ENABLE_DIFF_tb;
-	wire RESET_DIFF_tb;	
-	wire ENABLE_COUNTER_tb;
-	wire [3:0] COUNTER_tb;
+	
 	
 	//module instantiation 		
-	SATD satd(	.clk 	 		  		(clk),
-					.rst	 		  		(reset),
-					.ORG 			  		(input_ORG),
-					.CUR 			  		(input_CUR),
-					.diff_result_0 		(diff_tb_0),
-					.diff_result_1 		(diff_tb_1),
-					.diff_result_2 		(diff_tb_2),
-					.diff_result_3 		(diff_tb_3),
-					.diff_result_4 		(diff_tb_4),
-					.diff_result_5 		(diff_tb_5),
-					.diff_result_6 		(diff_tb_6),
-					.diff_result_7 		(diff_tb_7),
-					.ENABLE_DIFF  		(ENABLE_DIFF_tb),
-					.RESET_DIFF   		(RESET_DIFF_tb),
-					.ENABLE_COUNTER	(ENABLE_COUNTER_tb),
-					.COUNTER				(COUNTER_tb));
-
+	SATD #( .WIDTH (8), .NUM_INPUTS (8), .ITERATIONS (15)) satd
+	       (	.clk 	 		  	(clk),
+				.rst	 		  	(reset),
+				.ORG 			  	(input_ORG),
+				.CUR 			  	(input_CUR));
+					
+    //NUM_INPUTS !!SEMPRE 8!!, por enquanto
+    //  --pq eu nao consigo mudar o numero de registradores q to usando. 
 	//assign input_ORG = {60'b0, 4'b1111};
 	//assign input_CUR = {60'b0, 4'b0011};
 	
@@ -101,7 +81,7 @@ module SATD_tb(
 							  64'b1111111111111111111111111111111111111111010001010101000101010101};
 									  
 	initial begin
-		clk 	<= 0;
+		clk   <= 0;
 		reset <= 1;
 	end
 	

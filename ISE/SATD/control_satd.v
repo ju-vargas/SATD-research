@@ -20,11 +20,11 @@
 //////////////////////////////////////////////////////////////////////////////////
 //Part 1: Module Header ---------------------------------------------------------
 module control_satd(input clk,
-						  input rst,
-						  input 	wire [3:0] counter,
-						  output wire ENABLE_COUNTER,
-						  output wire ENABLE_DIFF,
-						  output wire RESET_DIFF);
+					input rst,
+		          	input  wire [3:0] counter,
+					output wire ENABLE_COUNTER,
+					output wire ENABLE_DIFF,
+					output wire RESET_DIFF);
 
 
 //Part 2: Declarations ----------------------------------------------------------
@@ -54,6 +54,8 @@ module control_satd(input clk,
 	
 	//FSM combinational logic
 	//faz sentido
+	//desse jeito nx_state vira um latch
+	//e isso nao quero 
 	always @(state or counter) begin
 		case(state)
 			STATE_A: begin

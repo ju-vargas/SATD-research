@@ -28,18 +28,18 @@ module control_tb;
 	reg reset;
 	wire [9:0] signals; 
 	wire [1:0] state; 
-   wire [2:0] count; 
+    wire [2:0] count; 
 	
 		//instancia do modulo control
-	control u0(	.clk 	 		(clk),
-					.rst	 		(reset),
-					.out_signal (signals),
-					.state 		(state),
-					.count 		(count));
+	control u0(	.clk 	 	(clk),
+				.rst	 	(reset),
+				.out_signal (signals),
+				.state 		(state),
+				.count 		(count));
 					
 					
 	initial begin
-		clk 	<= 0;
+		clk   <= 0;
 		reset <= 1;
 	end
 

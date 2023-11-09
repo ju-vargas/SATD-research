@@ -1,0 +1,8 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  "../../../../../ISE/SATD/differences.v"
+verilog xil_defaultlib  "../../../../../ISE/SATD/control_satd.v"
+verilog xil_defaultlib  "../../../../../ISE/SATD/SATD.v"
+verilog xil_defaultlib  "../../../../../ISE/SATD/SATD_tb.v"
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"

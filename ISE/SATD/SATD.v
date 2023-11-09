@@ -26,24 +26,19 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 //Part 1: Module Header ---------------------------------------------------------
- module SATD(input clk,
-				 input rst,
-				 input wire [1023:0] ORG,
-				 input wire [1023:0] CUR,
-				 output wire signed [8:0] diff_result_0,
-				 output wire signed [8:0] diff_result_1,
-				 output wire signed [8:0] diff_result_2,
-				 output wire signed [8:0] diff_result_3,
-				 output wire signed [8:0] diff_result_4,
-				 output wire signed [8:0] diff_result_5,
-				 output wire signed [8:0] diff_result_6,
-				 output wire signed [8:0] diff_result_7,
-				 output wire ENABLE_DIFF,
-				 output wire RESET_DIFF,
-				 output wire ENABLE_COUNTER,
-				 output wire [3:0] COUNTER);
+ module SATD #(parameter WIDTH = 0, parameter NUM_INPUTS = 0, parameter ITERATIONS = 0)(input clk,
+			 input rst,
+			 input wire [(WIDTH*NUM_INPUTS*ITERATIONS):0] ORG,
+		     input wire [(WIDTH*NUM_INPUTS*ITERATIONS):0] CUR);
 	
 //------------------------------------------------------------------------------------------
+
+                /*
+                        parametros
+                            -- WIDTH: quantidade de bits da amostra dos dados de CUR e REG
+                            -- NUM_INPUTS: quantos pixels por vez serao enviados
+                */
+                
 
 				/* 	
 						-- 64 bits -> 8 valores de 8 bits
@@ -60,44 +55,57 @@
 				
 				
 //Part 2: Declarations ---------------------------------------------------------------------	
-	reg [3:0] counter;
-	
-	assign COUNTER = counter;
+	reg unsigned [3:0] counter;
+	   
+
+    wire ENABLE_DIFF;
+    wire RESET_DIFF;
+    wire ENABLE_COUNTER;
+    
+	wire signed [WIDTH:0] diff_result_0;
+    wire signed [WIDTH:0] diff_result_1;
+    wire signed [WIDTH:0] diff_result_2;
+    wire signed [WIDTH:0] diff_result_3;
+    wire signed [WIDTH:0] diff_result_4;
+    wire signed [WIDTH:0] diff_result_5;
+    wire signed [WIDTH:0] diff_result_6;
+    wire signed [WIDTH:0] diff_result_7;
 //Part Instatiation: -----------------------------------------------------------------------
-	
-   control_satd control (.clk					(clk),
-								 .rst					(rst),
-								 .counter			(counter),
-								 .ENABLE_COUNTER	(ENABLE_COUNTER),
-								 .ENABLE_DIFF		(ENABLE_DIFF),
-								 .RESET_DIFF		(RESET_DIFF));
+   control_satd control (.clk				(clk),
+						 .rst				(rst),
+						 .counter			(counter),
+						 .ENABLE_COUNTER	(ENABLE_COUNTER),
+						 .ENABLE_DIFF		(ENABLE_DIFF),
+						 .RESET_DIFF		(RESET_DIFF));
 								 
-	differences diff(	.clk 	 		 (clk),
-							.rst		 	 (RESET_DIFF),
-							.ena			 (ENABLE_DIFF),
-							.ORG			 (ORG[(counter*64)+:64]),
-							.CUR 			 (CUR[(counter*64)+:64]),
-							.diff_0		 (diff_result_0),
-							.diff_1 		 (diff_result_1),
-							.diff_2		 (diff_result_2),
-							.diff_3		 (diff_result_3),
-							.diff_4		 (diff_result_4),
-							.diff_5		 (diff_result_5),
-							.diff_6		 (diff_result_6),
-							.diff_7		 (diff_result_7));
-							
+	differences #(.WIDTH (WIDTH), .NUM_INPUTS (NUM_INPUTS)) diff
+	                (.clk 	 	(clk),
+                     .rst       (RESET_DIFF),
+                     .ena       (ENABLE_DIFF),
+                     .ORG       (ORG[(counter*(NUM_INPUTS*WIDTH))+:(NUM_INPUTS*WIDTH)]),
+                     .CUR       (CUR[(counter*(NUM_INPUTS*WIDTH))+:(NUM_INPUTS*WIDTH)]),
+                     .diff_0    (diff_result_0),
+                     .diff_1    (diff_result_1),
+                     .diff_2    (diff_result_2),
+                     .diff_3    (diff_result_3),
+                     .diff_4    (diff_result_4),
+                     .diff_5    (diff_result_5),
+                     .diff_6    (diff_result_6),
+                     .diff_7    (diff_result_7));
+
 
 //Part 3: Statements ----------------------------------------------------------------------
 	always @(posedge clk) begin
 		if (rst) begin 
 			counter <= 0; 
 		end else begin 
-			if (ENABLE_COUNTER) begin
-				if (counter == 4'b1111) begin
-					counter <= 0;
-					$display("esse vai");
-				end
-				else 
+			if (ENABLE_COUNTER) begin		
+			    //! aq tem margem pra erro. counter pode nao suportar o tam de iterations
+				
+				if (counter  == ITERATIONS)
+					counter <= 0;								
+				
+				else      
 					counter <= counter + 1;
 			end
 		end				

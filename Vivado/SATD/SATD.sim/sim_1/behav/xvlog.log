@@ -1,0 +1,12 @@
+Determining compilation order of HDL files.
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/differences.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module differences
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/control_satd.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module control_satd
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/SATD.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SATD
+WARNING: [VRFC 10-969] keyword 'unsigned' is not allowed here in this mode of verilog [/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/SATD.v:58]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/SATD_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SATD_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/juliana/Documentos/GitHub/SATD-research/Vivado/SATD/SATD.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
