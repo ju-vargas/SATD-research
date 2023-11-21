@@ -86,10 +86,7 @@
 						 .RESET_SUM         (RESET_SUM));
 								 
 	differences #(.WIDTH (WIDTH), .NUM_INPUTS (NUM_INPUTS)) diff
-	                (.clk 	 	(clk),
-                     .rst       (RESET_DIFF),
-                     .ena       (ENABLE_DIFF),
-                     .ORG       (ORG[(counter*(NUM_INPUTS*WIDTH))+:(NUM_INPUTS*WIDTH)]),
+	                (.ORG       (ORG[(counter*(NUM_INPUTS*WIDTH))+:(NUM_INPUTS*WIDTH)]),
                      .CUR       (CUR[(counter*(NUM_INPUTS*WIDTH))+:(NUM_INPUTS*WIDTH)]),
                      .diff_0    (diff_result_0),
                      .diff_1    (diff_result_1),

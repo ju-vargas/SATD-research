@@ -22,7 +22,10 @@
 module ht_horizontal #(parameter WIDTH = 0, parameter NUM_INPUTS = 0) ( input  clk,
                              input  rst,
                              input  ena,
-                             input  sel, 
+                             input  sel,
+                             input  LOAD_RB, 
+                             input  LOAD_LB,
+                             input  LOAD_DB,
                              input wire signed [WIDTH:0]diff_0,
                              input wire signed [WIDTH:0]diff_1,
                              input wire signed [WIDTH:0]diff_2,
@@ -31,14 +34,6 @@ module ht_horizontal #(parameter WIDTH = 0, parameter NUM_INPUTS = 0) ( input  c
                              input wire signed [WIDTH:0]diff_5,
                              input wire signed [WIDTH:0]diff_6,
                              input wire signed [WIDTH:0]diff_7,
-                             input wire signed [WIDTH:0]diff_8,
-                             input wire signed [WIDTH:0]diff_9,
-                             input wire signed [WIDTH:0]diff_10,
-                             input wire signed [WIDTH:0]diff_11,
-                             input wire signed [WIDTH:0]diff_12,
-                             input wire signed [WIDTH:0]diff_13,                         
-                             input wire signed [WIDTH:0]diff_14,            
-                             input wire signed [WIDTH:0]diff_15,
                              output reg signed [(WIDTH+4):0]hth_0,
                              output reg signed [(WIDTH+4):0]hth_1,
                              output reg signed [(WIDTH+4):0]hth_2,
@@ -60,18 +55,45 @@ module ht_horizontal #(parameter WIDTH = 0, parameter NUM_INPUTS = 0) ( input  c
     
     
 //Part 2: Declarations ----------------------------------------------------------
+    
+    reg [WIDTH:0] diff_buffer  [(NUM_INPUTS-1):0]; 
+    reg [WIDTH:0] left_buffer  [(NUM_INPUTS-1):0]; 
+    reg [WIDTH:0] right_buffer [(NUM_INPUTS-1):0]; 
+    
     reg [(WIDTH+1):0] column0 [(NUM_INPUTS-1):0];
     reg [(WIDTH+2):0] column1 [(NUM_INPUTS-1):0];
     reg [(WIDTH+3):0] column2 [(NUM_INPUTS-1):0];
-    //reg [(WIDTH+4):0] column3 [(NUM_INPUTS-1):0];
 
 //Part 3: Statements ------------------------------------------------------------
 
     always @(posedge clk) begin
         if(ena) begin
             if (rst) begin
+            //zerar as coisas
             end
             else begin
+                if (LOAD_RB) begin
+                    right_buffer[0] <= diff_0; 
+                    right_buffer[1] <= diff_1;
+                    right_buffer[2] <= diff_2;
+                    right_buffer[3] <= diff_3;
+                    right_buffer[4] <= diff_4;
+                    right_buffer[5] <= diff_5;
+                    right_buffer[6] <= diff_6;
+                    right_buffer[7] <= diff_7; 
+                end
+                if (LOAD_LB) begin 
+                    left_buffer[0] <= diff_0; 
+                    left_buffer[1] <= diff_1; 
+                    left_buffer[2] <= diff_2; 
+                    left_buffer[3] <= diff_3; 
+                    left_buffer[4] <= diff_4; 
+                    left_buffer[5] <= diff_5; 
+                    left_buffer[6] <= diff_6; 
+                    left_buffer[7] <= diff_7; 
+                end 
+                    
+            //funcionamento da transformada
                 if(sel) begin
                     column0[0] <= diff_0 - diff_8;
                     column0[1] <= diff_1 - diff_9;
