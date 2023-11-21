@@ -10,7 +10,7 @@
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="16" />
+   <WVObjectSize size="22" />
    <wvobject db_ref_id="1" type="array" fp_name="/SATD_tb/input_ORG">
       <obj_property name="ElementShortName">input_ORG[1023:0]</obj_property>
       <obj_property name="ObjectShortName">input_ORG[1023:0]</obj_property>
@@ -83,5 +83,30 @@
       <obj_property name="ElementShortName">diff_result_7[8:0]</obj_property>
       <obj_property name="ObjectShortName">diff_result_7[8:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/SATD_tb/satd/ENABLE_SUM">
+      <obj_property name="ElementShortName">ENABLE_SUM</obj_property>
+      <obj_property name="ObjectShortName">ENABLE_SUM</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/SATD_tb/satd/RESET_SUM">
+      <obj_property name="ElementShortName">RESET_SUM</obj_property>
+      <obj_property name="ObjectShortName">RESET_SUM</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/SATD_tb/satd/abs_sum/layer0">
+      <obj_property name="ElementShortName">layer0[3:0][9:0]</obj_property>
+      <obj_property name="ObjectShortName">layer0[3:0][9:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/SATD_tb/satd/abs_sum/layer1">
+      <obj_property name="ElementShortName">layer1[1:0][9:0]</obj_property>
+      <obj_property name="ObjectShortName">layer1[1:0][9:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/SATD_tb/satd/abs_sum/layer2">
+      <obj_property name="ElementShortName">layer2[9:0]</obj_property>
+      <obj_property name="ObjectShortName">layer2[9:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/SATD_tb/satd/sad_result">
+      <obj_property name="ElementShortName">sad_result[26:0]</obj_property>
+      <obj_property name="ObjectShortName">sad_result[26:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
 </wave_config>

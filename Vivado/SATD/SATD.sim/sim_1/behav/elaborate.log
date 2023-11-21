@@ -3,14 +3,13 @@ Copyright 1986-1999, 2001-2014 Xilinx, Inc. All Rights Reserved.
 Running: /opt/Xilinx/Vivado/2014.4/bin/unwrapped/lnx64.o/xelab -wto 670e77f9da424c679b552d8a0c37d655 --debug typical --relax -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot SATD_tb_behav xil_defaultlib.SATD_tb xil_defaultlib.glbl -log elaborate.log 
 Multi-threading is on. Using 6 slave threads.
 Starting static elaboration
-WARNING: [VRFC 10-278] actual bit length 1024 differs from formal bit length 961 for port ORG [/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/SATD_tb.v:40]
-WARNING: [VRFC 10-278] actual bit length 1024 differs from formal bit length 961 for port CUR [/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/SATD_tb.v:41]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
 Compiling module xil_defaultlib.control_satd
 Compiling module xil_defaultlib.differences(WIDTH=8,NUM_INPUTS=8...
+Compiling module xil_defaultlib.absolute_sum(WIDTH=8,NUM_INPUTS=...
 Compiling module xil_defaultlib.SATD(WIDTH=8,NUM_INPUTS=8,ITERAT...
 Compiling module xil_defaultlib.SATD_tb
 Compiling module xil_defaultlib.glbl

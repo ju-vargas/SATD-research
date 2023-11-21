@@ -38,7 +38,6 @@ module differences #(parameter WIDTH = 0, parameter NUM_INPUTS = 0) ( input  clk
 //Part 3: Statements ------------------------------------------------------------
 
 	always @(posedge clk) begin
-	
 		if(ena) begin
 			if(rst) begin
 				diff_0 <= 0;
@@ -58,7 +57,7 @@ module differences #(parameter WIDTH = 0, parameter NUM_INPUTS = 0) ( input  clk
                 diff_4 <= (ORG[(5*WIDTH)-1:(4*WIDTH)] - CUR[(5*WIDTH)-1:(4*WIDTH)]);
                 diff_5 <= (ORG[(6*WIDTH)-1:(5*WIDTH)] - CUR[(6*WIDTH)-1:(5*WIDTH)]);
                 diff_6 <= (ORG[(7*WIDTH)-1:(6*WIDTH)] - CUR[(7*WIDTH)-1:(6*WIDTH)]);
-                diff_7 <= (ORG[(8*WIDTH)-1:(7*WIDTH)] - CUR[(8*WIDTH)-1:(7*WIDTH)]);                
+                diff_7 <= (ORG[(8*WIDTH)-1:(7*WIDTH)] - CUR[(8*WIDTH)-1:(7*WIDTH)]);
             end
 		end
 	end	

@@ -1,7 +1,47 @@
 	
 	- parametrizar tamanho dos dados
-	- apagar outputs desnecessários 
 	- refazer testbench
-		- mudar valores 
-	
+
+
+
+.clk
+                    .rst
+                    .ena
+                    .diff_0		(diff_result_0)
+                    .diff_1		(diff_result_1)
+                    .diff_2		(diff_result_2)
+                    .diff_3		(diff_result_3)
+                    .diff_4		(diff_result_4)
+                    .diff_5		(diff_result_5)
+                    .diff_6		(diff_result_6)
+                    .diff_7		(diff_result_7)		
+                    .sad 
+					
+
+
+
+			     (diff_0[WIDTH]) ? (diff_1[WIDTH] ? diff[0]+ (not(diff_1)+1) )               : 1'b0;
+
+
+
+hth_0 <= column2[0] + column2[1]; 
+hth_1 <= column2[0] - column2[1]; 
+hth_2 <= column2[2] + column2[3];
+hth_3 <= column2[2] - column2[3];
+hth_4 <= column2[4] + column2[5];
+hth_5 <= column2[4] - column2[5];
+hth_6 <= column2[6] + column2[7];
+hth_7 <= column2[6] - column2[7];
+
+
+
+
+    m1[j][0] = m2[j][0] + m2[j][1];
+    m1[j][1] = m2[j][0] - m2[j][1];
+    m1[j][2] = m2[j][2] + m2[j][3];
+    m1[j][3] = m2[j][2] - m2[j][3];
+    m1[j][4] = m2[j][4] + m2[j][5];
+    m1[j][5] = m2[j][4] - m2[j][5];
+    m1[j][6] = m2[j][6] + m2[j][7];
+    m1[j][7] = m2[j][6] - m2[j][7];
 

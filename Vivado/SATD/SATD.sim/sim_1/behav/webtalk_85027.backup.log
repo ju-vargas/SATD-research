@@ -2,9 +2,14 @@
 # Webtalk v2014.4 (64-bit)
 # SW Build 1071353 on Tue Nov 18 16:47:07 MST 2014
 # IP Build 1070531 on Tue Nov 18 01:10:18 MST 2014
-# Start of session at: Thu Nov  9 17:00:00 2023
-# Process ID: 31357
+# Start of session at: Tue Nov 14 09:13:37 2023
+# Process ID: 84863
 # Log file: /home/juliana/Documentos/GitHub/SATD-research/Vivado/SATD/SATD.sim/sim_1/behav/webtalk.log
 # Journal file: /home/juliana/Documentos/GitHub/SATD-research/Vivado/SATD/SATD.sim/sim_1/behav/webtalk.jou
 #-----------------------------------------------------------
 source /home/juliana/Documentos/GitHub/SATD-research/Vivado/SATD/SATD.sim/sim_1/behav/xsim.dir/SATD_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+
+    while executing
+"webtalk_transmit -clientid 397731131 -regid "212796884_0_0_826" -xml /home/juliana/Documentos/GitHub/SATD-research/Vivado/SATD/SATD.sim/sim_1/behav/xs..."
+    (file "/home/juliana/Documentos/GitHub/SATD-research/Vivado/SATD/SATD.sim/sim_1/behav/xsim.dir/SATD_tb_behav/webtalk/xsim_webtalk.tcl" line 41)
+INFO: [Common 17-206] Exiting Webtalk at Tue Nov 14 09:13:38 2023...

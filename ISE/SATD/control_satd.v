@@ -24,7 +24,9 @@ module control_satd(input clk,
 		          	input  wire [3:0] counter,
 					output wire ENABLE_COUNTER,
 					output wire ENABLE_DIFF,
-					output wire RESET_DIFF);
+					output wire RESET_DIFF,
+					output wire ENABLE_SUM,
+					output wire RESET_SUM);
 
 
 //Part 2: Declarations ----------------------------------------------------------
@@ -36,8 +38,7 @@ module control_satd(input clk,
 	parameter STATE_C = 2'b10;
 	parameter STATE_D = 2'b11;
 	/*
-		tem uma logica q usa nx_state mas eu achei complicada 
-		pelo menos POR ENQUANTO 
+		MUDAR O NX_STATE pq criou um LATCH, precisa ser fio, combinacional 
 	*/
 	
 //Part 3: Statements ------------------------------------------------------------
@@ -77,9 +78,20 @@ module control_satd(input clk,
 
 
 	//combinational output
-	assign ENABLE_DIFF = 1'b1; 
-	//assign ENABLE_DIFF 	 = (state  == STATE_D) ? 1'b0 : 1'b1;
-	assign RESET_DIFF  	 = ((state == STATE_A) || (state == STATE_D)) ? 1'b1 : 1'b0;
-	assign ENABLE_COUNTER = (state  == STATE_C) ? 1'b1 : 1'b0;
-
+	assign ENABLE_DIFF    = 1'b1; 
+	//assign ENABLE_DIFF    = (state  == STATE_D) ? 1'b0 : 1'b1;
+	assign ENABLE_COUNTER = (state  == STATE_B || state == STATE_C) ? 1'b1 : 1'b0;
+	assign ENABLE_SUM     = 1'b1; 
+	//vai mudar depois
+	
+	/*
+	   os enables vao mudar posteriormente em funcao do pipeline
+	   especialmente em funcao de sinais de controle do SATD 
+	*/
+	
+	
+	assign RESET_DIFF  	  = ((state == STATE_A) || (state == STATE_D)) ? 1'b1 : 1'b0;
+    assign RESET_SUM      = (state  == STATE_A) ? 1'b1 : 1'b0;
+   
+    
 endmodule

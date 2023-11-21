@@ -28,8 +28,8 @@
 //Part 1: Module Header ---------------------------------------------------------
  module SATD #(parameter WIDTH = 0, parameter NUM_INPUTS = 0, parameter ITERATIONS = 0)(input clk,
 			 input rst,
-			 input wire [(WIDTH*NUM_INPUTS*ITERATIONS):0] ORG,
-		     input wire [(WIDTH*NUM_INPUTS*ITERATIONS):0] CUR);
+			 input wire [(WIDTH*NUM_INPUTS*(ITERATIONS+1))-1:0] ORG,
+		     input wire [(WIDTH*NUM_INPUTS*(ITERATIONS+1))-1:0] CUR);
 	
 //------------------------------------------------------------------------------------------
 
@@ -59,8 +59,11 @@
 	   
 
     wire ENABLE_DIFF;
-    wire RESET_DIFF;
     wire ENABLE_COUNTER;
+    wire ENABLE_SUM;
+    
+    wire RESET_DIFF;
+    wire RESET_SUM; 
     
 	wire signed [WIDTH:0] diff_result_0;
     wire signed [WIDTH:0] diff_result_1;
@@ -70,13 +73,17 @@
     wire signed [WIDTH:0] diff_result_5;
     wire signed [WIDTH:0] diff_result_6;
     wire signed [WIDTH:0] diff_result_7;
+    
+    wire [(WIDTH+ITERATIONS+3):0] sad_result; 
 //Part Instatiation: -----------------------------------------------------------------------
    control_satd control (.clk				(clk),
 						 .rst				(rst),
 						 .counter			(counter),
 						 .ENABLE_COUNTER	(ENABLE_COUNTER),
 						 .ENABLE_DIFF		(ENABLE_DIFF),
-						 .RESET_DIFF		(RESET_DIFF));
+						 .RESET_DIFF		(RESET_DIFF),
+						 .ENABLE_SUM        (ENABLE_SUM),
+						 .RESET_SUM         (RESET_SUM));
 								 
 	differences #(.WIDTH (WIDTH), .NUM_INPUTS (NUM_INPUTS)) diff
 	                (.clk 	 	(clk),
@@ -93,6 +100,21 @@
                      .diff_6    (diff_result_6),
                      .diff_7    (diff_result_7));
 
+    //aq mandar como width a largura da saida das transformadas 
+    absolute_sum #(.WIDTH (8), .NUM_INPUTS (NUM_INPUTS), .ITERATIONS (ITERATIONS)) abs_sum 
+                   (.clk           (clk), 
+                    .rst           (RESET_SUM),
+                    .ena           (ENABLE_SUM),
+                    .diff_0        (diff_result_0),
+                    .diff_1        (diff_result_1),
+                    .diff_2        (diff_result_2),
+                    .diff_3        (diff_result_3),
+                    .diff_4        (diff_result_4),
+                    .diff_5        (diff_result_5),
+                    .diff_6        (diff_result_6),
+                    .diff_7        (diff_result_7),
+                    .sad           (sad_result)); 
+                    
 
 //Part 3: Statements ----------------------------------------------------------------------
 	always @(posedge clk) begin
@@ -102,9 +124,8 @@
 			if (ENABLE_COUNTER) begin		
 			    //! aq tem margem pra erro. counter pode nao suportar o tam de iterations
 				
-				if (counter  == ITERATIONS)
-					counter <= 0;								
-				
+				if (counter  == ITERATIONS) 
+					counter <= 0;					
 				else      
 					counter <= counter + 1;
 			end
