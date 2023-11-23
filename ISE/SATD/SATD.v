@@ -119,8 +119,7 @@
 			counter <= 0; 
 		end else begin 
 			if (ENABLE_COUNTER) begin		
-			    //! aq tem margem pra erro. counter pode nao suportar o tam de iterations
-				
+			    //! aq tem margem pra erro. counter pode nao suportar o tam de iterations				
 				if (counter  == ITERATIONS) 
 					counter <= 0;					
 				else      
