@@ -73,8 +73,23 @@ module ht_horizontal #(parameter WIDTH = 0, parameter NUM_INPUTS = 0) ( input  c
     wire signed [WIDTH+1:0]column_input_6 = (~sel) ? (right_buffer[6] + left_buffer[6]) : (right_buffer[6] - left_buffer[6]);
     wire signed [WIDTH+1:0]column_input_7 = (~sel) ? (right_buffer[7] + left_buffer[7]) : (right_buffer[7] - left_buffer[7]);
     
+    wire signed [WIDTH+1:0]right_input_0 = (~sel) ? diff_buffer[0] : right_buffer[0]; 
+    wire signed [WIDTH+1:0]right_input_1 = (~sel) ? diff_buffer[1] : right_buffer[1]; 
+    wire signed [WIDTH+1:0]right_input_2 = (~sel) ? diff_buffer[2] : right_buffer[2]; 
+    wire signed [WIDTH+1:0]right_input_3 = (~sel) ? diff_buffer[3] : right_buffer[3]; 
+    wire signed [WIDTH+1:0]right_input_4 = (~sel) ? diff_buffer[4] : right_buffer[4]; 
+    wire signed [WIDTH+1:0]right_input_5 = (~sel) ? diff_buffer[5] : right_buffer[5]; 
+    wire signed [WIDTH+1:0]right_input_6 = (~sel) ? diff_buffer[6] : right_buffer[6]; 
+    wire signed [WIDTH+1:0]right_input_7 = (~sel) ? diff_buffer[7] : right_buffer[7];     
     
-
+    wire signed [WIDTH+1:0]left_input_0 = (~sel) ? diff_0 : left_buffer[0]; 
+    wire signed [WIDTH+1:0]left_input_1 = (~sel) ? diff_1 : left_buffer[1]; 
+    wire signed [WIDTH+1:0]left_input_2 = (~sel) ? diff_2 : left_buffer[2]; 
+    wire signed [WIDTH+1:0]left_input_3 = (~sel) ? diff_3 : left_buffer[3]; 
+    wire signed [WIDTH+1:0]left_input_4 = (~sel) ? diff_4 : left_buffer[4]; 
+    wire signed [WIDTH+1:0]left_input_5 = (~sel) ? diff_5 : left_buffer[5]; 
+    wire signed [WIDTH+1:0]left_input_6 = (~sel) ? diff_6 : left_buffer[6]; 
+    wire signed [WIDTH+1:0]left_input_7 = (~sel) ? diff_7 : left_buffer[7];
 //Part 3: Statements ------------------------------------------------------------
 
     always @(posedge clk) begin
@@ -82,84 +97,34 @@ module ht_horizontal #(parameter WIDTH = 0, parameter NUM_INPUTS = 0) ( input  c
             if (rst) begin
             //zerar as coisas
             //preciso pensar no reset assincrono depois 
+                
             end
             else begin
                 
                 /*
                 load when sel = 0
                 */ 
-                right_buffer[0] <= (!sel) ?
-                                    diff_buffer[0]
-                                    :
-                                    right_buffer[0];
-                right_buffer[1] <= (!sel) ?
-                                    diff_buffer[1]
-                                    :
-                                    right_buffer[1];
-                right_buffer[2] <= (!sel) ?
-                                    diff_buffer[2]
-                                    :
-                                    right_buffer[2];
-                right_buffer[3] <= (!sel) ?
-                                    diff_buffer[3]
-                                    :
-                                    right_buffer[3];
-                right_buffer[4] <= (!sel) ?
-                                    diff_buffer[4]
-                                    :
-                                    right_buffer[4];
-                right_buffer[5] <= (!sel) ?
-                                    diff_buffer[5]
-                                    :
-                                    right_buffer[5];
-                right_buffer[6] <= (!sel) ?
-                                    diff_buffer[6]
-                                    :
-                                    right_buffer[6];
-                right_buffer[7] <= (!sel) ?
-                                    diff_buffer[7]
-                                    :
-                                    right_buffer[7];
-
+                right_buffer[0] <= right_input_0;
+                right_buffer[1] <= right_input_1;
+                right_buffer[2] <= right_input_2;
+                right_buffer[3] <= right_input_3;
+                right_buffer[4] <= right_input_4;
+                right_buffer[5] <= right_input_5;
+                right_buffer[6] <= right_input_6;
+                right_buffer[7] <= right_input_7;
 
                 /*
                     load when sel = 0
                 */
+                left_buffer[0] <= left_input_0;
+                left_buffer[1] <= left_input_1;
+                left_buffer[2] <= left_input_2;
+                left_buffer[3] <= left_input_3;
+                left_buffer[4] <= left_input_4;
+                left_buffer[5] <= left_input_5;
+                left_buffer[6] <= left_input_6;
+                left_buffer[7] <= left_input_7;                
                 
-                left_buffer[0] <= (!sel) ?
-                                    diff_0
-                                    :
-                                    left_buffer[0];
-                left_buffer[1] <= (!sel) ?
-                                    diff_1
-                                    :
-                                    left_buffer[1];
-                left_buffer[2] <= (!sel) ?
-                                    diff_2
-                                    :
-                                    left_buffer[2];
-                left_buffer[3] <= (!sel) ?
-                                    diff_3
-                                    :
-                                    left_buffer[3];
-                left_buffer[4] <= (!sel) ?
-                                    diff_4
-                                    :
-                                    left_buffer[4];
-                left_buffer[5] <= (!sel) ?
-                                    diff_5
-                                    :
-                                    left_buffer[5];
-                left_buffer[6] <= (!sel) ?
-                                    diff_6
-                                    :
-                                    left_buffer[6];
-                left_buffer[7] <= (!sel) ?
-                                    diff_7
-                                    :
-                                    left_buffer[7];
-
-
                 /*
                     sempre recebe o valor das diferencas, mesmo q ele nao seja sempre usado 
                     da pra ver isso melhor depois 
