@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 //Part 1: Module Header ---------------------------------------------------------
-module absolute_sum #(parameter WIDTH = 0, parameter NUM_INPUTS = 0, parameter ITERATIONS = 0) ( input  clk,
+module absolute_sum #(parameter WIDTH = 0, parameter SAMPLES = 0, parameter ITERATIONS = 0) ( input  clk,
 						 input  rst,
 						 input  ena,
                          input wire signed [WIDTH:0] diff_0,
@@ -37,7 +37,7 @@ module absolute_sum #(parameter WIDTH = 0, parameter NUM_INPUTS = 0, parameter I
     /*
         WIDTH vai mudar de acordo com a aproximacao
         mas isso eu decido na hora de instanciar
-        a quantidade de regs tb mudaria de acordo com NUM_INPUTS, mas isso eh a se pensar no futuro
+        a quantidade de regs tb mudaria de acordo com SAMPLES, mas isso eh a se pensar no futuro
             talvez tenha o maximo e alguns sejam desabilitados
             talvez isso nem mude 
             

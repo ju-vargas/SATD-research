@@ -26,17 +26,17 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 //Part 1: Module Header ---------------------------------------------------------
- module SATD #(parameter WIDTH = 0, parameter NUM_INPUTS = 0, parameter ITERATIONS = 0)(input clk,
+ module SATD #(parameter WIDTH = 0, parameter SAMPLES = 0, parameter ITERATIONS = 0)(input clk,
 			 input rst,
-			 input wire [(WIDTH*NUM_INPUTS*(ITERATIONS+1))-1:0] ORG,
-		     input wire [(WIDTH*NUM_INPUTS*(ITERATIONS+1))-1:0] CUR);
+			 input wire [(WIDTH*SAMPLES*(ITERATIONS+1))-1:0] ORG,
+		     input wire [(WIDTH*SAMPLES*(ITERATIONS+1))-1:0] CUR);
 	
 //------------------------------------------------------------------------------------------
 
                 /*
                         parametros
                             -- WIDTH: quantidade de bits da amostra dos dados de CUR e REG
-                            -- NUM_INPUTS: quantos pixels por vez serao enviados
+                            -- SAMPLES: quantos pixels por vez serao enviados
                 */
                 
 
@@ -61,9 +61,13 @@
     wire ENABLE_DIFF;
     wire ENABLE_COUNTER;
     wire ENABLE_SUM;
-    
+
+    wire ENABLE_HT_H;
+    wire SEL_HT_H;
+
     wire RESET_DIFF;
     wire RESET_SUM; 
+    wire RESET_HT_H;
     
 	wire signed [WIDTH:0] diff_result_0;
     wire signed [WIDTH:0] diff_result_1;
@@ -73,6 +77,15 @@
     wire signed [WIDTH:0] diff_result_5;
     wire signed [WIDTH:0] diff_result_6;
     wire signed [WIDTH:0] diff_result_7;
+    
+    wire signed [(WIDTH+4):0] hth_result_0;
+    wire signed [(WIDTH+4):0] hth_result_1;
+    wire signed [(WIDTH+4):0] hth_result_2;
+    wire signed [(WIDTH+4):0] hth_result_3;
+    wire signed [(WIDTH+4):0] hth_result_4;
+    wire signed [(WIDTH+4):0] hth_result_5;
+    wire signed [(WIDTH+4):0] hth_result_6;
+    wire signed [(WIDTH+4):0] hth_result_7;
     
     wire [(WIDTH+ITERATIONS+3):0] sad_result; 
 //Part Instatiation: -----------------------------------------------------------------------
@@ -84,10 +97,16 @@
 						 .RESET_DIFF		(RESET_DIFF),
 						 .ENABLE_SUM        (ENABLE_SUM),
 						 .RESET_SUM         (RESET_SUM));
+						 //.ENABLE_HT_H;
+                         //.SEL_HT_H;
+                     
+                         //RESET_HT_H;
+
+
 								 
-	differences #(.WIDTH (WIDTH), .NUM_INPUTS (NUM_INPUTS)) diff
-	                (.ORG       (ORG[(counter*(NUM_INPUTS*WIDTH))+:(NUM_INPUTS*WIDTH)]),
-                     .CUR       (CUR[(counter*(NUM_INPUTS*WIDTH))+:(NUM_INPUTS*WIDTH)]),
+	differences #(.WIDTH (WIDTH), .SAMPLES (SAMPLES)) diff
+	                (.ORG       (ORG[(counter*(SAMPLES*WIDTH))+:(SAMPLES*WIDTH)]),
+                     .CUR       (CUR[(counter*(SAMPLES*WIDTH))+:(SAMPLES*WIDTH)]),
                      .diff_0    (diff_result_0),
                      .diff_1    (diff_result_1),
                      .diff_2    (diff_result_2),
@@ -97,8 +116,33 @@
                      .diff_6    (diff_result_6),
                      .diff_7    (diff_result_7));
 
+    //transformada horizontal 
+    ht_horizontal #(.WIDTH (8), .SAMPLES (SAMPLES)) ht_h 
+                    (.clk          (clk),
+                     .rst          (RESET_HT_H),
+                     .ena          (ENABLE_HT_H),
+                     .sel          (SEL_HT_H),
+                     .diff_0       (diff_result_0),
+                     .diff_1       (diff_result_1),
+                     .diff_2       (diff_result_2),
+                     .diff_3       (diff_result_3),
+                     .diff_4       (diff_result_4),
+                     .diff_5       (diff_result_5),
+                     .diff_6       (diff_result_6),
+                     .diff_7       (diff_result_7),
+                     .hth_0        (hth_result_0),
+                     .hth_1        (hth_result_1),
+                     .hth_2        (hth_result_2),
+                     .hth_3        (hth_result_3),
+                     .hth_4        (hth_result_4),
+                     .hth_5        (hth_result_5),
+                     .hth_6        (hth_result_6),
+                     .hth_7        (hth_result_7));
+
+
+
     //aq mandar como width a largura da saida das transformadas 
-    absolute_sum #(.WIDTH (8), .NUM_INPUTS (NUM_INPUTS), .ITERATIONS (ITERATIONS)) abs_sum 
+    absolute_sum #(.WIDTH (8), .SAMPLES (SAMPLES), .ITERATIONS (ITERATIONS)) abs_sum 
                    (.clk           (clk), 
                     .rst           (RESET_SUM),
                     .ena           (ENABLE_SUM),
@@ -112,6 +156,12 @@
                     .diff_7        (diff_result_7),
                     .sad           (sad_result)); 
                     
+
+
+
+
+
+
 
 //Part 3: Statements ----------------------------------------------------------------------
 	always @(posedge clk) begin

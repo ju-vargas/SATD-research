@@ -18,9 +18,9 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module differences #(parameter WIDTH = 0, parameter NUM_INPUTS = 0) ( input  clk,
-						 input wire [(WIDTH*NUM_INPUTS)-1:0] ORG,
-						 input wire [(WIDTH*NUM_INPUTS)-1:0] CUR,
+module differences #(parameter WIDTH = 0, parameter SAMPLES = 0) ( input  clk,
+						 input wire [(WIDTH*SAMPLES)-1:0] ORG,
+						 input wire [(WIDTH*SAMPLES)-1:0] CUR,
 						 output signed [WIDTH:0]diff_0,
                          output signed [WIDTH:0]diff_1,
                          output signed [WIDTH:0]diff_2,

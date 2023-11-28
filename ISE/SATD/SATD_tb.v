@@ -34,13 +34,13 @@ module SATD_tb(
 	
 	
 	//module instantiation 		
-	SATD #( .WIDTH (8), .NUM_INPUTS (8), .ITERATIONS (15)) satd
+	SATD #( .WIDTH (8), .SAMPLES (8), .ITERATIONS (15)) satd
 	       (	.clk 	 		  	(clk),
 				.rst	 		  	(reset),
 				.ORG 			  	(input_ORG),
 				.CUR 			  	(input_CUR));
 					
-    //NUM_INPUTS !!SEMPRE 8!!, por enquanto
+    //SAMPLES !!SEMPRE 8!!, por enquanto
     //  --pq eu nao consigo mudar o numero de registradores q to usando. 
 	//assign input_ORG = {60'b0, 4'b1111};
 	//assign input_CUR = {60'b0, 4'b0011};
