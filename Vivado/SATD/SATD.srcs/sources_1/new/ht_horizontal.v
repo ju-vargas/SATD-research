@@ -100,49 +100,116 @@ module ht_horizontal #(parameter WIDTH = 0, parameter SAMPLES = 0) ( input  clk,
     wire signed [WIDTH+1:0]left_input_7 = (~sel) ? diff_7 : left_buffer[7];
     
     //cada linha pra UMA AMOSTRA DE n bits
-    wire signed column1_input_0 [(WIDTH+2):0] = column0[0] + column0[4];
-    wire signed column1_input_1 [(WIDTH+2):0] = column0[1] + column0[5];
-    wire signed column1_input_2 [(WIDTH+2):0] = column0[2] + column0[6];
-    wire signed column1_input_3 [(WIDTH+2):0] = column0[3] + column0[7];
-    wire signed column1_input_4 [(WIDTH+2):0] = column0[0] - column0[4]; 
-    wire signed column1_input_5 [(WIDTH+2):0] = column0[1] - column0[5]; 
-    wire signed column1_input_6 [(WIDTH+2):0] = column0[2] - column0[6];
-    wire signed column1_input_7 [(WIDTH+2):0] = column0[3] - column0[7];
+    wire signed [(WIDTH+2):0] column1_input_0  = column0[0] + column0[4];
+    wire signed [(WIDTH+2):0] column1_input_1 = column0[1] + column0[5];
+    wire signed [(WIDTH+2):0] column1_input_2 = column0[2] + column0[6];
+    wire signed [(WIDTH+2):0] column1_input_3 = column0[3] + column0[7];
+    wire signed [(WIDTH+2):0] column1_input_4 = column0[0] - column0[4]; 
+    wire signed [(WIDTH+2):0] column1_input_5 = column0[1] - column0[5]; 
+    wire signed [(WIDTH+2):0] column1_input_6 = column0[2] - column0[6];
+    wire signed [(WIDTH+2):0] column1_input_7 = column0[3] - column0[7];
                 
     //cada linha pra UMA AMOSTRA DE n bits
-    wire signed column2_input_0 [(WIDTH+3):0] = column1[0] + column1[2]; 
-    wire signed column2_input_1 [(WIDTH+3):0] = column1[1] + column1[3]; 
-    wire signed column2_input_2 [(WIDTH+3):0] = column1[0] - column1[2];
-    wire signed column2_input_3 [(WIDTH+3):0] = column1[1] - column1[3];
-    wire signed column2_input_4 [(WIDTH+3):0] = column1[4] + column1[6];
-    wire signed column2_input_5 [(WIDTH+3):0] = column1[5] + column1[7];
-    wire signed column2_input_6 [(WIDTH+3):0] = column1[4] - column1[6];
-    wire signed column2_input_7 [(WIDTH+3):0] = column1[5] - column1[7];
-                        
+    wire signed [(WIDTH+3):0] column2_input_0 = column1[0] + column1[2]; 
+    wire signed [(WIDTH+3):0] column2_input_1 = column1[1] + column1[3]; 
+    wire signed [(WIDTH+3):0] column2_input_2 = column1[0] - column1[2];
+    wire signed [(WIDTH+3):0] column2_input_3 = column1[1] - column1[3];
+    wire signed [(WIDTH+3):0] column2_input_4 = column1[4] + column1[6];
+    wire signed [(WIDTH+3):0] column2_input_5 = column1[5] + column1[7];
+    wire signed [(WIDTH+3):0] column2_input_6 = column1[4] - column1[6];
+    wire signed [(WIDTH+3):0] column2_input_7 = column1[5] - column1[7];
+
     //cada linha pra UMA AMOSTRA DE n bits                            
-    wire signed hth_input_0 [(WIDTH+4):0] = column2[0] + column2[1]; 
-    wire signed hth_input_1 [(WIDTH+4):0] = column2[0] - column2[1]; 
-    wire signed hth_input_2 [(WIDTH+4):0] = column2[2] + column2[3];
-    wire signed hth_input_3 [(WIDTH+4):0] = column2[2] - column2[3];
-    wire signed hth_input_4 [(WIDTH+4):0] = column2[4] + column2[5];
-    wire signed hth_input_5 [(WIDTH+4):0] = column2[4] - column2[5];
-    wire signed hth_input_6 [(WIDTH+4):0] = column2[6] + column2[7];
-    wire signed hth_input_7 [(WIDTH+4):0] = column2[6] - column2[7];                
-    
+    wire signed [(WIDTH+4):0] hth_input_0 = column2[0] + column2[1]; 
+    wire signed [(WIDTH+4):0] hth_input_1 = column2[0] - column2[1]; 
+    wire signed [(WIDTH+4):0] hth_input_2 = column2[2] + column2[3];
+    wire signed [(WIDTH+4):0] hth_input_3 = column2[2] - column2[3];
+    wire signed [(WIDTH+4):0] hth_input_4 = column2[4] + column2[5];
+    wire signed [(WIDTH+4):0] hth_input_5 = column2[4] - column2[5];
+    wire signed [(WIDTH+4):0] hth_input_6 = column2[6] + column2[7];
+    wire signed [(WIDTH+4):0] hth_input_7 = column2[6] - column2[7];                    
     
 //Part 3: Statements ------------------------------------------------------------
 
     always @(posedge clk) begin
         if(ena) begin
             if (rst) begin
-                diff_buffer  <= {SAMPLES*WIDTH{1'b0}};
-                left_buffer  <= {SAMPLES*WIDTH{1'b0}};
-                right_buffer <= {SAMPLES*WIDTH{1'b0}};
+                /*
+                achar um jeito de fazer isso direito
+                intankavel ter que fazer na mao assim
+                */
                 
-                column0 <= {SAMPLES*(WIDTH+1){1'b0}};
-                column1 <= {SAMPLES*(WIDTH+2){1'b0}};
-                column2 <= {SAMPLES*(WIDTH+3){1'b0}};
+                //diff_buffer  <= SAMPLES*WIDTH'b0;
+                //left_buffer  <= SAMPLES*WIDTH'b0;
+                //right_buffer <= SAMPLES*WIDTH'b0;
                 
+                //column0 <= SAMPLES*(WIDTH+1)'b0;
+                //column1 <= SAMPLES*(WIDTH+2)'b0;
+                //column2 <= SAMPLES*(WIDTH+3)'b0;
+                                
+                
+                diff_buffer[0] <= {(WIDTH+1){1'b0}}; 
+                diff_buffer[1] <= {(WIDTH+1){1'b0}}; 
+                diff_buffer[2] <= {(WIDTH+1){1'b0}}; 
+                diff_buffer[3] <= {(WIDTH+1){1'b0}}; 
+                diff_buffer[4] <= {(WIDTH+1){1'b0}}; 
+                diff_buffer[5] <= {(WIDTH+1){1'b0}}; 
+                diff_buffer[6] <= {(WIDTH+1){1'b0}}; 
+                diff_buffer[7] <= {(WIDTH+1){1'b0}}; 
+
+                left_buffer[0] <= {(WIDTH+1){1'b0}}; 
+                left_buffer[1] <= {(WIDTH+1){1'b0}}; 
+                left_buffer[2] <= {(WIDTH+1){1'b0}}; 
+                left_buffer[3] <= {(WIDTH+1){1'b0}}; 
+                left_buffer[4] <= {(WIDTH+1){1'b0}}; 
+                left_buffer[5] <= {(WIDTH+1){1'b0}}; 
+                left_buffer[6] <= {(WIDTH+1){1'b0}}; 
+                left_buffer[7] <= {(WIDTH+1){1'b0}}; 
+
+                right_buffer[0] <= {(WIDTH+1){1'b0}}; 
+                right_buffer[1] <= {(WIDTH+1){1'b0}}; 
+                right_buffer[2] <= {(WIDTH+1){1'b0}}; 
+                right_buffer[3] <= {(WIDTH+1){1'b0}}; 
+                right_buffer[4] <= {(WIDTH+1){1'b0}}; 
+                right_buffer[5] <= {(WIDTH+1){1'b0}}; 
+                right_buffer[6] <= {(WIDTH+1){1'b0}}; 
+                right_buffer[7] <= {(WIDTH+1){1'b0}}; 
+    
+                column0[0] <= {(WIDTH+2){1'b0}}; 
+                column0[1] <= {(WIDTH+2){1'b0}}; 
+                column0[2] <= {(WIDTH+2){1'b0}}; 
+                column0[3] <= {(WIDTH+2){1'b0}}; 
+                column0[4] <= {(WIDTH+2){1'b0}}; 
+                column0[5] <= {(WIDTH+2){1'b0}}; 
+                column0[6] <= {(WIDTH+2){1'b0}}; 
+                column0[7] <= {(WIDTH+2){1'b0}}; 
+                
+                column1[0] <= {(WIDTH+3){1'b0}}; 
+                column1[1] <= {(WIDTH+3){1'b0}}; 
+                column1[2] <= {(WIDTH+3){1'b0}}; 
+                column1[3] <= {(WIDTH+3){1'b0}}; 
+                column1[4] <= {(WIDTH+3){1'b0}}; 
+                column1[5] <= {(WIDTH+3){1'b0}}; 
+                column1[6] <= {(WIDTH+3){1'b0}}; 
+                column1[7] <= {(WIDTH+3){1'b0}}; 
+                
+                column2[0] <= {(WIDTH+4){1'b0}}; 
+                column2[1] <= {(WIDTH+4){1'b0}}; 
+                column2[2] <= {(WIDTH+4){1'b0}}; 
+                column2[3] <= {(WIDTH+4){1'b0}}; 
+                column2[4] <= {(WIDTH+4){1'b0}}; 
+                column2[5] <= {(WIDTH+4){1'b0}}; 
+                column2[6] <= {(WIDTH+4){1'b0}}; 
+                column2[7] <= {(WIDTH+4){1'b0}}; 
+
+                hth_0 <= {(WIDTH+5){1'b0}}; 
+                hth_1 <= {(WIDTH+5){1'b0}}; 
+                hth_2 <= {(WIDTH+5){1'b0}}; 
+                hth_3 <= {(WIDTH+5){1'b0}}; 
+                hth_4 <= {(WIDTH+5){1'b0}}; 
+                hth_5 <= {(WIDTH+5){1'b0}}; 
+                hth_6 <= {(WIDTH+5){1'b0}}; 
+                hth_7 <= {(WIDTH+5){1'b0}}; 
             end
             else begin
                 

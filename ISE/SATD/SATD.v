@@ -65,9 +65,12 @@
     wire ENABLE_HT_H;
     wire SEL_HT_H;
 
+    wire ENABLE_HT_V;
+    
     wire RESET_DIFF;
     wire RESET_SUM; 
     wire RESET_HT_H;
+    wire RESET_HT_V;
     
 	wire signed [WIDTH:0] diff_result_0;
     wire signed [WIDTH:0] diff_result_1;
@@ -96,11 +99,12 @@
 						 .ENABLE_DIFF		(ENABLE_DIFF),
 						 .RESET_DIFF		(RESET_DIFF),
 						 .ENABLE_SUM        (ENABLE_SUM),
-						 .RESET_SUM         (RESET_SUM));
-						 //.ENABLE_HT_H;
-                         //.SEL_HT_H;
-                     
-                         //RESET_HT_H;
+						 .RESET_SUM         (RESET_SUM),
+						 .ENABLE_HT_H       (ENABLE_HT_H),
+                         .SEL_HT_H          (SEL_HT_H),
+                         .RESET_HT_H        (RESET_HT_H),
+                         .ENABLE_HT_V       (ENABLE_HT_V),
+                         .RESET_HT_V        (RESET_HT_V));
 
 
 								 

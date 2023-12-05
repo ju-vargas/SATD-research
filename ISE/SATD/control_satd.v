@@ -26,7 +26,13 @@ module control_satd(input clk,
 					output wire ENABLE_DIFF,
 					output wire RESET_DIFF,
 					output wire ENABLE_SUM,
-					output wire RESET_SUM);
+					output wire RESET_SUM,
+					output wire ENABLE_HT_H,
+                    output wire SEL_HT_H,
+                    output wire RESET_HT_H,
+                    output wire ENABLE_HT_V,
+                    output wire RESET_HT_V);
+
 
 
 //Part 2: Declarations ----------------------------------------------------------
@@ -39,6 +45,7 @@ module control_satd(input clk,
 	parameter STATE_D = 2'b11;
 	/*
 		MUDAR O NX_STATE pq criou um LATCH, precisa ser fio, combinacional 
+		ja sei como mudar, so fazer agora, um ternario com os estados em um fio 
 	*/
 	
 //Part 3: Statements ------------------------------------------------------------
@@ -78,20 +85,28 @@ module control_satd(input clk,
 
 
 	//combinational output
-	assign ENABLE_DIFF    = 1'b1; 
-	//assign ENABLE_DIFF    = (state  == STATE_D) ? 1'b0 : 1'b1;
+    
+    /*
+       os enables vao mudar posteriormente em funcao do pipeline
+       especialmente em funcao de sinais de controle do SATD 
+
+     //assign ENABLE_DIFF    = (state  == STATE_D) ? 1'b0 : 1'b1;
+
+
+       os resets tambem. a ideia agora eh fazer funcionar pro teste
+    */    
+    
+    assign ENABLE_DIFF    = 1'b1; 
 	assign ENABLE_COUNTER = (state  == STATE_B || state == STATE_C) ? 1'b1 : 1'b0;
 	assign ENABLE_SUM     = 1'b1; 
-	//vai mudar depois
-	
-	/*
-	   os enables vao mudar posteriormente em funcao do pipeline
-	   especialmente em funcao de sinais de controle do SATD 
-	*/
-	
+    assign ENABLE_HT_H    = 1'b1;
+	assign ENABLE_HT_V    = 1'b1;
 	
 	assign RESET_DIFF  	  = ((state == STATE_A) || (state == STATE_D)) ? 1'b1 : 1'b0;
     assign RESET_SUM      = (state  == STATE_A) ? 1'b1 : 1'b0;
-   
+    //assign RESET_HT_H     = (state  == STATE_A) ? 1'b1 : 1'b0;
+    assign RESET_HT_H     = (state  == STATE_A) ? 1'b1 : 1'b0;
+    assign RESET_HT_V     = (state  == STATE_A) ? 1'b1 : 1'b0;
     
+    assign SEL_HT_H       = ~counter[0]; 
 endmodule
