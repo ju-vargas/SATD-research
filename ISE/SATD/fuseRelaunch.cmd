@@ -1,1 +1,0 @@
--intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/SATD_tb_isim_beh.exe" -prj "/media/juliana/LinFiles/Documents/GitHub/SATD-research/ISE/SATD/SATD_tb_beh.prj" "work.SATD_tb" "work.glbl" 

@@ -1,0 +1,252 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Thu Dec 14 11:34:59 2023
+# Process ID: 7512
+# Current directory: C:/Users/aluno/Desktop/gitapagar/SATD-research/pipeline_atraso/pipeline_atraso.runs/mult_pipe_synth_1
+# Command line: vivado.exe -log mult_pipe.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source mult_pipe.tcl
+# Log file: C:/Users/aluno/Desktop/gitapagar/SATD-research/pipeline_atraso/pipeline_atraso.runs/mult_pipe_synth_1/mult_pipe.vds
+# Journal file: C:/Users/aluno/Desktop/gitapagar/SATD-research/pipeline_atraso/pipeline_atraso.runs/mult_pipe_synth_1\vivado.jou
+# Running On: s-67-102-24, OS: Windows, CPU Frequency: 3194 MHz, CPU Physical cores: 4, Host memory: 8403 MB
+#-----------------------------------------------------------
+source mult_pipe.tcl -notrace
+create_project: Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 380.910 ; gain = 59.625
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: mult_pipe
+Command: synth_design -top mult_pipe -part xc7a12ticsg325-1L -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a12ti'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a12ti'
+INFO: [Device 21-403] Loading part xc7a12ticsg325-1L
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 6872
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1184.762 ; gain = 407.574
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'mult_pipe' [c:/Users/aluno/Desktop/gitapagar/SATD-research/pipeline_atraso/pipeline_atraso.gen/sources_1/ip/mult_pipe/synth/mult_pipe.vhd:68]
+WARNING: [Synth 8-5640] Port 'zero_detect' is missing in component declaration [c:/Users/aluno/Desktop/gitapagar/SATD-research/pipeline_atraso/pipeline_atraso.gen/sources_1/ip/mult_pipe/synth/mult_pipe.vhd:71]
+WARNING: [Synth 8-5640] Port 'pcasc' is missing in component declaration [c:/Users/aluno/Desktop/gitapagar/SATD-research/pipeline_atraso/pipeline_atraso.gen/sources_1/ip/mult_pipe/synth/mult_pipe.vhd:71]
+	Parameter C_VERBOSITY bound to: 0 - type: integer 
+	Parameter C_MODEL_TYPE bound to: 0 - type: integer 
+	Parameter C_OPTIMIZE_GOAL bound to: 1 - type: integer 
+	Parameter C_XDEVICEFAMILY bound to: artix7 - type: string 
+	Parameter C_HAS_CE bound to: 0 - type: integer 
+	Parameter C_HAS_SCLR bound to: 0 - type: integer 
+	Parameter C_LATENCY bound to: 5 - type: integer 
+	Parameter C_A_WIDTH bound to: 32 - type: integer 
+	Parameter C_A_TYPE bound to: 0 - type: integer 
+	Parameter C_B_WIDTH bound to: 32 - type: integer 
+	Parameter C_B_TYPE bound to: 0 - type: integer 
+	Parameter C_OUT_HIGH bound to: 63 - type: integer 
+	Parameter C_OUT_LOW bound to: 0 - type: integer 
+	Parameter C_MULT_TYPE bound to: 0 - type: integer 
+	Parameter C_CE_OVERRIDES_SCLR bound to: 0 - type: integer 
+	Parameter C_CCM_IMP bound to: 0 - type: integer 
+	Parameter C_B_VALUE bound to: 10000001 - type: string 
+	Parameter C_HAS_ZERO_DETECT bound to: 0 - type: integer 
+	Parameter C_ROUND_OUTPUT bound to: 0 - type: integer 
+	Parameter C_ROUND_PT bound to: 0 - type: integer 
+INFO: [Synth 8-3491] module 'mult_gen_v12_0_18' declared at 'c:/Users/aluno/Desktop/gitapagar/SATD-research/pipeline_atraso/pipeline_atraso.gen/sources_1/ip/mult_pipe/hdl/mult_gen_v12_0_vh_rfs.vhd:21010' bound to instance 'U0' of component 'mult_gen_v12_0_18' [c:/Users/aluno/Desktop/gitapagar/SATD-research/pipeline_atraso/pipeline_atraso.gen/sources_1/ip/mult_pipe/synth/mult_pipe.vhd:120]
+INFO: [Synth 8-256] done synthesizing module 'mult_pipe' (0#1) [c:/Users/aluno/Desktop/gitapagar/SATD-research/pipeline_atraso/pipeline_atraso.gen/sources_1/ip/mult_pipe/synth/mult_pipe.vhd:68]
+WARNING: [Synth 8-7129] Port CE in module mult_gen_v12_0_18_viv is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SCLR in module mult_gen_v12_0_18_viv is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:30 ; elapsed = 00:00:44 . Memory (MB): peak = 1327.414 ; gain = 550.227
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:30 ; elapsed = 00:00:45 . Memory (MB): peak = 1327.414 ; gain = 550.227
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:30 ; elapsed = 00:00:45 . Memory (MB): peak = 1327.414 ; gain = 550.227
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.152 . Memory (MB): peak = 1327.414 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1600 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/Users/aluno/Desktop/gitapagar/SATD-research/pipeline_atraso/pipeline_atraso.gen/sources_1/ip/mult_pipe/mult_pipe_ooc.xdc] for cell 'U0'
+Finished Parsing XDC File [c:/Users/aluno/Desktop/gitapagar/SATD-research/pipeline_atraso/pipeline_atraso.gen/sources_1/ip/mult_pipe/mult_pipe_ooc.xdc] for cell 'U0'
+Parsing XDC File [C:/Users/aluno/Desktop/gitapagar/SATD-research/pipeline_atraso/pipeline_atraso.runs/mult_pipe_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/aluno/Desktop/gitapagar/SATD-research/pipeline_atraso/pipeline_atraso.runs/mult_pipe_synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1369.527 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 528 instances were transformed.
+  MULT_AND => LUT2: 528 instances
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.130 . Memory (MB): peak = 1374.625 ; gain = 5.098
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:51 ; elapsed = 00:01:06 . Memory (MB): peak = 1374.625 ; gain = 597.438
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a12ticsg325-1L
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:51 ; elapsed = 00:01:06 . Memory (MB): peak = 1374.625 ; gain = 597.438
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for U0. (constraint file  C:/Users/aluno/Desktop/gitapagar/SATD-research/pipeline_atraso/pipeline_atraso.runs/mult_pipe_synth_1/dont_touch.xdc, line 9).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:51 ; elapsed = 00:01:06 . Memory (MB): peak = 1374.625 ; gain = 597.438
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:57 ; elapsed = 00:01:12 . Memory (MB): peak = 1374.625 ; gain = 597.438
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 40 (col length:40)
+BRAMs: 40 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-7129] Port CE in module mult_gen_v12_0_18_viv is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SCLR in module mult_gen_v12_0_18_viv is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:04 ; elapsed = 00:01:19 . Memory (MB): peak = 1374.625 ; gain = 597.438
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:17 ; elapsed = 00:01:32 . Memory (MB): peak = 1374.625 ; gain = 597.438
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:18 ; elapsed = 00:01:34 . Memory (MB): peak = 1374.625 ; gain = 597.438
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:20 ; elapsed = 00:01:35 . Memory (MB): peak = 1374.625 ; gain = 597.438
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:36 ; elapsed = 00:01:51 . Memory (MB): peak = 1374.625 ; gain = 597.438
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:36 ; elapsed = 00:01:51 . Memory (MB): peak = 1374.625 ; gain = 597.438
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:36 ; elapsed = 00:01:52 . Memory (MB): peak = 1374.625 ; gain = 597.438
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:36 ; elapsed = 00:01:52 . Memory (MB): peak = 1374.625 ; gain = 597.438
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:36 ; elapsed = 00:01:52 . Memory (MB): peak = 1374.625 ; gain = 597.438
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:36 ; elapsed = 00:01:52 . Memory (MB): peak = 1374.625 ; gain = 597.438
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |CARRY4   |   144|
+|2     |LUT1     |    16|
+|3     |LUT2     |   560|
+|4     |LUT3     |    32|
+|5     |LUT4     |   496|
+|6     |MULT_AND |   528|
+|7     |MUXCY    |   528|
+|8     |SRL16E   |     6|
+|9     |XORCY    |   544|
+|10    |FDRE     |  1143|
++------+---------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:36 ; elapsed = 00:01:52 . Memory (MB): peak = 1374.625 ; gain = 597.438
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 3 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:00 ; elapsed = 00:01:46 . Memory (MB): peak = 1374.625 ; gain = 550.227
+Synthesis Optimization Complete : Time (s): cpu = 00:01:37 ; elapsed = 00:01:52 . Memory (MB): peak = 1374.625 ; gain = 597.438
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.130 . Memory (MB): peak = 1374.625 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1744 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'mult_pipe' is not ideal for floorplanning, since the cellview 'luts' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1374.625 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 672 instances were transformed.
+  (MUXCY,XORCY) => CARRY4: 144 instances
+  MULT_AND => LUT2: 528 instances
+
+Synth Design complete, checksum: 9a568f5c
+INFO: [Common 17-83] Releasing license: Synthesis
+23 Infos, 8 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:48 ; elapsed = 00:02:06 . Memory (MB): peak = 1374.625 ; gain = 961.137
+INFO: [Common 17-1381] The checkpoint 'C:/Users/aluno/Desktop/gitapagar/SATD-research/pipeline_atraso/pipeline_atraso.runs/mult_pipe_synth_1/mult_pipe.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP mult_pipe, cache-ID = aa914d9a43ad9754
+INFO: [Coretcl 2-1174] Renamed 3 cell refs.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/aluno/Desktop/gitapagar/SATD-research/pipeline_atraso/pipeline_atraso.runs/mult_pipe_synth_1/mult_pipe.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file mult_pipe_utilization_synth.rpt -pb mult_pipe_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Dec 14 11:37:31 2023...

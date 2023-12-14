@@ -47,22 +47,22 @@ module buffer #(parameter WIDTH = 0, parameter SAMPLES = 0) ( input  clk,
     wire [(WIDTH+4):0] hth_result [127:0]; 
     
     
-    wire signed [(WIDTH+4):0] buffer_input_0 = (~sel) ? (WIDTH+4)'b0 : hth_0;
-    wire signed [(WIDTH+4):0] buffer_input_1 = (~sel) ? (WIDTH+4)'b0 : hth_1;
-    wire signed [(WIDTH+4):0] buffer_input_3 = (~sel) ? (WIDTH+4)'b0 : hth_2;
-    wire signed [(WIDTH+4):0] buffer_input_4 = (~sel) ? (WIDTH+4)'b0 : hth_3;
-    wire signed [(WIDTH+4):0] buffer_input_5 = (~sel) ? (WIDTH+4)'b0 : hth_4;
-    wire signed [(WIDTH+4):0] buffer_input_6 = (~sel) ? (WIDTH+4)'b0 : hth_5;
-    wire signed [(WIDTH+4):0] buffer_input_7 = (~sel) ? (WIDTH+4)'b0 : hth_6;
-    wire signed [(WIDTH+4):0] buffer_input_8 = (~sel) ? (WIDTH+4)'b0 : hth_7;
-    wire signed [(WIDTH+4):0] buffer_input_9 = (sel)  ? (WIDTH+4)'b0 : hth_0;
-    wire signed [(WIDTH+4):0] buffer_input_10 = (sel)  ? (WIDTH+4)'b0 : hth_1;
-    wire signed [(WIDTH+4):0] buffer_input_11 = (sel)  ? (WIDTH+4)'b0 : hth_2;
-    wire signed [(WIDTH+4):0] buffer_input_12 = (sel)  ? (WIDTH+4)'b0 : hth_3;
-    wire signed [(WIDTH+4):0] buffer_input_13 = (sel)  ? (WIDTH+4)'b0 : hth_4;
-    wire signed [(WIDTH+4):0] buffer_input_14 = (sel)  ? (WIDTH+4)'b0 : hth_5;
-    wire signed [(WIDTH+4):0] buffer_input_15 = (sel)  ? (WIDTH+4)'b0 : hth_6;
-
+    wire signed [(WIDTH+4):0] buffer_input_0 = (~sel) ? {(WIDTH+4){1'b0}} : hth_0;
+    wire signed [(WIDTH+4):0] buffer_input_0 = (~sel) ? {(WIDTH+4){1'b0}} : hth_0;
+    wire signed [(WIDTH+4):0] buffer_input_1 = (~sel) ? {(WIDTH+4){1'b0}} : hth_1;
+    wire signed [(WIDTH+4):0] buffer_input_3 = (~sel) ? {(WIDTH+4){1'b0}} : hth_2;
+    wire signed [(WIDTH+4):0] buffer_input_4 = (~sel) ? {(WIDTH+4){1'b0}} : hth_3;
+    wire signed [(WIDTH+4):0] buffer_input_5 = (~sel) ? {(WIDTH+4){1'b0}} : hth_4;
+    wire signed [(WIDTH+4):0] buffer_input_6 = (~sel) ? {(WIDTH+4){1'b0}} : hth_5;
+    wire signed [(WIDTH+4):0] buffer_input_7 = (~sel) ? {(WIDTH+4){1'b0}} : hth_6;
+    wire signed [(WIDTH+4):0] buffer_input_8 = (~sel) ? {(WIDTH+4){1'b0}} : hth_7;
+    wire signed [(WIDTH+4):0] buffer_input_9 = (sel)  ? {(WIDTH+4){1'b0}} : hth_0;
+    wire signed [(WIDTH+4):0] buffer_input_10 = (sel)  ? {(WIDTH+4){1'b0}} : hth_1;
+    wire signed [(WIDTH+4):0] buffer_input_11 = (sel)  ? {(WIDTH+4){1'b0}} : hth_2;
+    wire signed [(WIDTH+4):0] buffer_input_12 = (sel)  ? {(WIDTH+4){1'b0}} : hth_3;
+    wire signed [(WIDTH+4):0] buffer_input_13 = (sel)  ? {(WIDTH+4){1'b0}} : hth_4;
+    wire signed [(WIDTH+4):0] buffer_input_14 = (sel)  ? {(WIDTH+4){1'b0}} : hth_5;
+    wire signed [(WIDTH+4):0] buffer_input_15 = (sel)  ? {(WIDTH+4){1'b0}} : hth_6;
     
     
 //Part 3: Statements ------------------------------------------------------------

@@ -10,193 +10,118 @@
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="40" />
-   <wvobject db_ref_id="1" type="array" fp_name="/SATD_tb/input_ORG">
-      <obj_property name="ElementShortName">input_ORG[1023:0]</obj_property>
-      <obj_property name="ObjectShortName">input_ORG[1023:0]</obj_property>
+   <zoom_setting>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="88.501 ns"></ZoomEndTime>
+      <Cursor1Time time="67.900 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="276"></NameColumnWidth>
+      <ValueColumnWidth column_width="120"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="22" />
+   <wvobject fp_name="/SATD_tb/count" type="array">
+      <obj_property name="ElementShortName">count[31:0]</obj_property>
+      <obj_property name="ObjectShortName">count[31:0]</obj_property>
    </wvobject>
-   <wvobject db_ref_id="1" type="array" fp_name="/SATD_tb/input_CUR">
-      <obj_property name="ElementShortName">input_CUR[1023:0]</obj_property>
-      <obj_property name="ObjectShortName">input_CUR[1023:0]</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" type="logic" fp_name="/SATD_tb/clk">
+   <wvobject fp_name="/SATD_tb/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
    </wvobject>
-   <wvobject db_ref_id="1" type="logic" fp_name="/SATD_tb/reset">
+   <wvobject fp_name="/SATD_tb/reset" type="logic">
       <obj_property name="ElementShortName">reset</obj_property>
       <obj_property name="ObjectShortName">reset</obj_property>
    </wvobject>
-   <wvobject db_ref_id="1" type="logic" fp_name="/SATD_tb/satd/ENABLE_DIFF">
-      <obj_property name="ElementShortName">ENABLE_DIFF</obj_property>
-      <obj_property name="ObjectShortName">ENABLE_DIFF</obj_property>
+   <wvobject fp_name="/SATD_tb/input_ORG" type="array">
+      <obj_property name="ElementShortName">input_ORG[1023:0]</obj_property>
+      <obj_property name="ObjectShortName">input_ORG[1023:0]</obj_property>
    </wvobject>
-   <wvobject db_ref_id="1" type="logic" fp_name="/SATD_tb/satd/RESET_DIFF">
-      <obj_property name="ElementShortName">RESET_DIFF</obj_property>
-      <obj_property name="ObjectShortName">RESET_DIFF</obj_property>
+   <wvobject fp_name="/SATD_tb/input_CUR" type="array">
+      <obj_property name="ElementShortName">input_CUR[1023:0]</obj_property>
+      <obj_property name="ObjectShortName">input_CUR[1023:0]</obj_property>
    </wvobject>
-   <wvobject db_ref_id="1" type="logic" fp_name="/SATD_tb/satd/ENABLE_COUNTER">
-      <obj_property name="ElementShortName">ENABLE_COUNTER</obj_property>
-      <obj_property name="ObjectShortName">ENABLE_COUNTER</obj_property>
+   <wvobject fp_name="/SATD_tb/CLK_PERIOD" type="array">
+      <obj_property name="ElementShortName">CLK_PERIOD[31:0]</obj_property>
+      <obj_property name="ObjectShortName">CLK_PERIOD[31:0]</obj_property>
    </wvobject>
-   <wvobject db_ref_id="1" type="array" fp_name="/SATD_tb/satd/counter">
-      <obj_property name="ElementShortName">counter[3:0]</obj_property>
-      <obj_property name="ObjectShortName">counter[3:0]</obj_property>
-      <obj_property name="Radix">BINARYRADIX</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" type="array" fp_name="/SATD_tb/satd/diff_result_0">
-      <obj_property name="ElementShortName">diff_result_0[8:0]</obj_property>
-      <obj_property name="ObjectShortName">diff_result_0[8:0]</obj_property>
+   <wvobject fp_name="/SATD_tb/satd/diff/diff_0" type="array">
+      <obj_property name="ElementShortName">diff_0[8:0]</obj_property>
+      <obj_property name="ObjectShortName">diff_0[8:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject db_ref_id="1" type="array" fp_name="/SATD_tb/satd/diff_result_1">
-      <obj_property name="ElementShortName">diff_result_1[8:0]</obj_property>
-      <obj_property name="ObjectShortName">diff_result_1[8:0]</obj_property>
+   <wvobject fp_name="/SATD_tb/satd/diff/diff_1" type="array">
+      <obj_property name="ElementShortName">diff_1[8:0]</obj_property>
+      <obj_property name="ObjectShortName">diff_1[8:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject db_ref_id="1" type="array" fp_name="/SATD_tb/satd/diff_result_2">
-      <obj_property name="ElementShortName">diff_result_2[8:0]</obj_property>
-      <obj_property name="ObjectShortName">diff_result_2[8:0]</obj_property>
+   <wvobject fp_name="/SATD_tb/satd/diff/diff_2" type="array">
+      <obj_property name="ElementShortName">diff_2[8:0]</obj_property>
+      <obj_property name="ObjectShortName">diff_2[8:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject db_ref_id="1" type="array" fp_name="/SATD_tb/satd/diff_result_3">
-      <obj_property name="ElementShortName">diff_result_3[8:0]</obj_property>
-      <obj_property name="ObjectShortName">diff_result_3[8:0]</obj_property>
+   <wvobject fp_name="/SATD_tb/satd/diff/diff_3" type="array">
+      <obj_property name="ElementShortName">diff_3[8:0]</obj_property>
+      <obj_property name="ObjectShortName">diff_3[8:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject db_ref_id="1" type="array" fp_name="/SATD_tb/satd/diff_result_4">
-      <obj_property name="ElementShortName">diff_result_4[8:0]</obj_property>
-      <obj_property name="ObjectShortName">diff_result_4[8:0]</obj_property>
+   <wvobject fp_name="/SATD_tb/satd/diff/diff_4" type="array">
+      <obj_property name="ElementShortName">diff_4[8:0]</obj_property>
+      <obj_property name="ObjectShortName">diff_4[8:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject db_ref_id="1" type="array" fp_name="/SATD_tb/satd/diff_result_5">
-      <obj_property name="ElementShortName">diff_result_5[8:0]</obj_property>
-      <obj_property name="ObjectShortName">diff_result_5[8:0]</obj_property>
+   <wvobject fp_name="/SATD_tb/satd/diff/diff_5" type="array">
+      <obj_property name="ElementShortName">diff_5[8:0]</obj_property>
+      <obj_property name="ObjectShortName">diff_5[8:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject db_ref_id="1" type="array" fp_name="/SATD_tb/satd/diff_result_6">
-      <obj_property name="ElementShortName">diff_result_6[8:0]</obj_property>
-      <obj_property name="ObjectShortName">diff_result_6[8:0]</obj_property>
+   <wvobject fp_name="/SATD_tb/satd/diff/diff_6" type="array">
+      <obj_property name="ElementShortName">diff_6[8:0]</obj_property>
+      <obj_property name="ObjectShortName">diff_6[8:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject db_ref_id="1" type="array" fp_name="/SATD_tb/satd/diff_result_7">
-      <obj_property name="ElementShortName">diff_result_7[8:0]</obj_property>
-      <obj_property name="ObjectShortName">diff_result_7[8:0]</obj_property>
+   <wvobject fp_name="/SATD_tb/satd/diff/diff_7" type="array">
+      <obj_property name="ElementShortName">diff_7[8:0]</obj_property>
+      <obj_property name="ObjectShortName">diff_7[8:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject db_ref_id="1" type="logic" fp_name="/SATD_tb/satd/ENABLE_SUM">
-      <obj_property name="ElementShortName">ENABLE_SUM</obj_property>
-      <obj_property name="ObjectShortName">ENABLE_SUM</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" type="logic" fp_name="/SATD_tb/satd/RESET_SUM">
-      <obj_property name="ElementShortName">RESET_SUM</obj_property>
-      <obj_property name="ObjectShortName">RESET_SUM</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" type="array" fp_name="/SATD_tb/satd/abs_sum/layer0">
-      <obj_property name="ElementShortName">layer0[3:0][9:0]</obj_property>
-      <obj_property name="ObjectShortName">layer0[3:0][9:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" type="array" fp_name="/SATD_tb/satd/abs_sum/layer1">
-      <obj_property name="ElementShortName">layer1[1:0][10:0]</obj_property>
-      <obj_property name="ObjectShortName">layer1[1:0][10:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" type="array" fp_name="/SATD_tb/satd/abs_sum/layer2">
-      <obj_property name="ElementShortName">layer2[11:0]</obj_property>
-      <obj_property name="ObjectShortName">layer2[11:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" type="array" fp_name="/SATD_tb/satd/sad_result">
-      <obj_property name="ElementShortName">sad_result[26:0]</obj_property>
-      <obj_property name="ObjectShortName">sad_result[26:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" type="logic" fp_name="/SATD_tb/satd/ht_h/ena">
-      <obj_property name="ElementShortName">ena</obj_property>
-      <obj_property name="ObjectShortName">ena</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" type="logic" fp_name="/SATD_tb/satd/ht_h/rst">
-      <obj_property name="ElementShortName">rst</obj_property>
-      <obj_property name="ObjectShortName">rst</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" type="logic" fp_name="/SATD_tb/satd/ht_h/sel">
-      <obj_property name="ElementShortName">sel</obj_property>
-      <obj_property name="ObjectShortName">sel</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" type="array" fp_name="/SATD_tb/satd/ht_h/diff_buffer">
-      <obj_property name="ElementShortName">diff_buffer[7:0][8:0]</obj_property>
-      <obj_property name="ObjectShortName">diff_buffer[7:0][8:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" type="array" fp_name="/SATD_tb/satd/ht_h/right_buffer">
-      <obj_property name="ElementShortName">right_buffer[7:0][8:0]</obj_property>
-      <obj_property name="ObjectShortName">right_buffer[7:0][8:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" type="array" fp_name="/SATD_tb/satd/ht_h/left_buffer">
-      <obj_property name="ElementShortName">left_buffer[7:0][8:0]</obj_property>
-      <obj_property name="ObjectShortName">left_buffer[7:0][8:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" type="array" fp_name="/SATD_tb/satd/ht_h/right_buffer">
-      <obj_property name="ElementShortName">right_buffer[7:0][8:0]</obj_property>
-      <obj_property name="ObjectShortName">right_buffer[7:0][8:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" type="array" fp_name="/SATD_tb/satd/ht_h/column0">
-      <obj_property name="ElementShortName">column0[7:0][9:0]</obj_property>
-      <obj_property name="ObjectShortName">column0[7:0][9:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" type="array" fp_name="/SATD_tb/satd/ht_h/column1">
-      <obj_property name="ElementShortName">column1[7:0][10:0]</obj_property>
-      <obj_property name="ObjectShortName">column1[7:0][10:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" type="array" fp_name="/SATD_tb/satd/ht_h/column2">
-      <obj_property name="ElementShortName">column2[7:0][11:0]</obj_property>
-      <obj_property name="ObjectShortName">column2[7:0][11:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" type="array" fp_name="/SATD_tb/satd/ht_h/hth_0">
+   <wvobject fp_name="/SATD_tb/satd/ht_h/hth_0" type="array">
       <obj_property name="ElementShortName">hth_0[12:0]</obj_property>
       <obj_property name="ObjectShortName">hth_0[12:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject db_ref_id="1" type="array" fp_name="/SATD_tb/satd/ht_h/hth_1">
+   <wvobject fp_name="/SATD_tb/satd/ht_h/hth_1" type="array">
       <obj_property name="ElementShortName">hth_1[12:0]</obj_property>
       <obj_property name="ObjectShortName">hth_1[12:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject db_ref_id="1" type="array" fp_name="/SATD_tb/satd/ht_h/hth_2">
+   <wvobject fp_name="/SATD_tb/satd/ht_h/hth_2" type="array">
       <obj_property name="ElementShortName">hth_2[12:0]</obj_property>
       <obj_property name="ObjectShortName">hth_2[12:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject db_ref_id="1" type="array" fp_name="/SATD_tb/satd/ht_h/hth_3">
+   <wvobject fp_name="/SATD_tb/satd/ht_h/hth_3" type="array">
       <obj_property name="ElementShortName">hth_3[12:0]</obj_property>
       <obj_property name="ObjectShortName">hth_3[12:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject db_ref_id="1" type="array" fp_name="/SATD_tb/satd/ht_h/hth_4">
+   <wvobject fp_name="/SATD_tb/satd/ht_h/hth_4" type="array">
       <obj_property name="ElementShortName">hth_4[12:0]</obj_property>
       <obj_property name="ObjectShortName">hth_4[12:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject db_ref_id="1" type="array" fp_name="/SATD_tb/satd/ht_h/hth_5">
+   <wvobject fp_name="/SATD_tb/satd/ht_h/hth_5" type="array">
       <obj_property name="ElementShortName">hth_5[12:0]</obj_property>
       <obj_property name="ObjectShortName">hth_5[12:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject db_ref_id="1" type="array" fp_name="/SATD_tb/satd/ht_h/hth_7">
-      <obj_property name="ElementShortName">hth_7[12:0]</obj_property>
-      <obj_property name="ObjectShortName">hth_7[12:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" type="array" fp_name="/SATD_tb/satd/ht_h/hth_6">
+   <wvobject fp_name="/SATD_tb/satd/ht_h/hth_6" type="array">
       <obj_property name="ElementShortName">hth_6[12:0]</obj_property>
       <obj_property name="ObjectShortName">hth_6[12:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SATD_tb/satd/ht_h/hth_7" type="array">
+      <obj_property name="ElementShortName">hth_7[12:0]</obj_property>
+      <obj_property name="ObjectShortName">hth_7[12:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
 </wave_config>
