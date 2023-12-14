@@ -70,14 +70,14 @@ module ht_horizontal #(parameter WIDTH = 0, parameter SAMPLES = 0) ( input  clk,
     
     
     //cada linha pra UMA AMOSTRA DE n bits
-    wire signed [WIDTH+1:0]column_input_0 = (~sel) ? (right_buffer[0] + left_buffer[0]) : (right_buffer[0] - left_buffer[0]);
-    wire signed [WIDTH+1:0]column_input_1 = (~sel) ? (right_buffer[1] + left_buffer[1]) : (right_buffer[1] - left_buffer[1]);
-    wire signed [WIDTH+1:0]column_input_2 = (~sel) ? (right_buffer[2] + left_buffer[2]) : (right_buffer[2] - left_buffer[2]);
-    wire signed [WIDTH+1:0]column_input_3 = (~sel) ? (right_buffer[3] + left_buffer[3]) : (right_buffer[3] - left_buffer[3]);
-    wire signed [WIDTH+1:0]column_input_4 = (~sel) ? (right_buffer[4] + left_buffer[4]) : (right_buffer[4] - left_buffer[4]);
-    wire signed [WIDTH+1:0]column_input_5 = (~sel) ? (right_buffer[5] + left_buffer[5]) : (right_buffer[5] - left_buffer[5]);   
-    wire signed [WIDTH+1:0]column_input_6 = (~sel) ? (right_buffer[6] + left_buffer[6]) : (right_buffer[6] - left_buffer[6]);
-    wire signed [WIDTH+1:0]column_input_7 = (~sel) ? (right_buffer[7] + left_buffer[7]) : (right_buffer[7] - left_buffer[7]);
+    wire signed [WIDTH+1:0]column0_input_0 = (~sel) ? (right_buffer[0] + left_buffer[0]) : (right_buffer[0] - left_buffer[0]);
+    wire signed [WIDTH+1:0]column0_input_1 = (~sel) ? (right_buffer[1] + left_buffer[1]) : (right_buffer[1] - left_buffer[1]);
+    wire signed [WIDTH+1:0]column0_input_2 = (~sel) ? (right_buffer[2] + left_buffer[2]) : (right_buffer[2] - left_buffer[2]);
+    wire signed [WIDTH+1:0]column0_input_3 = (~sel) ? (right_buffer[3] + left_buffer[3]) : (right_buffer[3] - left_buffer[3]);
+    wire signed [WIDTH+1:0]column0_input_4 = (~sel) ? (right_buffer[4] + left_buffer[4]) : (right_buffer[4] - left_buffer[4]);
+    wire signed [WIDTH+1:0]column0_input_5 = (~sel) ? (right_buffer[5] + left_buffer[5]) : (right_buffer[5] - left_buffer[5]);   
+    wire signed [WIDTH+1:0]column0_input_6 = (~sel) ? (right_buffer[6] + left_buffer[6]) : (right_buffer[6] - left_buffer[6]);
+    wire signed [WIDTH+1:0]column0_input_7 = (~sel) ? (right_buffer[7] + left_buffer[7]) : (right_buffer[7] - left_buffer[7]);
     
     //cada linha pra UMA AMOSTRA DE n bits
     wire signed [WIDTH+1:0]right_input_0 = (~sel) ? diff_buffer[0] : right_buffer[0]; 
@@ -255,14 +255,14 @@ module ht_horizontal #(parameter WIDTH = 0, parameter SAMPLES = 0) ( input  clk,
                     sel = "1"  -> subtracao
                 */
                 
-                column0[0] <= column_input_0;
-                column0[1] <= column_input_1;
-                column0[2] <= column_input_2;
-                column0[3] <= column_input_3;
-                column0[4] <= column_input_4;
-                column0[5] <= column_input_5;
-                column0[6] <= column_input_6;
-                column0[7] <= column_input_7;
+                column0[0] <= column0_input_0;
+                column0[1] <= column0_input_1;
+                column0[2] <= column0_input_2;
+                column0[3] <= column0_input_3;
+                column0[4] <= column0_input_4;
+                column0[5] <= column0_input_5;
+                column0[6] <= column0_input_6;
+                column0[7] <= column0_input_7;
                 
                 column1[0] <= column1_input_0;
                 column1[1] <= column1_input_1;

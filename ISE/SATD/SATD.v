@@ -90,6 +90,17 @@
     wire signed [(WIDTH+4):0] hth_result_6;
     wire signed [(WIDTH+4):0] hth_result_7;
     
+    wire signed [(WIDTH+7):0] htv_result_0;
+    wire signed [(WIDTH+7):0] htv_result_1;
+    wire signed [(WIDTH+7):0] htv_result_2;
+    wire signed [(WIDTH+7):0] htv_result_3;
+    wire signed [(WIDTH+7):0] htv_result_4;
+    wire signed [(WIDTH+7):0] htv_result_5;
+    wire signed [(WIDTH+7):0] htv_result_6;
+    wire signed [(WIDTH+7):0] htv_result_7;
+                                
+
+    
     wire [(WIDTH+ITERATIONS+3):0] sad_result; 
 //Part Instatiation: -----------------------------------------------------------------------
    control_satd control (.clk				(clk),
@@ -144,9 +155,30 @@
                      .hth_7        (hth_result_7));
 
 
-
+    ht_vertical #(.WIDTH (8), .SAMPLES (SAMPLES)) ht_v
+                   (.clk            (clk),
+                    .rst            (RESET_HT_V),
+                    .ena            (ENABLE_HT_V),             
+                    .input_buffer_0 (hth_result_0),
+                    .input_buffer_1 (hth_result_1),
+                    .input_buffer_2 (hth_result_2),
+                    .input_buffer_3 (hth_result_3),
+                    .input_buffer_4 (hth_result_4),
+                    .input_buffer_5 (hth_result_5),
+                    .input_buffer_6 (hth_result_6),
+                    .input_buffer_7 (hth_result_7),
+                    .htv_0          (htv_result_0),
+                    .htv_1          (htv_result_1),
+                    .htv_2          (htv_result_2),
+                    .htv_3          (htv_result_3),
+                    .htv_4          (htv_result_4),
+                    .htv_5          (htv_result_5),
+                    .htv_6          (htv_result_6),
+                    .htv_7          (htv_result_7));
+                                 
+          
     //aq mandar como width a largura da saida das transformadas 
-    absolute_sum #(.WIDTH (8), .SAMPLES (SAMPLES), .ITERATIONS (ITERATIONS)) abs_sum 
+    absolute_sum #(.WIDTH (WIDTH + 7), .SAMPLES (SAMPLES), .ITERATIONS (ITERATIONS)) abs_sum 
                    (.clk           (clk), 
                     .rst           (RESET_SUM),
                     .ena           (ENABLE_SUM),

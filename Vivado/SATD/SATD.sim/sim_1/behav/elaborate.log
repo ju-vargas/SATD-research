@@ -3,6 +3,15 @@ Copyright 1986-1999, 2001-2014 Xilinx, Inc. All Rights Reserved.
 Running: /opt/Xilinx/Vivado/2014.4/bin/unwrapped/lnx64.o/xelab -wto 670e77f9da424c679b552d8a0c37d655 --debug typical --relax -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot SATD_tb_behav xil_defaultlib.SATD_tb xil_defaultlib.glbl -log elaborate.log 
 Multi-threading is on. Using 6 slave threads.
 Starting static elaboration
+WARNING: [VRFC 10-278] actual bit length 9 differs from formal bit length 16 for port diff_0 [/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/SATD.v:185]
+WARNING: [VRFC 10-278] actual bit length 9 differs from formal bit length 16 for port diff_1 [/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/SATD.v:186]
+WARNING: [VRFC 10-278] actual bit length 9 differs from formal bit length 16 for port diff_2 [/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/SATD.v:187]
+WARNING: [VRFC 10-278] actual bit length 9 differs from formal bit length 16 for port diff_3 [/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/SATD.v:188]
+WARNING: [VRFC 10-278] actual bit length 9 differs from formal bit length 16 for port diff_4 [/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/SATD.v:189]
+WARNING: [VRFC 10-278] actual bit length 9 differs from formal bit length 16 for port diff_5 [/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/SATD.v:190]
+WARNING: [VRFC 10-278] actual bit length 9 differs from formal bit length 16 for port diff_6 [/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/SATD.v:191]
+WARNING: [VRFC 10-278] actual bit length 9 differs from formal bit length 16 for port diff_7 [/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/SATD.v:192]
+WARNING: [VRFC 10-278] actual bit length 27 differs from formal bit length 34 for port sad [/home/juliana/Documentos/GitHub/SATD-research/ISE/SATD/SATD.v:193]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
@@ -10,7 +19,8 @@ Time Resolution for simulation is 1ps
 Compiling module xil_defaultlib.control_satd
 Compiling module xil_defaultlib.differences(WIDTH=8,SAMPLES=8)
 Compiling module xil_defaultlib.ht_horizontal(WIDTH=8,SAMPLES=8)
-Compiling module xil_defaultlib.absolute_sum(WIDTH=8,SAMPLES=8,I...
+Compiling module xil_defaultlib.ht_vertical(WIDTH=8,SAMPLES=8)
+Compiling module xil_defaultlib.absolute_sum(WIDTH=15,SAMPLES=8,...
 Compiling module xil_defaultlib.SATD(WIDTH=8,SAMPLES=8,ITERATION...
 Compiling module xil_defaultlib.SATD_tb
 Compiling module xil_defaultlib.glbl

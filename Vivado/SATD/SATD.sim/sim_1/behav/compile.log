@@ -1,4 +1,6 @@
 Determining compilation order of HDL files.
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/juliana/Documentos/GitHub/SATD-research/Vivado/SATD/SATD.srcs/sources_1/new/ht_vertical.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ht_vertical
 INFO: [VRFC 10-2263] Analyzing Verilog file "/home/juliana/Documentos/GitHub/SATD-research/Vivado/SATD/SATD.srcs/sources_1/new/ht_horizontal.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module ht_horizontal
 INFO: [VRFC 10-2263] Analyzing Verilog file "/home/juliana/Documentos/GitHub/SATD-research/Vivado/SATD/SATD.srcs/sources_1/new/abs_sum.v" into library xil_defaultlib
