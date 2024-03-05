@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="ht_vertical_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="ht_vertical_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="10747000fs"></ZoomStartTime>
+      <ZoomEndTime time="120747001fs"></ZoomEndTime>
+      <Cursor1Time time="29159000fs"></Cursor1Time>
+   </zoom_setting>
+   <WVObjectSize size="28" />
+   <wvobject db_ref_id="1" type="logic" fp_name="/ht_vertical_tb/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/ht_vertical_tb/rst">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/ht_vertical_tb/ena">
+      <obj_property name="ElementShortName">ena</obj_property>
+      <obj_property name="ObjectShortName">ena</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/ht_vertical_tb/sel">
+      <obj_property name="ElementShortName">sel</obj_property>
+      <obj_property name="ObjectShortName">sel</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/ht_vertical_tb/hth_0">
+      <obj_property name="ElementShortName">hth_0[10:0]</obj_property>
+      <obj_property name="ObjectShortName">hth_0[10:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/ht_vertical_tb/hth_1">
+      <obj_property name="ElementShortName">hth_1[10:0]</obj_property>
+      <obj_property name="ObjectShortName">hth_1[10:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/ht_vertical_tb/hth_2">
+      <obj_property name="ElementShortName">hth_2[10:0]</obj_property>
+      <obj_property name="ObjectShortName">hth_2[10:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/ht_vertical_tb/hth_3">
+      <obj_property name="ElementShortName">hth_3[10:0]</obj_property>
+      <obj_property name="ObjectShortName">hth_3[10:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/ht_vertical_tb/hth_4">
+      <obj_property name="ElementShortName">hth_4[10:0]</obj_property>
+      <obj_property name="ObjectShortName">hth_4[10:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/ht_vertical_tb/hth_5">
+      <obj_property name="ElementShortName">hth_5[10:0]</obj_property>
+      <obj_property name="ObjectShortName">hth_5[10:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/ht_vertical_tb/hth_6">
+      <obj_property name="ElementShortName">hth_6[10:0]</obj_property>
+      <obj_property name="ObjectShortName">hth_6[10:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/ht_vertical_tb/hth_7">
+      <obj_property name="ElementShortName">hth_7[10:0]</obj_property>
+      <obj_property name="ObjectShortName">hth_7[10:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/ht_vertical_tb/hth_8">
+      <obj_property name="ElementShortName">hth_8[10:0]</obj_property>
+      <obj_property name="ObjectShortName">hth_8[10:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/ht_vertical_tb/hth_9">
+      <obj_property name="ElementShortName">hth_9[10:0]</obj_property>
+      <obj_property name="ObjectShortName">hth_9[10:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/ht_vertical_tb/hth_10">
+      <obj_property name="ElementShortName">hth_10[10:0]</obj_property>
+      <obj_property name="ObjectShortName">hth_10[10:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/ht_vertical_tb/hth_11">
+      <obj_property name="ElementShortName">hth_11[10:0]</obj_property>
+      <obj_property name="ObjectShortName">hth_11[10:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/ht_vertical_tb/hth_12">
+      <obj_property name="ElementShortName">hth_12[10:0]</obj_property>
+      <obj_property name="ObjectShortName">hth_12[10:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/ht_vertical_tb/hth_13">
+      <obj_property name="ElementShortName">hth_13[10:0]</obj_property>
+      <obj_property name="ObjectShortName">hth_13[10:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/ht_vertical_tb/hth_14">
+      <obj_property name="ElementShortName">hth_14[10:0]</obj_property>
+      <obj_property name="ObjectShortName">hth_14[10:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/ht_vertical_tb/hth_15">
+      <obj_property name="ElementShortName">hth_15[10:0]</obj_property>
+      <obj_property name="ObjectShortName">hth_15[10:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/ht_vertical_tb/htv_0">
+      <obj_property name="ElementShortName">htv_0[14:0]</obj_property>
+      <obj_property name="ObjectShortName">htv_0[14:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/ht_vertical_tb/htv_1">
+      <obj_property name="ElementShortName">htv_1[14:0]</obj_property>
+      <obj_property name="ObjectShortName">htv_1[14:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/ht_vertical_tb/htv_2">
+      <obj_property name="ElementShortName">htv_2[14:0]</obj_property>
+      <obj_property name="ObjectShortName">htv_2[14:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/ht_vertical_tb/htv_3">
+      <obj_property name="ElementShortName">htv_3[14:0]</obj_property>
+      <obj_property name="ObjectShortName">htv_3[14:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/ht_vertical_tb/htv_4">
+      <obj_property name="ElementShortName">htv_4[14:0]</obj_property>
+      <obj_property name="ObjectShortName">htv_4[14:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/ht_vertical_tb/htv_5">
+      <obj_property name="ElementShortName">htv_5[14:0]</obj_property>
+      <obj_property name="ObjectShortName">htv_5[14:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/ht_vertical_tb/htv_6">
+      <obj_property name="ElementShortName">htv_6[14:0]</obj_property>
+      <obj_property name="ObjectShortName">htv_6[14:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/ht_vertical_tb/htv_7">
+      <obj_property name="ElementShortName">htv_7[14:0]</obj_property>
+      <obj_property name="ObjectShortName">htv_7[14:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+</wave_config>

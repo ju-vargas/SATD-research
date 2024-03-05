@@ -1,0 +1,12 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/juliana/LinFiles/Documents/GitHub/SATD-research/Emicro/SATD-8x16/SATD-8x16.srcs/sources_1/new/ht_vertical.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ht_vertical
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/juliana/LinFiles/Documents/GitHub/SATD-research/Emicro/SATD-8x16/SATD-8x16.srcs/sources_1/new/horizontal.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ht_horizontal
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/juliana/LinFiles/Documents/GitHub/SATD-research/Emicro/SATD-8x16/SATD-8x16.srcs/sources_1/new/buffer.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module buffer
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/juliana/LinFiles/Documents/GitHub/SATD-research/Emicro/SATD-8x16/SATD-8x16.srcs/sim_1/new/ht_vertical_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ht_vertical_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/juliana/LinFiles/Documents/GitHub/SATD-research/Emicro/SATD-8x16/SATD-8x16.srcs/sim_1/new/ht_horizontal_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ht_horizontal_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/juliana/LinFiles/Documents/GitHub/SATD-research/Emicro/SATD-8x16/SATD-8x16.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
