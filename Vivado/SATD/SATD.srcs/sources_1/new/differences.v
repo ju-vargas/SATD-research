@@ -34,9 +34,6 @@ module differences #(parameter WIDTH = 0, parameter SAMPLES = 0) ( input  clk,
 //Part 2: Declarations ----------------------------------------------------------
 	
 //Part 3: Statements ------------------------------------------------------------
-
-	//combinational part
-	//tirar reset e clk eh uma boa? 
 	
     assign diff_0 = (ORG[(WIDTH)-1:0]   		- CUR[(WIDTH)-1:0]);
     assign diff_1 = (ORG[(2*WIDTH)-1:(WIDTH)]   - CUR[(2*WIDTH)-1:(WIDTH)]);
