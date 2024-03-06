@@ -299,3 +299,297 @@ module sum #(parameter LENGTH = 0, parameter WIDTH = 0, parameter HEIGHT = 0)
             end
         end
     end
+
+
+//============================
+    block #(
+        .LENGTH(LENGTH),
+        .WIDTH(WIDTH),
+        .HEIGHT(HEIGHT)
+    ) block_0 (
+        .ORG(ORG),
+        .CUR(CUR),
+        .hth_result_0(hth_result[0]),
+        .hth_result_1(hth_result[1]),
+        .hth_result_2(hth_result[2]),
+        .hth_result_3(hth_result[3]),
+        .hth_result_4(hth_result[4]),
+        .hth_result_5(hth_result[5]),
+        .hth_result_6(hth_result[6]),
+        .hth_result_7(hth_result[7])
+    );
+    
+    
+    block #(
+        .LENGTH(LENGTH),
+        .WIDTH(WIDTH),
+        .HEIGHT(HEIGHT)
+    ) block_1 (
+        .ORG(ORG),
+        .CUR(CUR),
+        .hth_result_0(hth_result[8]),
+        .hth_result_1(hth_result[9]),
+        .hth_result_2(hth_result[10]),
+        .hth_result_3(hth_result[11]),
+        .hth_result_4(hth_result[12]),
+        .hth_result_5(hth_result[13]),
+        .hth_result_6(hth_result[14]),
+        .hth_result_7(hth_result[15])
+    );
+
+    
+    block #(
+        .LENGTH(LENGTH),
+        .WIDTH(WIDTH),
+        .HEIGHT(HEIGHT)
+    ) block_2 (
+        .ORG(ORG),
+        .CUR(CUR),
+        .hth_result_0(hth_result[16]),
+        .hth_result_1(hth_result[17]),
+        .hth_result_2(hth_result[18]),
+        .hth_result_3(hth_result[19]),
+        .hth_result_4(hth_result[20]),
+        .hth_result_5(hth_result[21]),
+        .hth_result_6(hth_result[22]),
+        .hth_result_7(hth_result[23])
+    );
+    
+    
+    block #(
+        .LENGTH(LENGTH),
+        .WIDTH(WIDTH),
+        .HEIGHT(HEIGHT)
+    ) block_3 (
+        .ORG(ORG),
+        .CUR(CUR),
+        .hth_result_0(hth_result[24]),
+        .hth_result_1(hth_result[25]),
+        .hth_result_2(hth_result[26]),
+        .hth_result_3(hth_result[27]),
+        .hth_result_4(hth_result[28]),
+        .hth_result_5(hth_result[29]),
+        .hth_result_6(hth_result[30]),
+        .hth_result_7(hth_result[31])
+    );
+    
+    
+    block #(
+        .LENGTH(LENGTH),
+        .WIDTH(WIDTH),
+        .HEIGHT(HEIGHT)
+    ) block_4 (
+        .ORG(ORG),
+        .CUR(CUR),
+        .hth_result_0(hth_result[32]),
+        .hth_result_1(hth_result[33]),
+        .hth_result_2(hth_result[34]),
+        .hth_result_3(hth_result[35]),
+        .hth_result_4(hth_result[36]),
+        .hth_result_5(hth_result[37]),
+        .hth_result_6(hth_result[38]),
+        .hth_result_7(hth_result[39])
+
+    );
+    
+    
+    block #(
+        .LENGTH(LENGTH),
+        .WIDTH(WIDTH),
+        .HEIGHT(HEIGHT)
+    ) block_5 (
+        .ORG(ORG),
+        .CUR(CUR),
+        .hth_result_0(hth_result[40]),
+        .hth_result_1(hth_result[41]),
+        .hth_result_2(hth_result[42]),
+        .hth_result_3(hth_result[43]),
+        .hth_result_4(hth_result[44]),
+        .hth_result_5(hth_result[45]),
+        .hth_result_6(hth_result[46]),
+        .hth_result_7(hth_result[47])
+
+    );
+    
+    
+    
+    block #(
+        .LENGTH(LENGTH),
+        .WIDTH(WIDTH),
+        .HEIGHT(HEIGHT)
+    ) block_6 (
+        .ORG(ORG),
+        .CUR(CUR),
+        .hth_result_0(hth_result[48]),
+        .hth_result_1(hth_result[49]),
+        .hth_result_2(hth_result[50]),
+        .hth_result_3(hth_result[51]),
+        .hth_result_4(hth_result[52]),
+        .hth_result_5(hth_result[53]),
+        .hth_result_6(hth_result[54]),
+        .hth_result_7(hth_result[55])
+    );
+   
+   
+     block #(
+         .LENGTH(LENGTH),
+         .WIDTH(WIDTH),
+         .HEIGHT(HEIGHT)
+     ) block_7 (
+         .ORG(ORG),
+         .CUR(CUR),
+         .hth_result_0(hth_result[56]),
+         .hth_result_1(hth_result[57]),
+         .hth_result_2(hth_result[58]),
+         .hth_result_3(hth_result[59]),
+         .hth_result_4(hth_result[60]),
+         .hth_result_5(hth_result[61]),
+         .hth_result_6(hth_result[62]),
+         .hth_result_7(hth_result[63])
+     );
+     
+     
+     block #(
+         .LENGTH(LENGTH),
+         .WIDTH(WIDTH),
+         .HEIGHT(HEIGHT)
+     ) block_8 (
+         .ORG(ORG),
+         .CUR(CUR),
+         .hth_result_0(hth_result[64]),
+         .hth_result_1(hth_result[65]),
+         .hth_result_2(hth_result[66]),
+         .hth_result_3(hth_result[67]),
+         .hth_result_4(hth_result[68]),
+         .hth_result_5(hth_result[69]),
+         .hth_result_6(hth_result[70]),
+         .hth_result_7(hth_result[71])
+
+     );
+ 
+     
+     block #(
+         .LENGTH(LENGTH),
+         .WIDTH(WIDTH),
+         .HEIGHT(HEIGHT)
+     ) block_9 (
+         .ORG(ORG),
+         .CUR(CUR),
+         .hth_result_0(hth_result[72]),
+         .hth_result_1(hth_result[73]),
+         .hth_result_2(hth_result[74]),
+         .hth_result_3(hth_result[75]),
+         .hth_result_4(hth_result[76]),
+         .hth_result_5(hth_result[77]),
+         .hth_result_6(hth_result[78]),
+         .hth_result_7(hth_result[79])
+
+     );
+     
+     
+     block #(
+         .LENGTH(LENGTH),
+         .WIDTH(WIDTH),
+         .HEIGHT(HEIGHT)
+     ) block_10 (
+         .ORG(ORG),
+         .CUR(CUR),
+         .hth_result_0(hth_result[80]),
+         .hth_result_1(hth_result[81]),
+         .hth_result_2(hth_result[82]),
+         .hth_result_3(hth_result[83]),
+         .hth_result_4(hth_result[84]),
+         .hth_result_5(hth_result[85]),
+         .hth_result_6(hth_result[86]),
+         .hth_result_7(hth_result[87])
+     );
+     
+     
+     block #(
+         .LENGTH(LENGTH),
+         .WIDTH(WIDTH),
+         .HEIGHT(HEIGHT)
+     ) block_11 (
+         .ORG(ORG),
+         .CUR(CUR),
+         .hth_result_0(hth_result[88]),
+         .hth_result_1(hth_result[89]),
+         .hth_result_2(hth_result[90]),
+         .hth_result_3(hth_result[91]),
+         .hth_result_4(hth_result[92]),
+         .hth_result_5(hth_result[93]),
+         .hth_result_6(hth_result[94]),
+         .hth_result_7(hth_result[95])
+     );
+     
+     
+     block #(
+         .LENGTH(LENGTH),
+         .WIDTH(WIDTH),
+         .HEIGHT(HEIGHT)
+     ) block_12 (
+         .ORG(ORG),
+         .CUR(CUR),
+         .hth_result_0(hth_result[96]),
+         .hth_result_1(hth_result[97]),
+         .hth_result_2(hth_result[98]),
+         .hth_result_3(hth_result[99]),
+         .hth_result_4(hth_result[100]),
+         .hth_result_5(hth_result[101]),
+         .hth_result_6(hth_result[102]),
+         .hth_result_7(hth_result[103])
+     );
+     
+     
+     block #(
+         .LENGTH(LENGTH),
+         .WIDTH(WIDTH),
+         .HEIGHT(HEIGHT)
+     ) block_13 (
+         .ORG(ORG),
+         .CUR(CUR),
+         .hth_result_0(hth_result[104]),
+         .hth_result_1(hth_result[105]),
+         .hth_result_2(hth_result[106]),
+         .hth_result_3(hth_result[107]),
+         .hth_result_4(hth_result[108]),
+         .hth_result_5(hth_result[109]),
+         .hth_result_6(hth_result[110]),
+         .hth_result_7(hth_result[111])
+     );
+     
+     
+     
+     block #(
+         .LENGTH(LENGTH),
+         .WIDTH(WIDTH),
+         .HEIGHT(HEIGHT)
+     ) block_14 (
+         .ORG(ORG),
+         .CUR(CUR),
+         .hth_result_0(hth_result[112]),
+         .hth_result_1(hth_result[113]),
+         .hth_result_2(hth_result[114]),
+         .hth_result_3(hth_result[115]),
+         .hth_result_4(hth_result[116]),
+         .hth_result_5(hth_result[117]),
+         .hth_result_6(hth_result[118]),
+         .hth_result_7(hth_result[119])
+     );
+    
+     block #(
+         .LENGTH(LENGTH),
+         .WIDTH(WIDTH),
+         .HEIGHT(HEIGHT)
+     ) block_15 (
+         .ORG(ORG),
+         .CUR(CUR),     
+         .hth_result_0(hth_result[120]),
+         .hth_result_1(hth_result[121]),
+         .hth_result_2(hth_result[122]),
+         .hth_result_3(hth_result[123]),
+         .hth_result_4(hth_result[124]),
+         .hth_result_5(hth_result[125]),
+         .hth_result_6(hth_result[126]),
+         .hth_result_7(hth_result[127])
+     );

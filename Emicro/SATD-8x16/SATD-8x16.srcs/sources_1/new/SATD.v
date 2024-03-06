@@ -37,14 +37,14 @@
     wire [LENGTH+11:0] satd;
     
     // wires
-    wire signed [LENGTH:0] diff_result_0;
-    wire signed [LENGTH:0] diff_result_1;
-    wire signed [LENGTH:0] diff_result_2;
-    wire signed [LENGTH:0] diff_result_3;
-    wire signed [LENGTH:0] diff_result_4;
-    wire signed [LENGTH:0] diff_result_5;
-    wire signed [LENGTH:0] diff_result_6;
-    wire signed [LENGTH:0] diff_result_7;
+    wire signed [LENGTH+1:0] diff_result_0;
+    wire signed [LENGTH+1:0] diff_result_1;
+    wire signed [LENGTH+1:0] diff_result_2;
+    wire signed [LENGTH+1:0] diff_result_3;
+    wire signed [LENGTH+1:0] diff_result_4;
+    wire signed [LENGTH+1:0] diff_result_5;
+    wire signed [LENGTH+1:0] diff_result_6;
+    wire signed [LENGTH+1:0] diff_result_7;
 
     wire signed [(LENGTH+3):0] hth_result_0;
     wire signed [(LENGTH+3):0] hth_result_1;
@@ -93,7 +93,6 @@
         .WIDTH(WIDTH),
         .HEIGHT(HEIGHT)
     ) diff (
-        .clk(clk),
         .ORG(ORG),
         .CUR(CUR),
         .diff_0(diff_result_0),
@@ -108,13 +107,10 @@
     
     
     ht_horizontal #(
-        .LENGTH(LENGTH),
+        .LENGTH(LENGTH+1),
         .WIDTH(WIDTH),
         .HEIGHT(HEIGHT)
     ) hth (
-        .clk(clk),
-        .rst(rst),
-        .ena(ena),
         .diff_0(diff_result_0),
         .diff_1(diff_result_1),
         .diff_2(diff_result_2),

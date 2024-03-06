@@ -20,17 +20,16 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 module differences #(parameter LENGTH = 0, parameter WIDTH = 0, parameter HEIGHT = 0) 
-   (input  clk,
-	input wire [((LENGTH+1)*WIDTH)-1:0] ORG,
+   (input wire [((LENGTH+1)*WIDTH)-1:0] ORG,
 	input wire [((LENGTH+1)*WIDTH)-1:0] CUR,
-	output signed [LENGTH:0]diff_0,
-    output signed [LENGTH:0]diff_1,
-    output signed [LENGTH:0]diff_2,
-    output signed [LENGTH:0]diff_3,
-    output signed [LENGTH:0]diff_4,
-    output signed [LENGTH:0]diff_5,
-    output signed [LENGTH:0]diff_6,
-    output signed [LENGTH:0]diff_7);
+	output signed [(LENGTH+1):0]diff_0,
+    output signed [(LENGTH+1):0]diff_1,
+    output signed [(LENGTH+1):0]diff_2,
+    output signed [(LENGTH+1):0]diff_3,
+    output signed [(LENGTH+1):0]diff_4,
+    output signed [(LENGTH+1):0]diff_5,
+    output signed [(LENGTH+1):0]diff_6,
+    output signed [(LENGTH+1):0]diff_7);
 
 						 	
 //Part 2: Declarations ----------------------------------------------------------

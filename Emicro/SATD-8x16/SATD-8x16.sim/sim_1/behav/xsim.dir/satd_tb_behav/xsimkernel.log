@@ -1,7 +1,0 @@
-Running: xsim.dir/satd_tb_behav/xsimk -simmode gui -wdb satd_tb_behav.wdb -simrunnum 0 -socket 52613
-Design successfully loaded
-Design Loading Memory Usage: 84504 KB (Peak: 84852 KB)
-Design Loading CPU Usage: 70 ms
-Simulation completed
-Simulation Memory Usage: 227872 KB (Peak: 293408 KB)
-Simulation CPU Usage: 90 ms
