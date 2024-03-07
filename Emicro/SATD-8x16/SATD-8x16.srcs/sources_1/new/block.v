@@ -20,9 +20,10 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module block #(parameter LENGTH = 0, parameter WIDTH = 0, parameter HEIGHT = 0)
-   (input wire [((LENGTH+1)*WIDTH)-1:0] ORG,
+module block #(parameter LENGTH = 11, parameter WIDTH = 8, parameter HEIGHT = 16)
+   (input wire [((LENGTH+1)*WIDTH)-1:0] ORG,  
     input wire [((LENGTH+1)*WIDTH)-1:0] CUR,
+    
     
     output wire signed [(LENGTH+1+3):0]hth_result_0,
     output wire signed [(LENGTH+1+3):0]hth_result_1,

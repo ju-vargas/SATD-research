@@ -19,7 +19,7 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-module differences #(parameter LENGTH = 0, parameter WIDTH = 0, parameter HEIGHT = 0) 
+module differences #(parameter LENGTH = 11, parameter WIDTH = 8, parameter HEIGHT = 16) 
    (input wire [((LENGTH+1)*WIDTH)-1:0] ORG,
 	input wire [((LENGTH+1)*WIDTH)-1:0] CUR,
 	output signed [(LENGTH+1):0]diff_0,
@@ -36,13 +36,13 @@ module differences #(parameter LENGTH = 0, parameter WIDTH = 0, parameter HEIGHT
 	
 //Part 3: Statements ------------------------------------------------------------
 	
-    assign diff_0 = (ORG[(LENGTH)-1:0]   		  - CUR[(LENGTH)-1:0]);
-    assign diff_1 = (ORG[(2*LENGTH)-1:(LENGTH)]   - CUR[(2*LENGTH)-1:(LENGTH)]);
-    assign diff_2 = (ORG[(3*LENGTH)-1:(2*LENGTH)] - CUR[(3*LENGTH)-1:(2*LENGTH)]);
-    assign diff_3 = (ORG[(4*LENGTH)-1:(3*LENGTH)] - CUR[(4*LENGTH)-1:(3*LENGTH)]);
-    assign diff_4 = (ORG[(5*LENGTH)-1:(4*LENGTH)] - CUR[(5*LENGTH)-1:(4*LENGTH)]);
-    assign diff_5 = (ORG[(6*LENGTH)-1:(5*LENGTH)] - CUR[(6*LENGTH)-1:(5*LENGTH)]);
-    assign diff_6 = (ORG[(7*LENGTH)-1:(6*LENGTH)] - CUR[(7*LENGTH)-1:(6*LENGTH)]);
-    assign diff_7 = (ORG[(8*LENGTH)-1:(7*LENGTH)] - CUR[(8*LENGTH)-1:(7*LENGTH)]);
+    assign diff_0 = (ORG[(LENGTH+1)-1:0]   		          - CUR[(LENGTH+1)-1:0]);
+    assign diff_1 = (ORG[(2*(LENGTH+1))-1:(LENGTH+1)]     - CUR[(2*(LENGTH+1))-1:(LENGTH+1)]);
+    assign diff_2 = (ORG[(3*(LENGTH+1))-1:(2*(LENGTH+1))] - CUR[(3*(LENGTH+1))-1:(2*(LENGTH+1))]);
+    assign diff_3 = (ORG[(4*(LENGTH+1))-1:(3*(LENGTH+1))] - CUR[(4*(LENGTH+1))-1:(3*(LENGTH+1))]);
+    assign diff_4 = (ORG[(5*(LENGTH+1))-1:(4*(LENGTH+1))] - CUR[(5*(LENGTH+1))-1:(4*(LENGTH+1))]);
+    assign diff_5 = (ORG[(6*(LENGTH+1))-1:(5*(LENGTH+1))] - CUR[(6*(LENGTH+1))-1:(5*(LENGTH+1))]);
+    assign diff_6 = (ORG[(7*(LENGTH+1))-1:(6*(LENGTH+1))] - CUR[(7*(LENGTH+1))-1:(6*(LENGTH+1))]);
+    assign diff_7 = (ORG[(8*(LENGTH+1))-1:(7*(LENGTH+1))] - CUR[(8*(LENGTH+1))-1:(7*(LENGTH+1))]);
 
 endmodule

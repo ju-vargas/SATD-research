@@ -593,3 +593,16 @@ module sum #(parameter LENGTH = 0, parameter WIDTH = 0, parameter HEIGHT = 0)
          .hth_result_6(hth_result[126]),
          .hth_result_7(hth_result[127])
      );
+
+
+
+
+     //=========
+     assign hth_0 = (({{n{diff_0[LENGTH]}}, diff_0} + {{n{diff_4[LENGTH]}},diff_4}) + ({{n{diff_2[LENGTH]}},diff_2} + {{n{diff_6[LENGTH]}},diff_6})) + (({{n{diff_1[LENGTH]}},diff_1} + {{n{diff_5[LENGTH]}},diff_5}) + ({{n{diff_3[LENGTH]}},diff_3} + {{n{diff_7[LENGTH]}},diff_7}));
+     assign hth_1 = (({{n{diff_0[LENGTH]}}, diff_0} + {{n{diff_4[LENGTH]}},diff_4}) + ({{n{diff_2[LENGTH]}},diff_2} + {{n{diff_6[LENGTH]}},diff_6})) - (({{n{diff_1[LENGTH]}},diff_1} + {{n{diff_5[LENGTH]}},diff_5}) + ({{n{diff_3[LENGTH]}},diff_3} + {{n{diff_7[LENGTH]}},diff_7}));
+     assign hth_2 = (({{n{diff_0[LENGTH]}}, diff_0} + {{n{diff_4[LENGTH]}},diff_4}) - ({{n{diff_2[LENGTH]}},diff_2} + {{n{diff_6[LENGTH]}},diff_6})) + (({{n{diff_1[LENGTH]}},diff_1} + {{n{diff_5[LENGTH]}},diff_5}) - ({{n{diff_3[LENGTH]}},diff_3} + {{n{diff_7[LENGTH]}},diff_7}));
+     assign hth_3 = (({{n{diff_0[LENGTH]}}, diff_0} + {{n{diff_4[LENGTH]}},diff_4}) - ({{n{diff_2[LENGTH]}},diff_2} + {{n{diff_6[LENGTH]}},diff_6})) - (({{n{diff_1[LENGTH]}},diff_1} + {{n{diff_5[LENGTH]}},diff_5}) - ({{n{diff_3[LENGTH]}},diff_3} + {{n{diff_7[LENGTH]}},diff_7}));
+     assign hth_4 = (({{n{diff_0[LENGTH]}}, diff_0} - {{n{diff_4[LENGTH]}},diff_4}) + ({{n{diff_2[LENGTH]}},diff_2} - {{n{diff_6[LENGTH]}},diff_6})) + (({{n{diff_1[LENGTH]}},diff_1} - {{n{diff_5[LENGTH]}},diff_5}) + ({{n{diff_3[LENGTH]}},diff_3} - {{n{diff_7[LENGTH]}},diff_7}));
+     assign hth_5 = (({{n{diff_0[LENGTH]}}, diff_0} - {{n{diff_4[LENGTH]}},diff_4}) + ({{n{diff_2[LENGTH]}},diff_2} - {{n{diff_6[LENGTH]}},diff_6})) - (({{n{diff_1[LENGTH]}},diff_1} - {{n{diff_5[LENGTH]}},diff_5}) + ({{n{diff_3[LENGTH]}},diff_3} - {{n{diff_7[LENGTH]}},diff_7}));
+     assign hth_6 = (({{n{diff_0[LENGTH]}}, diff_0} - {{n{diff_4[LENGTH]}},diff_4}) - ({{n{diff_2[LENGTH]}},diff_2} - {{n{diff_6[LENGTH]}},diff_6})) + (({{n{diff_1[LENGTH]}},diff_1} - {{n{diff_5[LENGTH]}},diff_5}) - ({{n{diff_3[LENGTH]}},diff_3} - {{n{diff_7[LENGTH]}},diff_7}));
+     assign hth_7 = (({{n{diff_0[LENGTH]}}, diff_0} - {{n{diff_4[LENGTH]}},diff_4}) - ({{n{diff_2[LENGTH]}},diff_2} - {{n{diff_6[LENGTH]}},diff_6})) - (({{n{diff_1[LENGTH]}},diff_1} - {{n{diff_5[LENGTH]}},diff_5}) - ({{n{diff_3[LENGTH]}},diff_3} - {{n{diff_7[LENGTH]}},diff_7}));

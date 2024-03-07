@@ -24,26 +24,25 @@ module comb_precise #(parameter LENGTH = 11 , parameter WIDTH = 8, parameter HEI
    (input clk,
     input rst,
     input ena, 
-    input wire [((LENGTH+1)*WIDTH)-1:0] ORG,
-    input wire [((LENGTH+1)*WIDTH)-1:0] CUR,
-    output reg [(LENGTH+7+4):0] satd);
+    input wire [((HEIGHT*WIDTH)*(LENGTH+1))-1:0] ORG,
+    input wire [((HEIGHT*WIDTH)*(LENGTH+1))-1:0] CUR,
+    output reg [(LENGTH+11+4):0] satd);
           
-    wire signed [(LENGTH+1+3):0] hth_result[(WIDTH * HEIGHT)-1:0]; 
-    wire signed [(LENGTH+7):0]sum_partial [7:0];
+    wire signed [(LENGTH+1+3):0]   hth_result[(WIDTH * HEIGHT)-1:0]; 
+    wire [(LENGTH+4+7):0]   sum_partial [7:0];
     
-    wire [(LENGTH+7+1):0] satd_0[3:0];
-    wire [(LENGTH+7+2):0] satd_1[1:0];
-    wire [(LENGTH+7+3):0] satd_2;  
+    wire [(LENGTH+11+1):0] satd_0[3:0];
+    wire [(LENGTH+11+2):0] satd_1[1:0];
+    wire [(LENGTH+11+3):0] satd_2;  
     
     reg sel; 
     
     block #(
-        .LENGTH(LENGTH),
-        .WIDTH(WIDTH),
+        .LENGTH(LENGTH),        .WIDTH(WIDTH),
         .HEIGHT(HEIGHT)
     ) block_0 (
-        .ORG(ORG),
-        .CUR(CUR),
+        .ORG(ORG[((WIDTH*(LENGTH+1)*1)-1)-:((LENGTH+1)*WIDTH)]),
+        .CUR(CUR[((WIDTH*(LENGTH+1)*1)-1)-:((LENGTH+1)*WIDTH)]),
         .hth_result_0(hth_result[0]),
         .hth_result_1(hth_result[1]),
         .hth_result_2(hth_result[2]),
@@ -60,8 +59,8 @@ module comb_precise #(parameter LENGTH = 11 , parameter WIDTH = 8, parameter HEI
         .WIDTH(WIDTH),
         .HEIGHT(HEIGHT)
     ) block_1 (
-        .ORG(ORG),
-        .CUR(CUR),
+        .ORG(ORG[((WIDTH*(LENGTH+1)*2)-1)-:((LENGTH+1)*WIDTH)]),
+        .CUR(CUR[((WIDTH*(LENGTH+1)*2)-1)-:((LENGTH+1)*WIDTH)]),
         .hth_result_0(hth_result[8]),
         .hth_result_1(hth_result[9]),
         .hth_result_2(hth_result[10]),
@@ -78,8 +77,8 @@ module comb_precise #(parameter LENGTH = 11 , parameter WIDTH = 8, parameter HEI
         .WIDTH(WIDTH),
         .HEIGHT(HEIGHT)
     ) block_2 (
-        .ORG(ORG),
-        .CUR(CUR),
+        .ORG(ORG[((WIDTH*(LENGTH+1)*3)-1)-:((LENGTH+1)*WIDTH)]),
+        .CUR(CUR[((WIDTH*(LENGTH+1)*3)-1)-:((LENGTH+1)*WIDTH)]),
         .hth_result_0(hth_result[16]),
         .hth_result_1(hth_result[17]),
         .hth_result_2(hth_result[18]),
@@ -96,8 +95,8 @@ module comb_precise #(parameter LENGTH = 11 , parameter WIDTH = 8, parameter HEI
         .WIDTH(WIDTH),
         .HEIGHT(HEIGHT)
     ) block_3 (
-        .ORG(ORG),
-        .CUR(CUR),
+        .ORG(ORG[((WIDTH*(LENGTH+1)*4)-1)-:((LENGTH+1)*WIDTH)]),
+        .CUR(CUR[((WIDTH*(LENGTH+1)*4)-1)-:((LENGTH+1)*WIDTH)]),
         .hth_result_0(hth_result[24]),
         .hth_result_1(hth_result[25]),
         .hth_result_2(hth_result[26]),
@@ -114,8 +113,8 @@ module comb_precise #(parameter LENGTH = 11 , parameter WIDTH = 8, parameter HEI
         .WIDTH(WIDTH),
         .HEIGHT(HEIGHT)
     ) block_4 (
-        .ORG(ORG),
-        .CUR(CUR),
+        .ORG(ORG[((WIDTH*(LENGTH+1)*5)-1)-:((LENGTH+1)*WIDTH)]),
+        .CUR(CUR[((WIDTH*(LENGTH+1)*5)-1)-:((LENGTH+1)*WIDTH)]),
         .hth_result_0(hth_result[32]),
         .hth_result_1(hth_result[33]),
         .hth_result_2(hth_result[34]),
@@ -133,8 +132,8 @@ module comb_precise #(parameter LENGTH = 11 , parameter WIDTH = 8, parameter HEI
         .WIDTH(WIDTH),
         .HEIGHT(HEIGHT)
     ) block_5 (
-        .ORG(ORG),
-        .CUR(CUR),
+        .ORG(ORG[((WIDTH*(LENGTH+1)*6)-1)-:((LENGTH+1)*WIDTH)]),
+        .CUR(CUR[((WIDTH*(LENGTH+1)*6)-1)-:((LENGTH+1)*WIDTH)]),
         .hth_result_0(hth_result[40]),
         .hth_result_1(hth_result[41]),
         .hth_result_2(hth_result[42]),
@@ -153,8 +152,8 @@ module comb_precise #(parameter LENGTH = 11 , parameter WIDTH = 8, parameter HEI
         .WIDTH(WIDTH),
         .HEIGHT(HEIGHT)
     ) block_6 (
-        .ORG(ORG),
-        .CUR(CUR),
+        .ORG(ORG[((WIDTH*(LENGTH+1)*7)-1)-:((LENGTH+1)*WIDTH)]),
+        .CUR(CUR[((WIDTH*(LENGTH+1)*7)-1)-:((LENGTH+1)*WIDTH)]),
         .hth_result_0(hth_result[48]),
         .hth_result_1(hth_result[49]),
         .hth_result_2(hth_result[50]),
@@ -171,8 +170,8 @@ module comb_precise #(parameter LENGTH = 11 , parameter WIDTH = 8, parameter HEI
          .WIDTH(WIDTH),
          .HEIGHT(HEIGHT)
      ) block_7 (
-         .ORG(ORG),
-         .CUR(CUR),
+         .ORG(ORG[((WIDTH*(LENGTH+1)*8)-1)-:((LENGTH+1)*WIDTH)]),
+         .CUR(CUR[((WIDTH*(LENGTH+1)*8)-1)-:((LENGTH+1)*WIDTH)]),
          .hth_result_0(hth_result[56]),
          .hth_result_1(hth_result[57]),
          .hth_result_2(hth_result[58]),
@@ -189,8 +188,8 @@ module comb_precise #(parameter LENGTH = 11 , parameter WIDTH = 8, parameter HEI
          .WIDTH(WIDTH),
          .HEIGHT(HEIGHT)
      ) block_8 (
-         .ORG(ORG),
-         .CUR(CUR),
+         .ORG(ORG[((WIDTH*(LENGTH+1)*9)-1)-:((LENGTH+1)*WIDTH)]),
+         .CUR(CUR[((WIDTH*(LENGTH+1)*9)-1)-:((LENGTH+1)*WIDTH)]),
          .hth_result_0(hth_result[64]),
          .hth_result_1(hth_result[65]),
          .hth_result_2(hth_result[66]),
@@ -208,8 +207,8 @@ module comb_precise #(parameter LENGTH = 11 , parameter WIDTH = 8, parameter HEI
          .WIDTH(WIDTH),
          .HEIGHT(HEIGHT)
      ) block_9 (
-         .ORG(ORG),
-         .CUR(CUR),
+         .ORG(ORG[((WIDTH*(LENGTH+1)*10)-1)-:((LENGTH+1)*WIDTH)]),
+         .CUR(CUR[((WIDTH*(LENGTH+1)*10)-1)-:((LENGTH+1)*WIDTH)]),
          .hth_result_0(hth_result[72]),
          .hth_result_1(hth_result[73]),
          .hth_result_2(hth_result[74]),
@@ -227,8 +226,8 @@ module comb_precise #(parameter LENGTH = 11 , parameter WIDTH = 8, parameter HEI
          .WIDTH(WIDTH),
          .HEIGHT(HEIGHT)
      ) block_10 (
-         .ORG(ORG),
-         .CUR(CUR),
+         .ORG(ORG[((WIDTH*(LENGTH+1)*11)-1)-:((LENGTH+1)*WIDTH)]),
+         .CUR(CUR[((WIDTH*(LENGTH+1)*11)-1)-:((LENGTH+1)*WIDTH)]),
          .hth_result_0(hth_result[80]),
          .hth_result_1(hth_result[81]),
          .hth_result_2(hth_result[82]),
@@ -245,8 +244,8 @@ module comb_precise #(parameter LENGTH = 11 , parameter WIDTH = 8, parameter HEI
          .WIDTH(WIDTH),
          .HEIGHT(HEIGHT)
      ) block_11 (
-         .ORG(ORG),
-         .CUR(CUR),
+         .ORG(ORG[((WIDTH*(LENGTH+1)*12)-1)-:((LENGTH+1)*WIDTH)]),
+         .CUR(CUR[((WIDTH*(LENGTH+1)*12)-1)-:((LENGTH+1)*WIDTH)]),
          .hth_result_0(hth_result[88]),
          .hth_result_1(hth_result[89]),
          .hth_result_2(hth_result[90]),
@@ -263,8 +262,8 @@ module comb_precise #(parameter LENGTH = 11 , parameter WIDTH = 8, parameter HEI
          .WIDTH(WIDTH),
          .HEIGHT(HEIGHT)
      ) block_12 (
-         .ORG(ORG),
-         .CUR(CUR),
+         .ORG(ORG[((WIDTH*(LENGTH+1)*13)-1)-:((LENGTH+1)*WIDTH)]),
+         .CUR(CUR[((WIDTH*(LENGTH+1)*13)-1)-:((LENGTH+1)*WIDTH)]),
          .hth_result_0(hth_result[96]),
          .hth_result_1(hth_result[97]),
          .hth_result_2(hth_result[98]),
@@ -281,8 +280,8 @@ module comb_precise #(parameter LENGTH = 11 , parameter WIDTH = 8, parameter HEI
          .WIDTH(WIDTH),
          .HEIGHT(HEIGHT)
      ) block_13 (
-         .ORG(ORG),
-         .CUR(CUR),
+         .ORG(ORG[((WIDTH*(LENGTH+1)*14)-1)-:((LENGTH+1)*WIDTH)]),
+         .CUR(CUR[((WIDTH*(LENGTH+1)*14)-1)-:((LENGTH+1)*WIDTH)]),
          .hth_result_0(hth_result[104]),
          .hth_result_1(hth_result[105]),
          .hth_result_2(hth_result[106]),
@@ -300,8 +299,8 @@ module comb_precise #(parameter LENGTH = 11 , parameter WIDTH = 8, parameter HEI
          .WIDTH(WIDTH),
          .HEIGHT(HEIGHT)
      ) block_14 (
-         .ORG(ORG),
-         .CUR(CUR),
+         .ORG(ORG[((WIDTH*(LENGTH+1)*15)-1)-:((LENGTH+1)*WIDTH)]),
+         .CUR(CUR[((WIDTH*(LENGTH+1)*15)-1)-:((LENGTH+1)*WIDTH)]),
          .hth_result_0(hth_result[112]),
          .hth_result_1(hth_result[113]),
          .hth_result_2(hth_result[114]),
@@ -317,8 +316,8 @@ module comb_precise #(parameter LENGTH = 11 , parameter WIDTH = 8, parameter HEI
          .WIDTH(WIDTH),
          .HEIGHT(HEIGHT)
      ) block_15 (
-         .ORG(ORG),
-         .CUR(CUR),     
+         .ORG(ORG[((WIDTH*(LENGTH+1)*16)-1)-:((LENGTH+1)*WIDTH)]),
+         .CUR(CUR[((WIDTH*(LENGTH+1)*16)-1)-:((LENGTH+1)*WIDTH)]),     
          .hth_result_0(hth_result[120]),
          .hth_result_1(hth_result[121]),
          .hth_result_2(hth_result[122]),
@@ -551,7 +550,7 @@ module comb_precise #(parameter LENGTH = 11 , parameter WIDTH = 8, parameter HEI
     assign satd_1[0] = satd_0[0] + satd_0[1];
     assign satd_1[1] = satd_0[2] + satd_0[3];
     
-    assign satd_2 = satd[0] + satd[1]; 
+    assign satd_2 = satd_1[0] + satd_1[1]; 
     
     always @(posedge clk) begin
         if (ena) begin
