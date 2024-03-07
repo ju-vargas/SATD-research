@@ -138,6 +138,165 @@ def had_8x16_precise():
 
     print("SATD:", sad)
 
+def had_8x16_3():
+    k = 0
+    jj = 0 
+
+    diff = [0] * 128
+
+    piCur = 0
+    piOrg = 0
+
+    for k in range(0, 128, 8):
+        diff[k + 0] = Org[k + 0] - Cur[k + 0]
+        diff[k + 1] = Org[k + 1] - Cur[k + 1]
+        diff[k + 2] = Org[k + 2] - Cur[k + 2]
+        diff[k + 3] = Org[k + 3] - Cur[k + 3]
+        diff[k + 4] = Org[k + 4] - Cur[k + 4]
+        diff[k + 5] = Org[k + 5] - Cur[k + 5]
+        diff[k + 6] = Org[k + 6] - Cur[k + 6]
+        diff[k + 7] = Org[k + 7] - Cur[k + 7]
+
+    #print("Org")
+    #print(Org)
+
+    #print("Cur")
+    #print(Cur)
+
+    #print("diff")
+    #print(diff)
+
+    #horizontal
+    for j in range(16):
+        jj = j << 3
+
+
+        m2[j][0] = diff[jj] + diff[jj + 4]
+        m2[j][1] = diff[jj + 1] + diff[jj + 5]
+        m2[j][2] = diff[jj + 2] + diff[jj + 6]
+        m2[j][3] = diff[jj + 3] + diff[jj + 7]
+        m2[j][4] = diff[jj] - diff[jj + 4]
+        m2[j][5] = diff[jj + 1] - diff[jj + 5]
+        m2[j][6] = diff[jj + 2] - diff[jj + 6]
+        m2[j][7] = diff[jj + 3] - diff[jj + 7]
+
+        m1[j][0] = m2[j][0] + m2[j][2]
+        m1[j][1] = m2[j][1] + m2[j][3]
+        m1[j][2] = m2[j][0] - m2[j][2]
+        m1[j][3] = m2[j][1] - m2[j][3]
+        m1[j][4] = m2[j][4] + m2[j][6]
+        m1[j][5] = m2[j][5] + m2[j][7]
+        m1[j][6] = m2[j][4] - m2[j][6]
+        m1[j][7] = m2[j][5] - m2[j][7]
+
+        m2[j][0] = m1[j][0] + m1[j][1]
+        m2[j][1] = m1[j][0] - m1[j][1]
+        m2[j][2] = m1[j][2] + m1[j][3]
+        m2[j][3] = m1[j][2] - m1[j][3]
+        m2[j][4] = m1[j][4] + m1[j][5]
+        m2[j][5] = m1[j][4] - m1[j][5]
+        m2[j][6] = m1[j][6] + m1[j][7]
+        m2[j][7] = m1[j][6] - m1[j][7]
+      
+
+      #vertical
+    for i in range(8):
+
+        m1[0][i] = m2[0][i] + m2[8][i]
+        m1[1][i] = m2[1][i] + m2[9][i]
+        m1[2][i] = m2[2][i] + m2[10][i]
+        m1[3][i] = m2[3][i] + m2[11][i]
+        m1[4][i] = m2[4][i] + m2[12][i]
+        m1[5][i] = m2[5][i] + m2[13][i]
+        m1[6][i] = m2[6][i] + m2[14][i]
+        m1[7][i] = m2[7][i] + m2[15][i]
+        m1[8][i] = m2[0][i] - m2[8][i]
+        m1[9][i] = m2[1][i] - m2[9][i]
+        m1[10][i] = m2[2][i] - m2[10][i]
+        m1[11][i] = m2[3][i] - m2[11][i]
+        m1[12][i] = m2[4][i] - m2[12][i]
+        m1[13][i] = m2[5][i] - m2[13][i]
+        m1[14][i] = m2[6][i] - m2[14][i]
+        m1[15][i] = m2[7][i] - m2[15][i]
+   
+      
+    sad = 0
+    for i in range(16):
+        for j in range(8):
+            sad += abs(m1[i][j])
+
+
+    print("SATD -3:", sad)
+def had_8x16_4():
+    k = 0
+    jj = 0 
+
+    diff = [0] * 128
+
+    piCur = 0
+    piOrg = 0
+
+    for k in range(0, 128, 8):
+        diff[k + 0] = Org[k + 0] - Cur[k + 0]
+        diff[k + 1] = Org[k + 1] - Cur[k + 1]
+        diff[k + 2] = Org[k + 2] - Cur[k + 2]
+        diff[k + 3] = Org[k + 3] - Cur[k + 3]
+        diff[k + 4] = Org[k + 4] - Cur[k + 4]
+        diff[k + 5] = Org[k + 5] - Cur[k + 5]
+        diff[k + 6] = Org[k + 6] - Cur[k + 6]
+        diff[k + 7] = Org[k + 7] - Cur[k + 7]
+
+    #print("Org")
+    #print(Org)
+
+    #print("Cur")
+    #print(Cur)
+
+    #print("diff")
+    #print(diff)
+
+    #horizontal
+    for j in range(16):
+        jj = j << 3
+
+
+        m2[j][0] = diff[jj] + diff[jj + 4]
+        m2[j][1] = diff[jj + 1] + diff[jj + 5]
+        m2[j][2] = diff[jj + 2] + diff[jj + 6]
+        m2[j][3] = diff[jj + 3] + diff[jj + 7]
+        m2[j][4] = diff[jj] - diff[jj + 4]
+        m2[j][5] = diff[jj + 1] - diff[jj + 5]
+        m2[j][6] = diff[jj + 2] - diff[jj + 6]
+        m2[j][7] = diff[jj + 3] - diff[jj + 7]
+
+        m1[j][0] = m2[j][0] + m2[j][2]
+        m1[j][1] = m2[j][1] + m2[j][3]
+        m1[j][2] = m2[j][0] - m2[j][2]
+        m1[j][3] = m2[j][1] - m2[j][3]
+        m1[j][4] = m2[j][4] + m2[j][6]
+        m1[j][5] = m2[j][5] + m2[j][7]
+        m1[j][6] = m2[j][4] - m2[j][6]
+        m1[j][7] = m2[j][5] - m2[j][7]
+
+        m2[j][0] = m1[j][0] + m1[j][1]
+        m2[j][1] = m1[j][0] - m1[j][1]
+        m2[j][2] = m1[j][2] + m1[j][3]
+        m2[j][3] = m1[j][2] - m1[j][3]
+        m2[j][4] = m1[j][4] + m1[j][5]
+        m2[j][5] = m1[j][4] - m1[j][5]
+        m2[j][6] = m1[j][6] + m1[j][7]
+        m2[j][7] = m1[j][6] - m1[j][7]
+      
+
+      #vertical
+
+    sad = 0
+    for i in range(16):
+        for j in range(8):
+            sad += abs(m2[i][j])
+
+
+    print("SATD -4:", sad)
 
 m1 = [[0] * 8 for _ in range(16)]
 m2 = [[0] * 8 for _ in range(16)]
@@ -152,3 +311,5 @@ Org = [2398,750 ,3666,414 ,3473,1455,2417,1994,2862,1619,2718,889 ,3384,2005,261
 
 
 had_8x16_precise()
+had_8x16_3()
+had_8x16_4()

@@ -113,14 +113,51 @@ localparam n = 3;
 
 
 
-    m1[0] = (hth[0] + hth[8] )
-    m1[1] = (hth[1] + hth[9] )
-    m1[2] = (hth[2] + hth[10])
-    m1[3] = (hth[3] + hth[11])
-    m1[4] = (hth[4] + hth[12])
-    m1[5] = (hth[5] + hth[13])
-    m1[6] = (hth[6] + hth[14])
-    m1[7] = (hth[7] + hth[15])
+    m1[0] = hth_0 + hth+8 
+    m1[1] = hth_1 + hth+9 
+    m1[2] = hth_2 + hth+10
+    m1[3] = hth_3 + hth+11
+    m1[4] = hth_4 + hth+12
+    m1[5] = hth_5 + hth+13
+    m1[6] = hth_6 + hth+14
+    m1[7] = hth_7 + hth+15
+
+
+
+    assign htv_ = (~sel) ? 
+        hth_0 + hth_8 
+    :   
+        hth_0 - hth_8 ; 
+    assign htv_ = (~sel) ? 
+        hth_1 + hth_9 
+    :
+        hth_1 - hth_9 ;
+    assign htv_ = (~sel) ? 
+        hth_2 + hth_10
+    :
+        hth_2 - hth_10;
+    assign htv_ = (~sel) ? 
+        hth_3 + hth_11
+    :
+        hth_3 - hth_11;
+    assign htv_ = (~sel) ? 
+        hth_4 + hth_12
+    :
+        hth_4 - hth_12;
+    assign htv_ = (~sel) ? 
+        hth_5 + hth_13
+    :
+        hth_5 - hth_13;
+    assign htv_ = (~sel) ? 
+        hth_6 + hth_14
+    :
+        hth_6 - hth_14;
+    assign htv_ = (~sel) ? 
+        hth_7 + hth_15
+    :
+        hth_7 - hth_15;
+
+
 
 
     m2[0] = ((hth[0] + hth[8] ) + (hth[4] + hth[12]))

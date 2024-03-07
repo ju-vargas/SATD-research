@@ -14,9 +14,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 7755 
+INFO: Helper process launched with PID 16486 
 ---------------------------------------------------------------------------------
-Starting Synthesize : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 974.078 ; gain = 161.051 ; free physical = 367 ; free virtual = 4963
+Starting Synthesize : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 974.074 ; gain = 161.051 ; free physical = 250 ; free virtual = 4445
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'comb_precise' [/media/juliana/LinFiles/Documents/GitHub/SATD-research/Emicro/SATD-8x16/SATD-8x16.srcs/sources_1/new/comb_precise.v:23]
 	Parameter LENGTH bound to: 11 - type: integer 
@@ -56,17 +56,17 @@ INFO: [Synth 8-256] done synthesizing module 'sum' (5#1) [/media/juliana/LinFile
 INFO: [Synth 8-256] done synthesizing module 'block_htv_absum' (6#1) [/media/juliana/LinFiles/Documents/GitHub/SATD-research/Emicro/SATD-8x16/SATD-8x16.srcs/sources_1/new/block_htv_absum.v:23]
 INFO: [Synth 8-256] done synthesizing module 'comb_precise' (7#1) [/media/juliana/LinFiles/Documents/GitHub/SATD-research/Emicro/SATD-8x16/SATD-8x16.srcs/sources_1/new/comb_precise.v:23]
 ---------------------------------------------------------------------------------
-Finished Synthesize : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1013.453 ; gain = 200.426 ; free physical = 325 ; free virtual = 4921
+Finished Synthesize : Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 1012.449 ; gain = 199.426 ; free physical = 208 ; free virtual = 4403
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1013.453 ; gain = 200.426 ; free physical = 324 ; free virtual = 4920
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 1012.449 ; gain = 199.426 ; free physical = 208 ; free virtual = 4403
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcsg325-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1021.457 ; gain = 208.430 ; free physical = 324 ; free virtual = 4920
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 1020.453 ; gain = 207.430 ; free physical = 208 ; free virtual = 4403
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcsg325-1
 INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [/media/juliana/LinFiles/Documents/GitHub/SATD-research/Emicro/SATD-8x16/SATD-8x16.srcs/sources_1/new/ht_vertical.v:52]
@@ -86,7 +86,7 @@ INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To p
 INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [/media/juliana/LinFiles/Documents/GitHub/SATD-research/Emicro/SATD-8x16/SATD-8x16.srcs/sources_1/new/sum.v:46]
 INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [/media/juliana/LinFiles/Documents/GitHub/SATD-research/Emicro/SATD-8x16/SATD-8x16.srcs/sources_1/new/sum.v:41]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1037.473 ; gain = 224.445 ; free physical = 315 ; free virtual = 4911
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1028.461 ; gain = 215.438 ; free physical = 202 ; free virtual = 4398
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -94,10 +94,10 @@ Report RTL Partitions:
 |      |RTL Partition      |Replication |Instances |
 +------+-------------------+------------+----------+
 |1     |block_htv_absum    |           8|      8610|
-|2     |comb_precise__GCB0 |           1|     18990|
-|3     |comb_precise__GCB1 |           1|      6330|
-|4     |comb_precise__GCB2 |           1|      8440|
-|5     |comb_precise__GCB3 |           1|       116|
+|2     |comb_precise__GCB0 |           1|     19062|
+|3     |comb_precise__GCB1 |           1|      6354|
+|4     |comb_precise__GCB2 |           1|      8472|
+|5     |comb_precise__GCB3 |           1|       828|
 +------+-------------------+------------+----------+
 No constraint files found.
 ---------------------------------------------------------------------------------
@@ -105,8 +105,8 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
+	   9 Input     27 Bit       Adders := 1     
 	   4 Input     23 Bit       Adders := 8     
-	   3 Input     23 Bit       Adders := 1     
 	   3 Input     21 Bit       Adders := 64    
 	   9 Input     20 Bit       Adders := 16    
 	   2 Input     20 Bit       Adders := 144   
@@ -121,13 +121,12 @@ Detailed RTL Component Info :
 	   5 Input     16 Bit       Adders := 16    
 	   3 Input     13 Bit       Adders := 128   
 +---Registers : 
-	               23 Bit    Registers := 1     
+	               27 Bit    Registers := 1     
 	                1 Bit    Registers := 1     
 +---Muxes : 
 	   2 Input     21 Bit        Muxes := 64    
 	   2 Input     20 Bit        Muxes := 96    
 	   2 Input      2 Bit        Muxes := 32    
-	   2 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -138,12 +137,10 @@ Hierarchical RTL Component report
 Module comb_precise 
 Detailed RTL Component Info : 
 +---Adders : 
-	   3 Input     23 Bit       Adders := 1     
+	   9 Input     27 Bit       Adders := 1     
 +---Registers : 
-	               23 Bit    Registers := 1     
+	               27 Bit    Registers := 1     
 	                1 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
 Module ht_vertical 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -352,68 +349,76 @@ BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
-Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1120.488 ; gain = 307.461 ; free physical = 242 ; free virtual = 4838
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1121.477 ; gain = 308.453 ; free physical = 182 ; free virtual = 4357
 ---------------------------------------------------------------------------------
 Start Cross Boundary Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:14 . Memory (MB): peak = 1128.488 ; gain = 315.461 ; free physical = 233 ; free virtual = 4830
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1129.477 ; gain = 316.453 ; free physical = 181 ; free virtual = 4343
 ---------------------------------------------------------------------------------
-Finished Parallel Reinference  : Time (s): cpu = 00:00:15 ; elapsed = 00:00:14 . Memory (MB): peak = 1128.488 ; gain = 315.461 ; free physical = 233 ; free virtual = 4830
+Finished Parallel Reinference  : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1129.477 ; gain = 316.453 ; free physical = 181 ; free virtual = 4343
 
 Report RTL Partitions: 
 +------+-------------------+------------+----------+
 |      |RTL Partition      |Replication |Instances |
 +------+-------------------+------------+----------+
 |1     |block_htv_absum    |           8|     10374|
-|2     |comb_precise__GCB0 |           1|     20088|
-|3     |comb_precise__GCB1 |           1|      6696|
-|4     |comb_precise__GCB2 |           1|      8928|
-|5     |comb_precise__GCB3 |           1|       116|
+|2     |comb_precise__GCB0 |           1|     20160|
+|3     |comb_precise__GCB1 |           1|      6720|
+|4     |comb_precise__GCB2 |           1|      8960|
+|5     |comb_precise__GCB3 |           1|      1018|
 +------+-------------------+------------+----------+
 No constraint files found.
 ---------------------------------------------------------------------------------
 Start Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1144.504 ; gain = 331.477 ; free physical = 217 ; free virtual = 4814
+Finished Area Optimization : Time (s): cpu = 00:00:37 ; elapsed = 00:00:40 . Memory (MB): peak = 1219.141 ; gain = 406.117 ; free physical = 147 ; free virtual = 4255
 ---------------------------------------------------------------------------------
-Finished Parallel Area Optimization  : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1144.504 ; gain = 331.477 ; free physical = 217 ; free virtual = 4814
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:37 ; elapsed = 00:00:40 . Memory (MB): peak = 1219.141 ; gain = 406.117 ; free physical = 147 ; free virtual = 4255
 
 Report RTL Partitions: 
 +------+-------------------+------------+----------+
 |      |RTL Partition      |Replication |Instances |
 +------+-------------------+------------+----------+
-|1     |comb_precise__GCB3 |           1|        73|
+|1     |block_htv_absum    |           8|      7245|
+|2     |comb_precise__GCB0 |           1|     11223|
+|3     |comb_precise__GCB1 |           1|      3741|
+|4     |comb_precise__GCB2 |           1|      4988|
+|5     |comb_precise__GCB3 |           1|       899|
 +------+-------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 No constraint files found.
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1144.504 ; gain = 331.477 ; free physical = 217 ; free virtual = 4814
+Finished Timing Optimization : Time (s): cpu = 00:00:37 ; elapsed = 00:00:40 . Memory (MB): peak = 1219.141 ; gain = 406.117 ; free physical = 147 ; free virtual = 4255
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
 +------+-------------------+------------+----------+
 |      |RTL Partition      |Replication |Instances |
 +------+-------------------+------------+----------+
-|1     |comb_precise__GCB3 |           1|        73|
+|1     |block_htv_absum    |           8|      7245|
+|2     |comb_precise__GCB0 |           1|     11223|
+|3     |comb_precise__GCB1 |           1|      3741|
+|4     |comb_precise__GCB2 |           1|      4988|
+|5     |comb_precise__GCB3 |           1|       899|
 +------+-------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1144.504 ; gain = 331.477 ; free physical = 217 ; free virtual = 4813
+Finished Technology Mapping : Time (s): cpu = 00:00:42 ; elapsed = 00:00:46 . Memory (MB): peak = 1234.344 ; gain = 421.320 ; free physical = 159 ; free virtual = 4258
 ---------------------------------------------------------------------------------
-Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1144.504 ; gain = 331.477 ; free physical = 217 ; free virtual = 4813
+Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:42 ; elapsed = 00:00:46 . Memory (MB): peak = 1234.344 ; gain = 421.320 ; free physical = 159 ; free virtual = 4258
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
 | |RTL Partition |Replication |Instances |
 +-+--------------+------------+----------+
 +-+--------------+------------+----------+
-Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1144.504 ; gain = 331.477 ; free physical = 217 ; free virtual = 4813
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:42 ; elapsed = 00:00:46 . Memory (MB): peak = 1234.344 ; gain = 421.320 ; free physical = 159 ; free virtual = 4258
 ---------------------------------------------------------------------------------
 Start IO Insertion
 ---------------------------------------------------------------------------------
@@ -430,7 +435,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1144.504 ; gain = 331.477 ; free physical = 217 ; free virtual = 4813
+Finished IO Insertion : Time (s): cpu = 00:00:46 ; elapsed = 00:00:49 . Memory (MB): peak = 1234.344 ; gain = 421.320 ; free physical = 159 ; free virtual = 4257
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -443,7 +448,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1144.504 ; gain = 331.477 ; free physical = 217 ; free virtual = 4813
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:46 ; elapsed = 00:00:49 . Memory (MB): peak = 1234.344 ; gain = 421.320 ; free physical = 159 ; free virtual = 4257
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -455,25 +460,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1144.504 ; gain = 331.477 ; free physical = 217 ; free virtual = 4813
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:47 ; elapsed = 00:00:50 . Memory (MB): peak = 1234.344 ; gain = 421.320 ; free physical = 159 ; free virtual = 4257
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1144.504 ; gain = 331.477 ; free physical = 217 ; free virtual = 4813
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:51 ; elapsed = 00:00:55 . Memory (MB): peak = 1234.344 ; gain = 421.320 ; free physical = 170 ; free virtual = 4258
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1144.504 ; gain = 331.477 ; free physical = 217 ; free virtual = 4813
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:51 ; elapsed = 00:00:55 . Memory (MB): peak = 1234.344 ; gain = 421.320 ; free physical = 170 ; free virtual = 4258
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1144.504 ; gain = 331.477 ; free physical = 217 ; free virtual = 4813
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:52 ; elapsed = 00:00:55 . Memory (MB): peak = 1234.344 ; gain = 421.320 ; free physical = 170 ; free virtual = 4258
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -490,37 +495,52 @@ Report Cell Usage:
 |      |Cell   |Count |
 +------+-------+------+
 |1     |BUFG   |     1|
-|2     |CARRY4 |     6|
-|3     |LUT1   |     2|
-|4     |LUT2   |    22|
-|5     |FDRE   |    23|
-|6     |IBUF   |     3|
-|7     |OBUF   |    23|
+|2     |CARRY4 |  4668|
+|3     |LUT1   |   452|
+|4     |LUT2   | 10241|
+|5     |LUT3   |  8056|
+|6     |LUT4   |  2644|
+|7     |LUT5   |  4808|
+|8     |LUT6   |  2080|
+|9     |FDRE   |    59|
+|10    |IBUF   |  3075|
+|11    |OBUF   |    27|
 +------+-------+------+
 
 Report Instance Areas: 
-+------+---------+-------+------+
-|      |Instance |Module |Cells |
-+------+---------+-------+------+
-|1     |top      |       |    80|
-+------+---------+-------+------+
++------+-----------+----------------+------+
+|      |Instance   |Module          |Cells |
++------+-----------+----------------+------+
+|1     |top        |                | 36111|
+|2     |  block_10 |block           |  1554|
+|3     |    diff   |differences_4   |   210|
+|4     |    hth    |ht_horizontal_5 |  1344|
+|5     |  block_8  |block_0         |  1455|
+|6     |    diff   |differences_2   |   202|
+|7     |    hth    |ht_horizontal_3 |  1253|
+|8     |  block_9  |block_1         |  1458|
+|9     |    diff   |differences     |   204|
+|10    |    hth    |ht_horizontal   |  1254|
++------+-----------+----------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1144.504 ; gain = 331.477 ; free physical = 217 ; free virtual = 4813
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:52 ; elapsed = 00:00:55 . Memory (MB): peak = 1234.344 ; gain = 421.320 ; free physical = 170 ; free virtual = 4258
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1144.504 ; gain = 232.426 ; free physical = 217 ; free virtual = 4813
-Synthesis Optimization Complete : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1144.504 ; gain = 331.477 ; free physical = 217 ; free virtual = 4813
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:49 ; elapsed = 00:00:50 . Memory (MB): peak = 1234.344 ; gain = 322.270 ; free physical = 170 ; free virtual = 4258
+Synthesis Optimization Complete : Time (s): cpu = 00:00:52 ; elapsed = 00:00:55 . Memory (MB): peak = 1234.344 ; gain = 421.320 ; free physical = 170 ; free virtual = 4258
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 9 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 7743 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'comb_precise' is not ideal for floorplanning, since the cellview 'comb_precise' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-39 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+39 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1202.504 ; gain = 318.160 ; free physical = 159 ; free virtual = 4753
-report_utilization: Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.12 . Memory (MB): peak = 1234.520 ; gain = 0.000 ; free physical = 164 ; free virtual = 4749
-INFO: [Common 17-206] Exiting Vivado at Wed Mar  6 22:51:46 2024...
+synth_design: Time (s): cpu = 00:01:01 ; elapsed = 00:01:03 . Memory (MB): peak = 1345.355 ; gain = 461.016 ; free physical = 121 ; free virtual = 4183
+write_checkpoint: Time (s): cpu = 00:00:10 ; elapsed = 00:00:08 . Memory (MB): peak = 1377.371 ; gain = 32.016 ; free physical = 148 ; free virtual = 4124
+report_utilization: Time (s): cpu = 00:00:00.49 ; elapsed = 00:00:00.55 . Memory (MB): peak = 1377.371 ; gain = 0.000 ; free physical = 134 ; free virtual = 4111
+INFO: [Common 17-206] Exiting Vivado at Thu Mar  7 00:47:32 2024...

@@ -31,7 +31,7 @@ module comb_precise_tb;
     reg ena;
     reg [(HEIGHT*WIDTH)*(LENGTH+1)-1:0] ORG;
     reg [(HEIGHT*WIDTH)*(LENGTH+1)-1:0] CUR;
-    wire [(LENGTH+7+4):0] satd;
+    wire [(LENGTH+11+4):0] satd;
     
     // Instantiate the comb_precise module
     comb_precise #(
