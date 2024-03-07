@@ -1,255 +1,41 @@
-    sum #(
-     .LENGTH(LENGTH+4),
-     .WIDTH(WIDTH),
-     .HEIGHT(HEIGHT)
-    ) sum_inst_0(
-     .diff_0(hth_result_[0]),
-     .diff_1(hth_result_[1]),
-     .diff_2(hth_result_[2]),
-     .diff_3(hth_result_[3]),
-     .diff_4(hth_result_[4]),
-     .diff_5(hth_result_[5]),
-     .diff_6(hth_result_[6]),
-     .diff_7(hth_result_[7]),
-     .abs_sum(sum_partial[0])
-    );
 
-    sum #(
-     .LENGTH(LENGTH+4),
-     .WIDTH(WIDTH),
-     .HEIGHT(HEIGHT)
-    ) sum_inst_1 (
-     .diff_0(hth_result_[8]),
-     .diff_1(hth_result_[9]),
-     .diff_2(hth_result_[10]),
-     .diff_3(hth_result_[11]),
-     .diff_4(hth_result_[12]),
-     .diff_5(hth_result_[13]),
-     .diff_6(hth_result_[14]),
-     .diff_7(hth_result_[15]),
-     .abs_sum(sum_partial[1])
-    );
+    
+    assign htv_0 = (~sel) ? 
+        {hth_0[LENGTH],hth_0} + {hth_8[LENGTH],hth_8} 
+    :   
+        {hth_0[LENGTH],hth_0} - {hth_8[LENGTH],hth_8} ;  
 
-    sum #(
-     .LENGTH(LENGTH+4),
-     .WIDTH(WIDTH),
-     .HEIGHT(HEIGHT)
-    ) sum_inst (
-     .diff_0(htv_result_0),
-     .diff_1(htv_result_1),
-     .diff_2(htv_result_2),
-     .diff_3(htv_result_3),
-     .diff_4(htv_result_4),
-     .diff_5(htv_result_5),
-     .diff_6(htv_result_6),
-     .diff_7(htv_result_7),
-     .abs_sum(sum_partial)
-    );
+    assign htv_1 = (~sel) ? 
+        {hth_1[LENGTH],hth_1} + {hth_9[LENGTH],hth_9} 
+    :
+        {hth_1[LENGTH],hth_1} - {hth_9[LENGTH],hth_9} ;
 
-    sum #(
-     .LENGTH(LENGTH+4),
-     .WIDTH(WIDTH),
-     .HEIGHT(HEIGHT)
-    ) sum_inst (
-     .diff_0(htv_result_0),
-     .diff_1(htv_result_1),
-     .diff_2(htv_result_2),
-     .diff_3(htv_result_3),
-     .diff_4(htv_result_4),
-     .diff_5(htv_result_5),
-     .diff_6(htv_result_6),
-     .diff_7(htv_result_7),
-     .abs_sum(sum_partial)
-    );
+    assign htv_2 = (~sel) ? 
+        {hth_2[LENGTH],hth_2} + {hth_10[LENGTH],hth_10}
+    :
+        {hth_2[LENGTH],hth_2} - {hth_10[LENGTH],hth_10};
 
-    sum #(
-     .LENGTH(LENGTH+4),
-     .WIDTH(WIDTH),
-     .HEIGHT(HEIGHT)
-    ) sum_inst (
-     .diff_0(htv_result_0),
-     .diff_1(htv_result_1),
-     .diff_2(htv_result_2),
-     .diff_3(htv_result_3),
-     .diff_4(htv_result_4),
-     .diff_5(htv_result_5),
-     .diff_6(htv_result_6),
-     .diff_7(htv_result_7),
-     .abs_sum(sum_partial)
-    );
+    assign htv_3 = (~sel) ? 
+        {hth_3[LENGTH],hth_3} + {hth_11[LENGTH],hth_11}
+    :
+        {hth_3[LENGTH],hth_3} - {hth_11[LENGTH],hth_11};
 
-    sum #(
-     .LENGTH(LENGTH+4),
-     .WIDTH(WIDTH),
-     .HEIGHT(HEIGHT)
-    ) sum_inst (
-     .diff_0(htv_result_0),
-     .diff_1(htv_result_1),
-     .diff_2(htv_result_2),
-     .diff_3(htv_result_3),
-     .diff_4(htv_result_4),
-     .diff_5(htv_result_5),
-     .diff_6(htv_result_6),
-     .diff_7(htv_result_7),
-     .abs_sum(sum_partial)
-    );
+    assign htv_4 = (~sel) ? 
+        {hth_4[LENGTH],hth_4} + {hth_12[LENGTH],hth_12}
+    :
+        {hth_4[LENGTH],hth_4} - {hth_12[LENGTH],hth_12};
 
-    sum #(
-     .LENGTH(LENGTH+4),
-     .WIDTH(WIDTH),
-     .HEIGHT(HEIGHT)
-    ) sum_inst (
-     .diff_0(htv_result_0),
-     .diff_1(htv_result_1),
-     .diff_2(htv_result_2),
-     .diff_3(htv_result_3),
-     .diff_4(htv_result_4),
-     .diff_5(htv_result_5),
-     .diff_6(htv_result_6),
-     .diff_7(htv_result_7),
-     .abs_sum(sum_partial)
-    );
+    assign htv_5 = (~sel) ? 
+        {hth_5[LENGTH],hth_5} + {hth_13[LENGTH],hth_13}
+    :
+        {hth_5[LENGTH],hth_5} - {hth_13[LENGTH],hth_13};
 
-    sum #(
-     .LENGTH(LENGTH+4),
-     .WIDTH(WIDTH),
-     .HEIGHT(HEIGHT)
-    ) sum_inst (
-     .diff_0(htv_result_0),
-     .diff_1(htv_result_1),
-     .diff_2(htv_result_2),
-     .diff_3(htv_result_3),
-     .diff_4(htv_result_4),
-     .diff_5(htv_result_5),
-     .diff_6(htv_result_6),
-     .diff_7(htv_result_7),
-     .abs_sum(sum_partial)
-    );
-
-    sum #(
-     .LENGTH(LENGTH+4),
-     .WIDTH(WIDTH),
-     .HEIGHT(HEIGHT)
-    ) sum_inst (
-     .diff_0(htv_result_0),
-     .diff_1(htv_result_1),
-     .diff_2(htv_result_2),
-     .diff_3(htv_result_3),
-     .diff_4(htv_result_4),
-     .diff_5(htv_result_5),
-     .diff_6(htv_result_6),
-     .diff_7(htv_result_7),
-     .abs_sum(sum_partial)
-    );
-
-    sum #(
-     .LENGTH(LENGTH+4),
-     .WIDTH(WIDTH),
-     .HEIGHT(HEIGHT)
-    ) sum_inst (
-     .diff_0(htv_result_0),
-     .diff_1(htv_result_1),
-     .diff_2(htv_result_2),
-     .diff_3(htv_result_3),
-     .diff_4(htv_result_4),
-     .diff_5(htv_result_5),
-     .diff_6(htv_result_6),
-     .diff_7(htv_result_7),
-     .abs_sum(sum_partial)
-    );
-
-    sum #(
-     .LENGTH(LENGTH+4),
-     .WIDTH(WIDTH),
-     .HEIGHT(HEIGHT)
-    ) sum_inst (
-     .diff_0(htv_result_0),
-     .diff_1(htv_result_1),
-     .diff_2(htv_result_2),
-     .diff_3(htv_result_3),
-     .diff_4(htv_result_4),
-     .diff_5(htv_result_5),
-     .diff_6(htv_result_6),
-     .diff_7(htv_result_7),
-     .abs_sum(sum_partial)
-    );
-
-    sum #(
-     .LENGTH(LENGTH+4),
-     .WIDTH(WIDTH),
-     .HEIGHT(HEIGHT)
-    ) sum_inst (
-     .diff_0(htv_result_0),
-     .diff_1(htv_result_1),
-     .diff_2(htv_result_2),
-     .diff_3(htv_result_3),
-     .diff_4(htv_result_4),
-     .diff_5(htv_result_5),
-     .diff_6(htv_result_6),
-     .diff_7(htv_result_7),
-     .abs_sum(sum_partial)
-    );
-
-    sum #(
-     .LENGTH(LENGTH+4),
-     .WIDTH(WIDTH),
-     .HEIGHT(HEIGHT)
-    ) sum_inst (
-     .diff_0(htv_result_0),
-     .diff_1(htv_result_1),
-     .diff_2(htv_result_2),
-     .diff_3(htv_result_3),
-     .diff_4(htv_result_4),
-     .diff_5(htv_result_5),
-     .diff_6(htv_result_6),
-     .diff_7(htv_result_7),
-     .abs_sum(sum_partial)
-    );
-
-    sum #(
-     .LENGTH(LENGTH+4),
-     .WIDTH(WIDTH),
-     .HEIGHT(HEIGHT)
-    ) sum_inst (
-     .diff_0(htv_result_0),
-     .diff_1(htv_result_1),
-     .diff_2(htv_result_2),
-     .diff_3(htv_result_3),
-     .diff_4(htv_result_4),
-     .diff_5(htv_result_5),
-     .diff_6(htv_result_6),
-     .diff_7(htv_result_7),
-     .abs_sum(sum_partial)
-    );
-
-    sum #(
-     .LENGTH(LENGTH+4),
-     .WIDTH(WIDTH),
-     .HEIGHT(HEIGHT)
-    ) sum_inst (
-     .diff_0(htv_result_0),
-     .diff_1(htv_result_1),
-     .diff_2(htv_result_2),
-     .diff_3(htv_result_3),
-     .diff_4(htv_result_4),
-     .diff_5(htv_result_5),
-     .diff_6(htv_result_6),
-     .diff_7(htv_result_7),
-     .abs_sum(sum_partial)
-    );
-
-    sum #(
-     .LENGTH(LENGTH+4),
-     .WIDTH(WIDTH),
-     .HEIGHT(HEIGHT)
-    ) sum_inst (
-     .diff_0(htv_result_0),
-     .diff_1(htv_result_1),
-     .diff_2(htv_result_2),
-     .diff_3(htv_result_3),
-     .diff_4(htv_result_4),
-     .diff_5(htv_result_5),
-     .diff_6(htv_result_6),
-     .diff_7(htv_result_7),
-     .abs_sum(sum_partial)
-    );
+    assign htv_6 = (~sel) ? 
+        {hth_6[LENGTH],hth_6} + {hth_14[LENGTH],hth_14}
+    :
+        {hth_6[LENGTH],hth_6} - {hth_14[LENGTH],hth_14};
+        
+    assign htv_7 = (~sel) ? 
+        {hth_7[LENGTH],hth_7} + {hth_15[LENGTH],hth_15}
+    :
+        {hth_7[LENGTH],hth_7} - {hth_15[LENGTH],hth_15};

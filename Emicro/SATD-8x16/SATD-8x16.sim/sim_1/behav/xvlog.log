@@ -12,6 +12,12 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "/media/juliana/LinFiles/Documents/G
 INFO: [VRFC 10-311] analyzing module block
 INFO: [VRFC 10-2263] Analyzing Verilog file "/media/juliana/LinFiles/Documents/GitHub/SATD-research/Emicro/SATD-8x16/SATD-8x16.srcs/sources_1/new/block_htv_absum.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module block_htv_absum
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/juliana/LinFiles/Documents/GitHub/SATD-research/Emicro/SATD-8x16/SATD-8x16.srcs/sources_1/new/comb_aprox_3.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module comb_aprox_3
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/juliana/LinFiles/Documents/GitHub/SATD-research/Emicro/SATD-8x16/SATD-8x16.srcs/sources_1/new/htv_vertical_aprox_3.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module htv_vertical_aprox_3
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/juliana/LinFiles/Documents/GitHub/SATD-research/Emicro/SATD-8x16/SATD-8x16.srcs/sources_1/new/block_htv_absum_aprox_3.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module block_htv_absum_aprox_3
 INFO: [VRFC 10-2263] Analyzing Verilog file "/media/juliana/LinFiles/Documents/GitHub/SATD-research/Emicro/SATD-8x16/SATD-8x16.srcs/sim_1/new/ht_vertical_tb.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module ht_vertical_tb
 INFO: [VRFC 10-2263] Analyzing Verilog file "/media/juliana/LinFiles/Documents/GitHub/SATD-research/Emicro/SATD-8x16/SATD-8x16.srcs/sim_1/new/ht_horizontal_tb.v" into library xil_defaultlib
@@ -20,5 +26,7 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "/media/juliana/LinFiles/Documents/G
 INFO: [VRFC 10-311] analyzing module buffer_tb
 INFO: [VRFC 10-2263] Analyzing Verilog file "/media/juliana/LinFiles/Documents/GitHub/SATD-research/Emicro/SATD-8x16/SATD-8x16.srcs/sim_1/new/comb_precise_tb.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module comb_precise_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/juliana/LinFiles/Documents/GitHub/SATD-research/Emicro/SATD-8x16/SATD-8x16.srcs/sim_1/new/comb_aprox_3_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module comb_aprox_3_tb
 INFO: [VRFC 10-2263] Analyzing Verilog file "/media/juliana/LinFiles/Documents/GitHub/SATD-research/Emicro/SATD-8x16/SATD-8x16.sim/sim_1/behav/glbl.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module glbl

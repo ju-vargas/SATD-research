@@ -25,14 +25,14 @@ module comb_aprox_3 #(parameter LENGTH = 11 , parameter WIDTH = 8, parameter HEI
     input ena, 
     input wire [((HEIGHT*WIDTH)*(LENGTH+1))-1:0] ORG,
     input wire [((HEIGHT*WIDTH)*(LENGTH+1))-1:0] CUR,
-    output reg [(LENGTH+11+4):0] satd);
+    output reg [(LENGTH+8+4):0] satd);
           
     wire signed [(LENGTH+1+3):0]   hth_result[(WIDTH * HEIGHT)-1:0]; 
-    wire [(LENGTH+4+7):0]   sum_partial [7:0];
+    wire [(LENGTH+1+7):0] sum_partial [7:0];
     
-    wire [(LENGTH+11+1):0] satd_0[3:0];
-    wire [(LENGTH+11+2):0] satd_1[1:0];
-    wire [(LENGTH+11+3):0] satd_2;  
+    wire [(LENGTH+8+1):0] satd_0[3:0];
+    wire [(LENGTH+8+2):0] satd_1[1:0];
+    wire [(LENGTH+8+3):0] satd_2;  
     
     reg sel; 
     
@@ -329,7 +329,7 @@ module comb_aprox_3 #(parameter LENGTH = 11 , parameter WIDTH = 8, parameter HEI
      
      
 //==================
-    block_htv_absum #(
+    block_htv_absum_aprox_3 #(
         .LENGTH(LENGTH + 4),
         .WIDTH(WIDTH),
         .HEIGHT(HEIGHT)
@@ -354,7 +354,7 @@ module comb_aprox_3 #(parameter LENGTH = 11 , parameter WIDTH = 8, parameter HEI
         .sum_partial(sum_partial[0])
     );
 
-    block_htv_absum #(
+    block_htv_absum_aprox_3 #(
         .LENGTH(LENGTH + 4),
         .WIDTH(WIDTH),
         .HEIGHT(HEIGHT)
@@ -381,7 +381,7 @@ module comb_aprox_3 #(parameter LENGTH = 11 , parameter WIDTH = 8, parameter HEI
     );
 
 
-    block_htv_absum #(
+    block_htv_absum_aprox_3 #(
         .LENGTH(LENGTH + 4),
         .WIDTH(WIDTH),
         .HEIGHT(HEIGHT)
@@ -408,7 +408,7 @@ module comb_aprox_3 #(parameter LENGTH = 11 , parameter WIDTH = 8, parameter HEI
     );
   
 
-    block_htv_absum #(
+    block_htv_absum_aprox_3 #(
         .LENGTH(LENGTH + 4),
         .WIDTH(WIDTH),
         .HEIGHT(HEIGHT)
@@ -435,7 +435,7 @@ module comb_aprox_3 #(parameter LENGTH = 11 , parameter WIDTH = 8, parameter HEI
     );
 
 
-    block_htv_absum #(
+    block_htv_absum_aprox_3 #(
         .LENGTH(LENGTH + 4),
         .WIDTH(WIDTH),
         .HEIGHT(HEIGHT)
@@ -462,7 +462,7 @@ module comb_aprox_3 #(parameter LENGTH = 11 , parameter WIDTH = 8, parameter HEI
     );
       
 
-    block_htv_absum #(
+    block_htv_absum_aprox_3 #(
         .LENGTH(LENGTH + 4),
         .WIDTH(WIDTH),
         .HEIGHT(HEIGHT)
@@ -489,7 +489,7 @@ module comb_aprox_3 #(parameter LENGTH = 11 , parameter WIDTH = 8, parameter HEI
     );
   
 
-        block_htv_absum #(
+        block_htv_absum_aprox_3 #(
         .LENGTH(LENGTH + 4),
         .WIDTH(WIDTH),
         .HEIGHT(HEIGHT)
@@ -515,7 +515,7 @@ module comb_aprox_3 #(parameter LENGTH = 11 , parameter WIDTH = 8, parameter HEI
         .sum_partial(sum_partial[6])    
     );
 
-        block_htv_absum #(
+        block_htv_absum_aprox_3 #(
         .LENGTH(LENGTH + 4),
         .WIDTH(WIDTH),
         .HEIGHT(HEIGHT)
