@@ -21,6 +21,9 @@ read_verilog -library xil_defaultlib {
   /media/juliana/LinFiles/Documents/GitHub/SATD-research/Emicro/SATD-8x16/SATD-8x16.srcs/sources_1/new/comb_precise.v
   /media/juliana/LinFiles/Documents/GitHub/SATD-research/Emicro/SATD-8x16/SATD-8x16.srcs/sources_1/new/block.v
   /media/juliana/LinFiles/Documents/GitHub/SATD-research/Emicro/SATD-8x16/SATD-8x16.srcs/sources_1/new/block_htv_absum.v
+  /media/juliana/LinFiles/Documents/GitHub/SATD-research/Emicro/SATD-8x16/SATD-8x16.srcs/sources_1/new/comb_aprox_3.v
+  /media/juliana/LinFiles/Documents/GitHub/SATD-research/Emicro/SATD-8x16/SATD-8x16.srcs/sources_1/new/htv_vertical_aprox_3.v
+  /media/juliana/LinFiles/Documents/GitHub/SATD-research/Emicro/SATD-8x16/SATD-8x16.srcs/sources_1/new/block_htv_absum_aprox_3.v
 }
 synth_design -top comb_precise -part xc7a35tcsg325-1
 write_checkpoint -noxdef comb_precise.dcp

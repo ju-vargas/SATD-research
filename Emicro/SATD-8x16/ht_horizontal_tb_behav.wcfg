@@ -12,7 +12,7 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="308000756fs"></ZoomEndTime>
+      <ZoomEndTime time="308000757fs"></ZoomEndTime>
       <Cursor1Time time="125000000fs"></Cursor1Time>
    </zoom_setting>
    <WVObjectSize size="12" />
@@ -50,8 +50,8 @@
       <obj_property name="ObjectShortName">hth_result[127:0][15:0]</obj_property>
    </wvobject>
    <wvobject db_ref_id="1" type="array" fp_name="/comb_aprox_3_tb/dut/sum_partial">
-      <obj_property name="ElementShortName">sum_partial[7:0][22:0]</obj_property>
-      <obj_property name="ObjectShortName">sum_partial[7:0][22:0]</obj_property>
+      <obj_property name="ElementShortName">sum_partial[7:0][19:0]</obj_property>
+      <obj_property name="ObjectShortName">sum_partial[7:0][19:0]</obj_property>
    </wvobject>
    <wvobject db_ref_id="1" type="array" fp_name="/comb_aprox_3_tb/dut/satd_0">
       <obj_property name="ElementShortName">satd_0[3:0][20:0]</obj_property>
@@ -64,5 +64,6 @@
    <wvobject db_ref_id="1" type="array" fp_name="/comb_aprox_3_tb/dut/satd_2">
       <obj_property name="ElementShortName">satd_2[22:0]</obj_property>
       <obj_property name="ObjectShortName">satd_2[22:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
 </wave_config>

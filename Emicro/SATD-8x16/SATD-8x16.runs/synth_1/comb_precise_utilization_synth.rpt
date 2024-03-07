@@ -1,7 +1,7 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2015.4 (lin64) Build 1412921 Wed Nov 18 09:44:32 MST 2015
-| Date         : Thu Mar  7 00:47:32 2024
+| Date         : Thu Mar  7 02:20:40 2024
 | Host         : juliana-ideapad running 64-bit Linux Mint 21.2
 | Command      : report_utilization -file comb_precise_utilization_synth.rpt -pb comb_precise_utilization_synth.pb
 | Design       : comb_precise
