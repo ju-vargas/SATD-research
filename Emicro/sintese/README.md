@@ -1,7 +1,9 @@
 ```comb_precise.v``` instancia os outros módulos
 ```/aprox-3```contém outro .v que instancia modulos aproximados da transformada
 
-## Preciso
+# Sintese Vivado
+## Artix xc7a35tcsg325-1
+### Preciso
 
 ```
 1. Slice Logic
@@ -21,7 +23,7 @@
 +-------------------------+-------+-------+-----------+--------+
 ```
 
-## Aproximado
+### Aproximado
 
 ```
 1. Slice Logic
@@ -39,4 +41,44 @@
 | F7 Muxes                |     0 |     0 |     16300 |  0.00 |
 | F8 Muxes                |     0 |     0 |      8150 |  0.00 |
 +-------------------------+-------+-------+-----------+-------+
+```
+
+## Artix xc7a50tcpg236-3
+### Preciso
+```
+1. Slice Logic
+--------------
+
++-------------------------+-------+-------+-----------+-------+
+|        Site Type        |  Used | Fixed | Available | Util% |
++-------------------------+-------+-------+-----------+-------+
+| Slice LUTs*             | 21785 |     0 |     32600 | 66.83 |
+|   LUT as Logic          | 21785 |     0 |     32600 | 66.83 |
+|   LUT as Memory         |     0 |     0 |      9600 |  0.00 |
+| Slice Registers         |    59 |     0 |     65200 |  0.09 |
+|   Register as Flip Flop |    59 |     0 |     65200 |  0.09 |
+|   Register as Latch     |     0 |     0 |     65200 |  0.00 |
+| F7 Muxes                |     0 |     0 |     16300 |  0.00 |
+| F8 Muxes                |     0 |     0 |      8150 |  0.00 |
++-------------------------+-------+-------+-----------+-------+
+```
+### Aproximado 
+
+```
+1. Slice Logic
+--------------
+
++-------------------------+-------+-------+-----------+-------+
+|        Site Type        |  Used | Fixed | Available | Util% |
++-------------------------+-------+-------+-----------+-------+
+| Slice LUTs*             | 10890 |     0 |     32600 | 33.40 |
+|   LUT as Logic          | 10890 |     0 |     32600 | 33.40 |
+|   LUT as Memory         |     0 |     0 |      9600 |  0.00 |
+| Slice Registers         |    40 |     0 |     65200 |  0.06 |
+|   Register as Flip Flop |    40 |     0 |     65200 |  0.06 |
+|   Register as Latch     |     0 |     0 |     65200 |  0.00 |
+| F7 Muxes                |     0 |     0 |     16300 |  0.00 |
+| F8 Muxes                |     0 |     0 |      8150 |  0.00 |
++-------------------------+-------+-------+-----------+-------+
+
 ```
