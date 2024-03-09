@@ -1,6 +1,6 @@
 Vivado Simulator 2015.4
 Time resolution is 1 ps
-satd:        x
-satd:        0
-satd:   238422
-$finish called at time : 125 ns : File "/media/juliana/LinFiles/Documents/GitHub/SATD-research/Emicro/SATD-8x16/SATD-8x16.srcs/sim_1/new/comb_aprox_3_tb.v" Line 344
+satd:         x
+satd:         0
+satd:    626756
+$finish called at time : 125 ns : File "/media/juliana/LinFiles/Documents/GitHub/SATD-research/Emicro/SATD-8x16/SATD-8x16.srcs/sim_1/new/comb_precise_tb.v" Line 342

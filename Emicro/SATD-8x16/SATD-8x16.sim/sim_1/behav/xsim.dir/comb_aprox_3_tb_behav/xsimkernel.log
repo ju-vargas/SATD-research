@@ -1,7 +1,0 @@
-Running: xsim.dir/comb_aprox_3_tb_behav/xsimk -simmode gui -wdb comb_aprox_3_tb_behav.wdb -simrunnum 0 -socket 35179
-Design successfully loaded
-Design Loading Memory Usage: 84332 KB (Peak: 84408 KB)
-Design Loading CPU Usage: 60 ms
-Simulation completed
-Simulation Memory Usage: 162164 KB (Peak: 223600 KB)
-Simulation CPU Usage: 60 ms

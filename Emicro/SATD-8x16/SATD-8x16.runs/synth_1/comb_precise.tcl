@@ -4,7 +4,9 @@
 
 set_msg_config -id {HDL 9-1061} -limit 100000
 set_msg_config -id {HDL 9-1654} -limit 100000
-create_project -in_memory -part xc7a35tcsg325-1
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
+create_project -in_memory -part xc7a50tcpg236-3
 
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
@@ -25,6 +27,6 @@ read_verilog -library xil_defaultlib {
   /media/juliana/LinFiles/Documents/GitHub/SATD-research/Emicro/SATD-8x16/SATD-8x16.srcs/sources_1/new/htv_vertical_aprox_3.v
   /media/juliana/LinFiles/Documents/GitHub/SATD-research/Emicro/SATD-8x16/SATD-8x16.srcs/sources_1/new/block_htv_absum_aprox_3.v
 }
-synth_design -top comb_precise -part xc7a35tcsg325-1
+synth_design -top comb_precise -part xc7a50tcpg236-3
 write_checkpoint -noxdef comb_precise.dcp
 catch { report_utilization -file comb_precise_utilization_synth.rpt -pb comb_precise_utilization_synth.pb }

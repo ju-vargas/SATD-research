@@ -9,14 +9,14 @@
     ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 
 source comb_precise.tcl -notrace
-Command: synth_design -top comb_precise -part xc7a35tcsg325-1
+Command: synth_design -top comb_precise -part xc7a50tcpg236-3
 Starting synth_design
-Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
-INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a50t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a50t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 22921 
+INFO: Helper process launched with PID 106461 
 ---------------------------------------------------------------------------------
-Starting Synthesize : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 974.074 ; gain = 161.051 ; free physical = 498 ; free virtual = 5053
+Starting Synthesize : Time (s): cpu = 00:00:11 ; elapsed = 00:00:20 . Memory (MB): peak = 974.070 ; gain = 161.051 ; free physical = 1276 ; free virtual = 4179
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'comb_precise' [/media/juliana/LinFiles/Documents/GitHub/SATD-research/Emicro/SATD-8x16/SATD-8x16.srcs/sources_1/new/comb_precise.v:23]
 	Parameter LENGTH bound to: 11 - type: integer 
@@ -56,27 +56,27 @@ INFO: [Synth 8-256] done synthesizing module 'sum' (5#1) [/media/juliana/LinFile
 INFO: [Synth 8-256] done synthesizing module 'block_htv_absum' (6#1) [/media/juliana/LinFiles/Documents/GitHub/SATD-research/Emicro/SATD-8x16/SATD-8x16.srcs/sources_1/new/block_htv_absum.v:23]
 INFO: [Synth 8-256] done synthesizing module 'comb_precise' (7#1) [/media/juliana/LinFiles/Documents/GitHub/SATD-research/Emicro/SATD-8x16/SATD-8x16.srcs/sources_1/new/comb_precise.v:23]
 ---------------------------------------------------------------------------------
-Finished Synthesize : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1013.449 ; gain = 200.426 ; free physical = 455 ; free virtual = 5011
+Finished Synthesize : Time (s): cpu = 00:00:13 ; elapsed = 00:00:22 . Memory (MB): peak = 1012.445 ; gain = 199.426 ; free physical = 1261 ; free virtual = 4147
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1013.449 ; gain = 200.426 ; free physical = 455 ; free virtual = 5010
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:22 . Memory (MB): peak = 1012.445 ; gain = 199.426 ; free physical = 1261 ; free virtual = 4147
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
-Loading part: xc7a35tcsg325-1
+Loading part: xc7a50tcpg236-3
+INFO: [Device 21-403] Loading part xc7a50tcpg236-3
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1021.453 ; gain = 208.430 ; free physical = 455 ; free virtual = 5010
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:22 . Memory (MB): peak = 1020.449 ; gain = 207.430 ; free physical = 1260 ; free virtual = 4147
 ---------------------------------------------------------------------------------
-INFO: [Device 21-403] Loading part xc7a35tcsg325-1
-INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [/media/juliana/LinFiles/Documents/GitHub/SATD-research/Emicro/SATD-8x16/SATD-8x16.srcs/sources_1/new/ht_vertical.v:52]
-INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [/media/juliana/LinFiles/Documents/GitHub/SATD-research/Emicro/SATD-8x16/SATD-8x16.srcs/sources_1/new/ht_vertical.v:56]
-INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [/media/juliana/LinFiles/Documents/GitHub/SATD-research/Emicro/SATD-8x16/SATD-8x16.srcs/sources_1/new/ht_vertical.v:60]
-INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [/media/juliana/LinFiles/Documents/GitHub/SATD-research/Emicro/SATD-8x16/SATD-8x16.srcs/sources_1/new/ht_vertical.v:64]
-INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [/media/juliana/LinFiles/Documents/GitHub/SATD-research/Emicro/SATD-8x16/SATD-8x16.srcs/sources_1/new/ht_vertical.v:68]
-INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [/media/juliana/LinFiles/Documents/GitHub/SATD-research/Emicro/SATD-8x16/SATD-8x16.srcs/sources_1/new/ht_vertical.v:72]
-INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [/media/juliana/LinFiles/Documents/GitHub/SATD-research/Emicro/SATD-8x16/SATD-8x16.srcs/sources_1/new/ht_vertical.v:76]
-INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [/media/juliana/LinFiles/Documents/GitHub/SATD-research/Emicro/SATD-8x16/SATD-8x16.srcs/sources_1/new/ht_vertical.v:80]
+INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [/media/juliana/LinFiles/Documents/GitHub/SATD-research/Emicro/SATD-8x16/SATD-8x16.srcs/sources_1/new/ht_vertical.v:89]
+INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [/media/juliana/LinFiles/Documents/GitHub/SATD-research/Emicro/SATD-8x16/SATD-8x16.srcs/sources_1/new/ht_vertical.v:85]
+INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [/media/juliana/LinFiles/Documents/GitHub/SATD-research/Emicro/SATD-8x16/SATD-8x16.srcs/sources_1/new/ht_vertical.v:81]
+INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [/media/juliana/LinFiles/Documents/GitHub/SATD-research/Emicro/SATD-8x16/SATD-8x16.srcs/sources_1/new/ht_vertical.v:77]
+INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [/media/juliana/LinFiles/Documents/GitHub/SATD-research/Emicro/SATD-8x16/SATD-8x16.srcs/sources_1/new/ht_vertical.v:73]
+INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [/media/juliana/LinFiles/Documents/GitHub/SATD-research/Emicro/SATD-8x16/SATD-8x16.srcs/sources_1/new/ht_vertical.v:69]
+INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [/media/juliana/LinFiles/Documents/GitHub/SATD-research/Emicro/SATD-8x16/SATD-8x16.srcs/sources_1/new/ht_vertical.v:65]
+INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [/media/juliana/LinFiles/Documents/GitHub/SATD-research/Emicro/SATD-8x16/SATD-8x16.srcs/sources_1/new/ht_vertical.v:61]
 INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [/media/juliana/LinFiles/Documents/GitHub/SATD-research/Emicro/SATD-8x16/SATD-8x16.srcs/sources_1/new/sum.v:84]
 INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [/media/juliana/LinFiles/Documents/GitHub/SATD-research/Emicro/SATD-8x16/SATD-8x16.srcs/sources_1/new/sum.v:79]
 INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [/media/juliana/LinFiles/Documents/GitHub/SATD-research/Emicro/SATD-8x16/SATD-8x16.srcs/sources_1/new/sum.v:71]
@@ -86,14 +86,26 @@ INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To p
 INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [/media/juliana/LinFiles/Documents/GitHub/SATD-research/Emicro/SATD-8x16/SATD-8x16.srcs/sources_1/new/sum.v:46]
 INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [/media/juliana/LinFiles/Documents/GitHub/SATD-research/Emicro/SATD-8x16/SATD-8x16.srcs/sources_1/new/sum.v:41]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1036.469 ; gain = 223.445 ; free physical = 446 ; free virtual = 5003
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:23 . Memory (MB): peak = 1028.457 ; gain = 215.438 ; free physical = 1252 ; free virtual = 4135
 ---------------------------------------------------------------------------------
+# Minor page faults: 75371 Major page faults: 1642
+# Thrashing Detected!
+# Process may be trying to use more memory than is available
+# (memory might be consumed by other processes or file cache).
+# Minor page faults: 75376 Major page faults: 1645
+# Thrashing Detected!
+# Process may be trying to use more memory than is available
+# (memory might be consumed by other processes or file cache).
+# Minor page faults: 75376 Major page faults: 1645
+# Thrashing Detected!
+# Process may be trying to use more memory than is available
+# (memory might be consumed by other processes or file cache).
 
 Report RTL Partitions: 
 +------+-------------------+------------+----------+
 |      |RTL Partition      |Replication |Instances |
 +------+-------------------+------------+----------+
-|1     |block_htv_absum    |           8|      8610|
+|1     |block_htv_absum    |           8|      4329|
 |2     |comb_precise__GCB0 |           1|     19062|
 |3     |comb_precise__GCB1 |           1|      6354|
 |4     |comb_precise__GCB2 |           1|      8472|
@@ -108,13 +120,10 @@ Detailed RTL Component Info :
 	   9 Input     27 Bit       Adders := 1     
 	   4 Input     23 Bit       Adders := 8     
 	   3 Input     21 Bit       Adders := 64    
-	   9 Input     20 Bit       Adders := 16    
-	   2 Input     20 Bit       Adders := 144   
-	   3 Input     20 Bit       Adders := 96    
-	   5 Input     20 Bit       Adders := 48    
-	   6 Input     20 Bit       Adders := 16    
-	   7 Input     20 Bit       Adders := 16    
-	   4 Input     20 Bit       Adders := 32    
+	   3 Input     20 Bit       Adders := 128   
+	   2 Input     20 Bit       Adders := 96    
+	   4 Input     20 Bit       Adders := 24    
+	   5 Input     20 Bit       Adders := 8     
 	   2 Input     16 Bit       Adders := 192   
 	   3 Input     16 Bit       Adders := 128   
 	   4 Input     16 Bit       Adders := 48    
@@ -125,7 +134,7 @@ Detailed RTL Component Info :
 	                1 Bit    Registers := 1     
 +---Muxes : 
 	   2 Input     21 Bit        Muxes := 64    
-	   2 Input     20 Bit        Muxes := 96    
+	   2 Input     20 Bit        Muxes := 64    
 	   2 Input      2 Bit        Muxes := 32    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -144,15 +153,12 @@ Detailed RTL Component Info :
 Module ht_vertical 
 Detailed RTL Component Info : 
 +---Adders : 
-	   9 Input     20 Bit       Adders := 2     
-	   2 Input     20 Bit       Adders := 18    
-	   3 Input     20 Bit       Adders := 12    
-	   5 Input     20 Bit       Adders := 6     
-	   6 Input     20 Bit       Adders := 2     
-	   7 Input     20 Bit       Adders := 2     
-	   4 Input     20 Bit       Adders := 4     
+	   3 Input     20 Bit       Adders := 16    
+	   2 Input     20 Bit       Adders := 12    
+	   4 Input     20 Bit       Adders := 3     
+	   5 Input     20 Bit       Adders := 1     
 +---Muxes : 
-	   2 Input     20 Bit        Muxes := 12    
+	   2 Input     20 Bit        Muxes := 8     
 Module sum 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -344,25 +350,25 @@ Finished RTL Hierarchical Component Statistics
 Start Part Resource Summary
 ---------------------------------------------------------------------------------
 Part Resources:
-DSPs: 90 (col length:60)
-BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+DSPs: 120 (col length:60)
+BRAMs: 150 (col length: RAMB18 60 RAMB36 30)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
-Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1121.484 ; gain = 308.461 ; free physical = 383 ; free virtual = 4937
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:19 ; elapsed = 00:00:29 . Memory (MB): peak = 1120.473 ; gain = 307.453 ; free physical = 1178 ; free virtual = 3947
 ---------------------------------------------------------------------------------
 Start Cross Boundary Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1129.484 ; gain = 316.461 ; free physical = 378 ; free virtual = 4932
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:33 . Memory (MB): peak = 1128.473 ; gain = 315.453 ; free physical = 1177 ; free virtual = 3932
 ---------------------------------------------------------------------------------
-Finished Parallel Reinference  : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1129.484 ; gain = 316.461 ; free physical = 378 ; free virtual = 4932
+Finished Parallel Reinference  : Time (s): cpu = 00:00:22 ; elapsed = 00:00:33 . Memory (MB): peak = 1128.473 ; gain = 315.453 ; free physical = 1177 ; free virtual = 3932
 
 Report RTL Partitions: 
 +------+-------------------+------------+----------+
 |      |RTL Partition      |Replication |Instances |
 +------+-------------------+------------+----------+
-|1     |block_htv_absum    |           8|     10374|
+|1     |block_htv_absum    |           8|      4770|
 |2     |comb_precise__GCB0 |           1|     20160|
 |3     |comb_precise__GCB1 |           1|      6720|
 |4     |comb_precise__GCB2 |           1|      8960|
@@ -373,15 +379,15 @@ No constraint files found.
 Start Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Area Optimization : Time (s): cpu = 00:00:35 ; elapsed = 00:00:35 . Memory (MB): peak = 1218.156 ; gain = 405.133 ; free physical = 303 ; free virtual = 4846
+Finished Area Optimization : Time (s): cpu = 00:00:36 ; elapsed = 00:00:49 . Memory (MB): peak = 1200.512 ; gain = 387.492 ; free physical = 1102 ; free virtual = 3911
 ---------------------------------------------------------------------------------
-Finished Parallel Area Optimization  : Time (s): cpu = 00:00:35 ; elapsed = 00:00:35 . Memory (MB): peak = 1218.156 ; gain = 405.133 ; free physical = 303 ; free virtual = 4846
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:36 ; elapsed = 00:00:49 . Memory (MB): peak = 1200.512 ; gain = 387.492 ; free physical = 1102 ; free virtual = 3911
 
 Report RTL Partitions: 
 +------+-------------------+------------+----------+
 |      |RTL Partition      |Replication |Instances |
 +------+-------------------+------------+----------+
-|1     |block_htv_absum    |           8|      7245|
+|1     |block_htv_absum    |           8|      2638|
 |2     |comb_precise__GCB0 |           1|     11223|
 |3     |comb_precise__GCB1 |           1|      3741|
 |4     |comb_precise__GCB2 |           1|      4988|
@@ -392,14 +398,14 @@ Start Timing Optimization
 ---------------------------------------------------------------------------------
 No constraint files found.
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:35 ; elapsed = 00:00:35 . Memory (MB): peak = 1218.156 ; gain = 405.133 ; free physical = 303 ; free virtual = 4846
+Finished Timing Optimization : Time (s): cpu = 00:00:36 ; elapsed = 00:00:49 . Memory (MB): peak = 1200.512 ; gain = 387.492 ; free physical = 1102 ; free virtual = 3911
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
 +------+-------------------+------------+----------+
 |      |RTL Partition      |Replication |Instances |
 +------+-------------------+------------+----------+
-|1     |block_htv_absum    |           8|      7245|
+|1     |block_htv_absum    |           8|      2638|
 |2     |comb_precise__GCB0 |           1|     11223|
 |3     |comb_precise__GCB1 |           1|      3741|
 |4     |comb_precise__GCB2 |           1|      4988|
@@ -409,16 +415,16 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:40 ; elapsed = 00:00:40 . Memory (MB): peak = 1237.367 ; gain = 424.344 ; free physical = 311 ; free virtual = 4854
+Finished Technology Mapping : Time (s): cpu = 00:00:40 ; elapsed = 00:00:53 . Memory (MB): peak = 1215.551 ; gain = 402.531 ; free physical = 1080 ; free virtual = 3902
 ---------------------------------------------------------------------------------
-Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:40 ; elapsed = 00:00:40 . Memory (MB): peak = 1237.367 ; gain = 424.344 ; free physical = 311 ; free virtual = 4854
+Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:40 ; elapsed = 00:00:53 . Memory (MB): peak = 1215.551 ; gain = 402.531 ; free physical = 1080 ; free virtual = 3902
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
 | |RTL Partition |Replication |Instances |
 +-+--------------+------------+----------+
 +-+--------------+------------+----------+
-Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:40 ; elapsed = 00:00:40 . Memory (MB): peak = 1237.367 ; gain = 424.344 ; free physical = 311 ; free virtual = 4854
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:40 ; elapsed = 00:00:53 . Memory (MB): peak = 1215.551 ; gain = 402.531 ; free physical = 1080 ; free virtual = 3902
 ---------------------------------------------------------------------------------
 Start IO Insertion
 ---------------------------------------------------------------------------------
@@ -435,7 +441,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:43 ; elapsed = 00:00:43 . Memory (MB): peak = 1237.367 ; gain = 424.344 ; free physical = 310 ; free virtual = 4854
+Finished IO Insertion : Time (s): cpu = 00:00:44 ; elapsed = 00:00:57 . Memory (MB): peak = 1215.551 ; gain = 402.531 ; free physical = 1090 ; free virtual = 3891
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -448,7 +454,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:43 ; elapsed = 00:00:44 . Memory (MB): peak = 1237.367 ; gain = 424.344 ; free physical = 310 ; free virtual = 4854
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:44 ; elapsed = 00:00:57 . Memory (MB): peak = 1215.551 ; gain = 402.531 ; free physical = 1087 ; free virtual = 3891
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -460,25 +466,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:44 ; elapsed = 00:00:45 . Memory (MB): peak = 1237.367 ; gain = 424.344 ; free physical = 309 ; free virtual = 4853
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:45 ; elapsed = 00:00:58 . Memory (MB): peak = 1215.551 ; gain = 402.531 ; free physical = 1104 ; free virtual = 3902
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:49 ; elapsed = 00:00:49 . Memory (MB): peak = 1237.367 ; gain = 424.344 ; free physical = 280 ; free virtual = 4825
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:47 ; elapsed = 00:01:00 . Memory (MB): peak = 1215.551 ; gain = 402.531 ; free physical = 1061 ; free virtual = 3878
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:49 ; elapsed = 00:00:50 . Memory (MB): peak = 1237.367 ; gain = 424.344 ; free physical = 279 ; free virtual = 4825
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:47 ; elapsed = 00:01:00 . Memory (MB): peak = 1215.551 ; gain = 402.531 ; free physical = 1059 ; free virtual = 3877
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:49 ; elapsed = 00:00:50 . Memory (MB): peak = 1237.367 ; gain = 424.344 ; free physical = 279 ; free virtual = 4825
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:47 ; elapsed = 00:01:00 . Memory (MB): peak = 1215.551 ; gain = 402.531 ; free physical = 1083 ; free virtual = 3897
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -495,14 +501,14 @@ Report Cell Usage:
 |      |Cell   |Count |
 +------+-------+------+
 |1     |BUFG   |     1|
-|2     |CARRY4 |  4668|
-|3     |LUT1   |   452|
-|4     |LUT2   | 10241|
-|5     |LUT3   |  8056|
-|6     |LUT4   |  2644|
-|7     |LUT5   |  4808|
-|8     |LUT6   |  2080|
-|9     |FDRE   |    59|
+|2     |CARRY4 |  3788|
+|3     |LUT1   |   420|
+|4     |LUT2   | 11033|
+|5     |LUT3   |  4500|
+|6     |LUT4   |  1268|
+|7     |LUT5   |  1640|
+|8     |LUT6   |   616|
+|9     |FDRE   |    47|
 |10    |IBUF   |  3075|
 |11    |OBUF   |    27|
 +------+-------+------+
@@ -511,25 +517,25 @@ Report Instance Areas:
 +------+-----------+----------------+------+
 |      |Instance   |Module          |Cells |
 +------+-----------+----------------+------+
-|1     |top        |                | 36111|
-|2     |  block_10 |block           |  1554|
-|3     |    diff   |differences_4   |   210|
-|4     |    hth    |ht_horizontal_5 |  1344|
-|5     |  block_8  |block_0         |  1455|
-|6     |    diff   |differences_2   |   202|
-|7     |    hth    |ht_horizontal_3 |  1253|
-|8     |  block_9  |block_1         |  1458|
-|9     |    diff   |differences     |   204|
-|10    |    hth    |ht_horizontal   |  1254|
+|1     |top        |                | 26415|
+|2     |  block_10 |block           |   872|
+|3     |    diff   |differences_4   |   190|
+|4     |    hth    |ht_horizontal_5 |   682|
+|5     |  block_8  |block_0         |   872|
+|6     |    diff   |differences_2   |   190|
+|7     |    hth    |ht_horizontal_3 |   682|
+|8     |  block_9  |block_1         |   872|
+|9     |    diff   |differences     |   190|
+|10    |    hth    |ht_horizontal   |   682|
 +------+-----------+----------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:49 ; elapsed = 00:00:50 . Memory (MB): peak = 1237.367 ; gain = 424.344 ; free physical = 279 ; free virtual = 4825
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:47 ; elapsed = 00:01:00 . Memory (MB): peak = 1215.551 ; gain = 402.531 ; free physical = 1082 ; free virtual = 3896
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:47 ; elapsed = 00:00:47 . Memory (MB): peak = 1237.367 ; gain = 325.293 ; free physical = 279 ; free virtual = 4825
-Synthesis Optimization Complete : Time (s): cpu = 00:00:49 ; elapsed = 00:00:50 . Memory (MB): peak = 1237.367 ; gain = 424.344 ; free physical = 279 ; free virtual = 4825
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:42 ; elapsed = 00:00:48 . Memory (MB): peak = 1215.551 ; gain = 303.480 ; free physical = 1079 ; free virtual = 3894
+Synthesis Optimization Complete : Time (s): cpu = 00:00:47 ; elapsed = 00:01:01 . Memory (MB): peak = 1215.551 ; gain = 402.531 ; free physical = 1078 ; free virtual = 3894
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 7743 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 6863 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 WARNING: [Netlist 29-101] Netlist 'comb_precise' is not ideal for floorplanning, since the cellview 'comb_precise' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -540,7 +546,7 @@ No Unisim elements were transformed.
 INFO: [Common 17-83] Releasing license: Synthesis
 39 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:57 ; elapsed = 00:00:56 . Memory (MB): peak = 1344.379 ; gain = 460.039 ; free physical = 249 ; free virtual = 4776
-write_checkpoint: Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 1376.395 ; gain = 32.016 ; free physical = 255 ; free virtual = 4772
-report_utilization: Time (s): cpu = 00:00:00.29 ; elapsed = 00:00:00.34 . Memory (MB): peak = 1376.395 ; gain = 0.000 ; free physical = 248 ; free virtual = 4766
-INFO: [Common 17-206] Exiting Vivado at Thu Mar  7 02:20:40 2024...
+synth_design: Time (s): cpu = 00:00:53 ; elapsed = 00:01:03 . Memory (MB): peak = 1312.562 ; gain = 428.227 ; free physical = 1113 ; free virtual = 3930
+write_checkpoint: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 1344.578 ; gain = 32.016 ; free physical = 1110 ; free virtual = 3937
+report_utilization: Time (s): cpu = 00:00:00.34 ; elapsed = 00:00:00.72 . Memory (MB): peak = 1344.578 ; gain = 0.000 ; free physical = 1108 ; free virtual = 3942
+INFO: [Common 17-206] Exiting Vivado at Sat Mar  9 16:10:29 2024...

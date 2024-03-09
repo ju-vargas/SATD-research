@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcsg325-1" LaunchTime="1709788767">
+<GenRun Id="synth_1" LaunchPart="xc7a50tcpg236-3" LaunchTime="1710011331">
   <File Type="VDS-TIMING-PB" Name="comb_precise_timing_summary_synth.pb"/>
   <File Type="VDS-TIMINGSUMMARY" Name="comb_precise_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="comb_precise.dcp"/>
